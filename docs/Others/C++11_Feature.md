@@ -23,6 +23,7 @@
     auto it = v.cbegin(); // it has type vector<int>::const_iterator
     ```
 - The Library `begin()` and `end()` Functions:
+
     ``` cpp
     int ia[] = {0,1,2,3,4,5,6,7,8,9}; // ia is an array of ten ints 
     int *beg = begin(ia); // pointer to the first element in ia
