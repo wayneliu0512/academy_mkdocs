@@ -1,0 +1,1515 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>裝飾者模式 (Decorator pattern) - Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#decorator-pattern" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Academy" class="md-header__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              裝飾者模式 (Decorator pattern)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Academy" class="md-nav__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Academy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Agile project managment
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agile project managment" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Agile project managment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/" class="md-nav__link">
+        Agile Project Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Agile_Development/" class="md-nav__link">
+        Agile Development
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Jira_Project_Management/" class="md-nav__link">
+        Jira Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Kanban/" class="md-nav__link">
+        Kanban
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Scrum/" class="md-nav__link">
+        Scrum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Software_Development/" class="md-nav__link">
+        Software Development
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/" class="md-nav__link">
+        C++ Academy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/compound_type/" class="md-nav__link">
+        複合型別 (Compound type)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/copy_control/" class="md-nav__link">
+        拷貝控制項 (Copy Control)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/effective_cpp/" class="md-nav__link">
+        Effective C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/exception_additional_doc/" class="md-nav__link">
+        Exception 補充
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/object_oriented_programming/" class="md-nav__link">
+        物件導向編程 (OOP)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/q%26a/" class="md-nav__link">
+        Q&A
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/smart_pointer/" class="md-nav__link">
+        Smart Pointer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/template/" class="md-nav__link">
+        Template and Generic Programming
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Concurrency
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Concurrency" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Concurrency
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concurrency/Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concurrency/qt_threading_event/" class="md-nav__link">
+        Qt Threading and Event Loop
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Design pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design pattern" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Design pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Design Pattern
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command/" class="md-nav__link">
+        Command pattern (命令模式)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          裝飾者模式 (Decorator pattern)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        裝飾者模式 (Decorator pattern)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    星巴克咖啡
+  </a>
+  
+    <nav class="md-nav" aria-label="星巴克咖啡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    設計守則
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decorator-pattern_1" class="md-nav__link">
+    認識裝飾者模式 (Decorator pattern)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    目前得知的結論
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    定義裝飾者模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    裝飾飲料
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    在繼承和合成之間，觀念有些混淆，討論解決問題
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    寫下程式碼
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-beverages" class="md-nav__link">
+    Coding beverages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-condiments" class="md-nav__link">
+    Coding condiments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-result" class="md-nav__link">
+    Test result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-io" class="md-nav__link">
+    真實世界的裝飾者: Java I/O
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../factory/" class="md-nav__link">
+        工廠模式 (Factory pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observer/" class="md-nav__link">
+        觀察者模式 (Observer pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../singleton/" class="md-nav__link">
+        獨體 (單例) 模式 (Singleton Pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../welcome_strategy/" class="md-nav__link">
+        Welcome to Design Pattern (設計模式)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/" class="md-nav__link">
+        Git Academy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/branch_mang_remote/" class="md-nav__link">
+        Branch mang remote
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/branching_merging/" class="md-nav__link">
+        Branching merging
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/branching_nutshell/" class="md-nav__link">
+        Branching nutshell
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/clone_recording_changes/" class="md-nav__link">
+        Clone recording changes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_maintain_data_recovery/" class="md-nav__link">
+        Git maintain data recovery
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_object/" class="md-nav__link">
+        Git object
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_ref_packfiles/" class="md-nav__link">
+        Git ref packfiles
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_refspec/" class="md-nav__link">
+        Git refspec
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/q%26a/" class="md-nav__link">
+        Q&a
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/rebasing/" class="md-nav__link">
+        Rebasing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/remote/" class="md-nav__link">
+        Remote
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/tagging_aliase/" class="md-nav__link">
+        Tagging aliase
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/viewing_history_undoing/" class="md-nav__link">
+        Viewing history undoing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/C%2B%2B11_Feature/" class="md-nav__link">
+        C++ 11 new feature
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/C%2B%2B_Coding_Style/" class="md-nav__link">
+        C++ Coding Style
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/C%2B%2B_Primer_Ch2_Variable%26Types/" class="md-nav__link">
+        Chapter 2 - Variables and Basic Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/Clean_Code/" class="md-nav__link">
+        Clean Code 重點
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/How_to_Build_a_Web_on_GCP/" class="md-nav__link">
+        How to build a web server on GCP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/Why_UML_Modeling/" class="md-nav__link">
+        Why UML Modeling ? 為何使用UML建模
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Principles of OOD
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Principles of OOD" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Principles of OOD
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/" class="md-nav__link">
+        Principles of OOD (Object oriented design)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/SOLID/" class="md-nav__link">
+        SOLID 物件導向設計原則
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/coupling_packages/" class="md-nav__link">
+        Coupling packages
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/package_cohesion/" class="md-nav__link">
+        Granularity
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Qt
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Qt" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Qt
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Qt/" class="md-nav__link">
+        Qt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Qt/model_view/" class="md-nav__link">
+        Model-View Programming
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        ROS
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="ROS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          ROS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS/ros/" class="md-nav__link">
+        ROS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    星巴克咖啡
+  </a>
+  
+    <nav class="md-nav" aria-label="星巴克咖啡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    設計守則
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decorator-pattern_1" class="md-nav__link">
+    認識裝飾者模式 (Decorator pattern)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    目前得知的結論
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    定義裝飾者模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    裝飾飲料
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    在繼承和合成之間，觀念有些混淆，討論解決問題
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    寫下程式碼
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-beverages" class="md-nav__link">
+    Coding beverages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-condiments" class="md-nav__link">
+    Coding condiments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-result" class="md-nav__link">
+    Test result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-io" class="md-nav__link">
+    真實世界的裝飾者: Java I/O
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="decorator-pattern">裝飾者模式 (Decorator pattern)</h1>
+<h3 id="_1">星巴克咖啡</h3>
+<p>我們設計一個訂單系統，原先的設計是這樣的:</p>
+<p><img alt="3_1" src="../images/3_1.PNG" /></p>
+<p>購買咖啡時，也可以要求各種加料，例如:牛奶 (steamed milk), 豆漿 (soy), 摩卡 (mocha)。星巴克會根據加料斟酌收費，所以訂單系統設計上必須考慮加料的部分。</p>
+<p>這是我們嘗試的第一個版本:</p>
+<p><img alt="3_2" src="../images/3_2.PNG" /></p>
+<p>這設計顯然是笨透了，我們可以利用實體變數跟繼承，就可以追蹤這些配料了:</p>
+<p><img alt="3_3" src="../images/3_3.PNG" /></p>
+<p>這樣仍然有一些設計上的問題:</p>
+<ul>
+<li>配料價格改變會使得我們需要更改程式碼。</li>
+<li>一旦出現新的配料，就需要加入新方法，並改變超類別中 <code>cost()</code> 對於配料價格的計算。</li>
+<li>某些口味對某些飲料而言 (例如:冰茶)，配料可能不適合，但是 Tea (茶) 次類別仍將繼承某些不合適的方法，例如: <code>hasWhip()</code> (要加奶泡嗎)。</li>
+<li>萬一顧客想要雙倍摩卡 (巧克力加兩倍) 咖啡，那怎麼辦?</li>
+</ul>
+<h4 id="_2">設計守則</h4>
+<p>類別應該對擴充開放; 應該對修改封閉。</p>
+<p>我們的目標是允許類別容易擴充，在不修改既有程式碼的情況下，就可以搭配新的行為。這樣的設計具有彈性可以因應改變，可以接受新的功能已達到改變需求的目的。</p>
+<h3 id="decorator-pattern_1">認識裝飾者模式 (Decorator pattern)</h3>
+<p>在這裡我們要採用不一樣的作法:我們要以飲料為主體，然後在執行期以配料 "裝飾" (decorate) 飲料。比方說，如果顧客想要摩卡與奶泡的深度烘培咖啡:</p>
+<ol>
+<li>拿一個深度烘培咖啡 (DarkRoast) 物件。</li>
+<li>以摩卡 (Mocha) 物件裝飾。</li>
+<li>以奶泡 (Whip) 物件裝飾。</li>
+<li>呼叫 <code>cost()</code> 方法，將依賴委派 (delegate) 將配料的價格加上去。</li>
+</ol>
+<p><img alt="3_4" src="../images/3_4.PNG" /></p>
+<p><img alt="3_5" src="../images/3_5.PNG" /></p>
+<p><img alt="3_6" src="../images/3_6.PNG" /></p>
+<p><img alt="3_7" src="../images/3_7.PNG" /></p>
+<h3 id="_3">目前得知的結論</h3>
+<ul>
+<li>裝飾者與被裝飾者有相同的超型態。</li>
+<li>你可以利用一個或多個裝飾者包裝一個物件。</li>
+<li>裝飾者與被裝飾者有相同的超型態，所以我們可以在任何需要傳遞原始的 (被包裝的) 物件的場合，改以傳遞裝飾後 (包裝的) 的物件。</li>
+<li>裝飾者可以在所委派被裝飾者的行為，之前或之後加上自己的行為，達到特定目的。</li>
+<li>物件可以在任何時候被裝飾，所以可以在執行期動態地用任何適合的裝飾者，來裝飾物件。</li>
+</ul>
+<h3 id="_4">定義裝飾者模式</h3>
+<p>裝飾者模式動態地將責任加諸於物件上。若要擴充功能，裝飾者提供了比繼承更有彈性的選擇。</p>
+<p><img alt="3_8" src="../images/3_8.PNG" /></p>
+<h3 id="_5">裝飾飲料</h3>
+<p><img alt="3_9" src="../images/3_9.PNG" /></p>
+<h3 id="_6">在繼承和合成之間，觀念有些混淆，討論解決問題</h3>
+<p>A: 我原本以為在此模式中不會使用到繼承，而是要利用合成取代繼承。</p>
+<p>B: 的確是如此，但我認為，這麼做的重點是在於，裝飾者和被裝飾者必須是一樣的型態，也就是有共同的超類別。在這裡，我們利用繼承達到 "型態相符"，而非利用繼承取得相同的 "行為"。</p>
+<p>A: 我知道為何裝飾者需要和被裝飾者有相同的介面，因為裝飾者必須能取代被裝飾者。但是行為又是何從而來 ?</p>
+<p>B: 當我們將裝飾者與元件合成時，就是加入新行為。所得到的新行為，並非繼承自超類別，而是由合成物件得來的。</p>
+<h3 id="_7">寫下程式碼</h3>
+<p><img alt="3_10" src="../images/3_10.PNG" /></p>
+<p><img alt="3_11" src="../images/3_11.PNG" /></p>
+<h3 id="coding-beverages">Coding beverages</h3>
+<p><img alt="3_12" src="../images/3_12.PNG" /></p>
+<p><img alt="3_13" src="../images/3_13.PNG" /></p>
+<h3 id="coding-condiments">Coding condiments</h3>
+<p><img alt="3_14" src="../images/3_14.PNG" /></p>
+<h3 id="test-result">Test result</h3>
+<p><img alt="3_15" src="../images/3_15.PNG" /></p>
+<p><img alt="3_16" src="../images/3_16.PNG" /></p>
+<h3 id="java-io">真實世界的裝飾者: Java I/O</h3>
+<p>你已經到裝飾者模式了，這些 I/O 的相關類別，對你來說應該比較有意義了，因為其中許多類別都是裝飾者。下面是一個典型的物件集合，透過裝飾者來將功能結合起來，以讀取檔案。</p>
+<p><img alt="3_17" src="../images/3_17.PNG" /></p>
+<p><img alt="3_18" src="../images/3_18.PNG" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../command/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Command pattern (命令模式)
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../factory/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              工廠模式 (Factory pattern)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+    
+  </body>
+</html>

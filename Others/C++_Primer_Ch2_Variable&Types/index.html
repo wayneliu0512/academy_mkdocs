@@ -1,0 +1,2063 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>Chapter 2 - Variables and Basic Types - Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-variables-and-basic-types" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Academy" class="md-header__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 2 - Variables and Basic Types
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Academy" class="md-nav__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Academy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Agile project managment
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agile project managment" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Agile project managment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/" class="md-nav__link">
+        Agile Project Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Agile_Development/" class="md-nav__link">
+        Agile Development
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Jira_Project_Management/" class="md-nav__link">
+        Jira Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Kanban/" class="md-nav__link">
+        Kanban
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Scrum/" class="md-nav__link">
+        Scrum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Software_Development/" class="md-nav__link">
+        Software Development
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/" class="md-nav__link">
+        C++ Academy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/compound_type/" class="md-nav__link">
+        複合型別 (Compound type)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/copy_control/" class="md-nav__link">
+        拷貝控制項 (Copy Control)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/effective_cpp/" class="md-nav__link">
+        Effective C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/exception_additional_doc/" class="md-nav__link">
+        Exception 補充
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/object_oriented_programming/" class="md-nav__link">
+        物件導向編程 (OOP)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/q%26a/" class="md-nav__link">
+        Q&A
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/smart_pointer/" class="md-nav__link">
+        Smart Pointer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/template/" class="md-nav__link">
+        Template and Generic Programming
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Concurrency
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Concurrency" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Concurrency
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concurrency/Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concurrency/qt_threading_event/" class="md-nav__link">
+        Qt Threading and Event Loop
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Design pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design pattern" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Design pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/" class="md-nav__link">
+        Design Pattern
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/command/" class="md-nav__link">
+        Command pattern (命令模式)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/decorator/" class="md-nav__link">
+        裝飾者模式 (Decorator pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/factory/" class="md-nav__link">
+        工廠模式 (Factory pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/observer/" class="md-nav__link">
+        觀察者模式 (Observer pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/singleton/" class="md-nav__link">
+        獨體 (單例) 模式 (Singleton Pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/welcome_strategy/" class="md-nav__link">
+        Welcome to Design Pattern (設計模式)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/" class="md-nav__link">
+        Git Academy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/branch_mang_remote/" class="md-nav__link">
+        Branch mang remote
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/branching_merging/" class="md-nav__link">
+        Branching merging
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/branching_nutshell/" class="md-nav__link">
+        Branching nutshell
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/clone_recording_changes/" class="md-nav__link">
+        Clone recording changes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_maintain_data_recovery/" class="md-nav__link">
+        Git maintain data recovery
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_object/" class="md-nav__link">
+        Git object
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_ref_packfiles/" class="md-nav__link">
+        Git ref packfiles
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_refspec/" class="md-nav__link">
+        Git refspec
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/q%26a/" class="md-nav__link">
+        Q&a
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/rebasing/" class="md-nav__link">
+        Rebasing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/remote/" class="md-nav__link">
+        Remote
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/tagging_aliase/" class="md-nav__link">
+        Tagging aliase
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/viewing_history_undoing/" class="md-nav__link">
+        Viewing history undoing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%2B%2B11_Feature/" class="md-nav__link">
+        C++ 11 new feature
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%2B%2B_Coding_Style/" class="md-nav__link">
+        C++ Coding Style
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 2 - Variables and Basic Types
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Chapter 2 - Variables and Basic Types
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tags-c-c11-cprimer" class="md-nav__link">
+    tags: C++ C++11 C++primer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-primitive-built-in-types" class="md-nav__link">
+    2.1 Primitive Built-in Types
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Primitive Built-in Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-arithmetic-types" class="md-nav__link">
+    2.1.1 Arithmetic Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advice-deciding-which-type-to-use" class="md-nav__link">
+    Advice: Deciding Which Type to use
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-type-conversions" class="md-nav__link">
+    2.1.2 Type Conversions
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.2 Type Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caution-dont-mix-signed-and-unsigned-types" class="md-nav__link">
+    Caution: Don't Mix Signed and Unsigned Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-literals" class="md-nav__link">
+    2.1.3 Literals
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.3 Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer-literals" class="md-nav__link">
+    Integer Literals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-point-literals" class="md-nav__link">
+    Floating-point Literals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-variables" class="md-nav__link">
+    2.2 Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-variable-definitions" class="md-nav__link">
+    2.2.1 Variable Definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.1 Variable Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-initialization" class="md-nav__link">
+    List Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-initialization" class="md-nav__link">
+    Default Initialization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-variable-declaration-and-definitions" class="md-nav__link">
+    2.2.2 Variable Declaration and Definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-identifiers" class="md-nav__link">
+    2.2.3 Identifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-scope-of-a-name" class="md-nav__link">
+    2.2.4 Scope of a Name
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-compound-types" class="md-nav__link">
+    2.3 Compound Types
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Compound Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-reference" class="md-nav__link">
+    2.3.1 Reference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-pointers" class="md-nav__link">
+    2.3.2 Pointers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-understanding-compound-type-declaration" class="md-nav__link">
+    2.3.3 Understanding Compound Type Declaration
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.3 Understanding Compound Type Declaration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-multiple-variable" class="md-nav__link">
+    Defining Multiple Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointers-to-pointers" class="md-nav__link">
+    Pointers to Pointers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-to-pointers" class="md-nav__link">
+    Reference to Pointers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-const-qualifier" class="md-nav__link">
+    2.4 const Qualifier
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 const Qualifier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialization-and-const" class="md-nav__link">
+    Initialization and const
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-default-const-object-are-local-to-a-file" class="md-nav__link">
+    By Default, const Object Are Local to a File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#241-reference-to-const" class="md-nav__link">
+    2.4.1 Reference to const
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Clean_Code/" class="md-nav__link">
+        Clean Code 重點
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../How_to_Build_a_Web_on_GCP/" class="md-nav__link">
+        How to build a web server on GCP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Why_UML_Modeling/" class="md-nav__link">
+        Why UML Modeling ? 為何使用UML建模
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Principles of OOD
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Principles of OOD" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Principles of OOD
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/" class="md-nav__link">
+        Principles of OOD (Object oriented design)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/SOLID/" class="md-nav__link">
+        SOLID 物件導向設計原則
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/coupling_packages/" class="md-nav__link">
+        Coupling packages
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/package_cohesion/" class="md-nav__link">
+        Granularity
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Qt
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Qt" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Qt
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Qt/" class="md-nav__link">
+        Qt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Qt/model_view/" class="md-nav__link">
+        Model-View Programming
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        ROS
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="ROS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          ROS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS/ros/" class="md-nav__link">
+        ROS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tags-c-c11-cprimer" class="md-nav__link">
+    tags: C++ C++11 C++primer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-primitive-built-in-types" class="md-nav__link">
+    2.1 Primitive Built-in Types
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Primitive Built-in Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-arithmetic-types" class="md-nav__link">
+    2.1.1 Arithmetic Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advice-deciding-which-type-to-use" class="md-nav__link">
+    Advice: Deciding Which Type to use
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-type-conversions" class="md-nav__link">
+    2.1.2 Type Conversions
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.2 Type Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caution-dont-mix-signed-and-unsigned-types" class="md-nav__link">
+    Caution: Don't Mix Signed and Unsigned Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-literals" class="md-nav__link">
+    2.1.3 Literals
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.3 Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer-literals" class="md-nav__link">
+    Integer Literals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-point-literals" class="md-nav__link">
+    Floating-point Literals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-variables" class="md-nav__link">
+    2.2 Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-variable-definitions" class="md-nav__link">
+    2.2.1 Variable Definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.1 Variable Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-initialization" class="md-nav__link">
+    List Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-initialization" class="md-nav__link">
+    Default Initialization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-variable-declaration-and-definitions" class="md-nav__link">
+    2.2.2 Variable Declaration and Definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-identifiers" class="md-nav__link">
+    2.2.3 Identifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-scope-of-a-name" class="md-nav__link">
+    2.2.4 Scope of a Name
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-compound-types" class="md-nav__link">
+    2.3 Compound Types
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Compound Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-reference" class="md-nav__link">
+    2.3.1 Reference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-pointers" class="md-nav__link">
+    2.3.2 Pointers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-understanding-compound-type-declaration" class="md-nav__link">
+    2.3.3 Understanding Compound Type Declaration
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.3 Understanding Compound Type Declaration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-multiple-variable" class="md-nav__link">
+    Defining Multiple Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointers-to-pointers" class="md-nav__link">
+    Pointers to Pointers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-to-pointers" class="md-nav__link">
+    Reference to Pointers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-const-qualifier" class="md-nav__link">
+    2.4 const Qualifier
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 const Qualifier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialization-and-const" class="md-nav__link">
+    Initialization and const
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-default-const-object-are-local-to-a-file" class="md-nav__link">
+    By Default, const Object Are Local to a File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#241-reference-to-const" class="md-nav__link">
+    2.4.1 Reference to const
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="chapter-2-variables-and-basic-types">Chapter 2 - Variables and Basic Types</h1>
+<h6 id="tags-c-c11-cprimer">tags: <code>C++</code> <code>C++11</code> <code>C++primer</code></h6>
+<hr />
+<h2 id="21-primitive-built-in-types">2.1 Primitive Built-in Types</h2>
+<h3 id="211-arithmetic-types">2.1.1 Arithmetic Types</h3>
+<ul>
+<li><code>char</code> 保證大小足夠儲存裝置的 basic character set </li>
+<li><code>wchar_t</code>, <code>char16_t</code>, <code>char32_t</code> 用於儲存 extended character set, <code>wchar_t</code> 保證大小足夠儲存裝置最大的 extended character set, 而 <code>char16_t</code>, <code>char32_t</code> 則是用於 Unicode character</li>
+<li><code>int</code> 保證可儲存的大小 &gt;= <code>short</code></li>
+<li><code>long</code> 保證可儲存的大小 &gt;= <code>int</code></li>
+<li>
+<p><code>long long</code> 保證可儲存的大小 &gt;= <code>long</code></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Minimum Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td>boolean</td>
+<td>NA</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>character</td>
+<td>8 bits</td>
+</tr>
+<tr>
+<td><code>wchar_t</code></td>
+<td>wide character</td>
+<td>16 bits</td>
+</tr>
+<tr>
+<td><code>char16_t</code></td>
+<td>Unicode character</td>
+<td>16 bits</td>
+</tr>
+<tr>
+<td><code>char32_t</code></td>
+<td>Unicode character</td>
+<td>32 bits</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>short integer</td>
+<td>16 bits</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>integer</td>
+<td>16 bits</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>long integer</td>
+<td>32 bits</td>
+</tr>
+<tr>
+<td><code>long long</code></td>
+<td>long integer</td>
+<td>64 bits</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>single-precision floating-point</td>
+<td>6 significant digits</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>double-precision floating-point</td>
+<td>10 significant digits</td>
+</tr>
+<tr>
+<td><code>long double</code></td>
+<td>extended-precision floating-point</td>
+<td>10 significant digits</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<h3 id="advice-deciding-which-type-to-use">Advice: Deciding Which Type to use</h3>
+<p>C++ 的設計讓程式設計師在必要的時候可以更貼近硬體, 這些 arithmetic types 被設計成可以迎合各式各樣不同的硬體, 某些的 arithmetic types 或許會讓開發者覺得複雜, 所以以下提供幾種簡單的方法去選擇使用的型別:
+- 當你知道這個值不可能是負的時候, 請使用 <code>unsigned</code>
+- 整數請使用 <code>int</code>, <code>short</code> 通常太小, <code>long</code> 則往往跟 <code>int</code> 佔用一樣的大小, 如果你要使用的值大於 <code>int</code> 的 minimum size, 則請改用 <code>long long</code>
+- 浮點數運算請使用 <code>double</code>, <code>float</code> 通常不夠精準, double-precision floating-point 與 single-precision floating-point 的所耗的計算量差異並不大, 事實上, 在有些裝置 double-precision floating-point 的運算速度甚至快於 single-precision floating-point</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="212-type-conversions">2.1.2 Type Conversions</h3>
+<ul>
+<li>
+<p>型別轉換通常取決於此型態可容許的大小範圍
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>          <span class="c1">// b is true</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>            <span class="c1">// i has value 1</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">i</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>             <span class="c1">// i has value 3</span>
+<span class="linenos" data-linenos="4 "></span><span class="kt">double</span> <span class="n">pi</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>        <span class="c1">// pi has value 3.0</span>
+<span class="linenos" data-linenos="5 "></span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">-1</span><span class="p">;</span> <span class="c1">// assuming 8-bits char, c has value 255</span>
+<span class="linenos" data-linenos="6 "></span><span class="kt">signed</span> <span class="kt">char</span> <span class="n">c2</span> <span class="o">=</span> <span class="mi">256</span><span class="p">;</span> <span class="c1">// assuming 8-bits char, the value of c is undefined</span>
+</code></pre></div>
+    &gt; 隱式型別轉換的細節規則, 可以在書上查</p>
+</li>
+<li>
+<p>當我們在一個 expression 裡面使用了一種 arithmetic types 的變數, 但 expression 卻期望得到另一種 arithmetic types 的變數時, compiler 會自動做型別轉換
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1">// condition will evaluate as true</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>當涉及到 <code>unsigned</code> 型別時必須小心
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">unsigned</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">-42</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">+</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// print -84 </span>
+<span class="linenos" data-linenos="4 "></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">+</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// if 32-bits int, print 4294967264</span>
+</code></pre></div>
+    可以看到上面第二個 expression <code>i</code> 被隱式型別轉換成 <code>unsigned</code>所以造成問題
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// WRONG: u can never be less than 0; the condition will always succeed</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">u</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">u</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div>
+    可以改成使用 <code>while</code> 來解決這種問題
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">unsigned</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">while</span> <span class="p">(</span><span class="n">u</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="o">--</span><span class="n">u</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</code></pre></div></p>
+<blockquote>
+<h4 id="caution-dont-mix-signed-and-unsigned-types">Caution: Don't Mix Signed and Unsigned Types</h4>
+<p>當 expression 同時包含 <code>signed</code> 跟 <code>unsigned</code> 型別的變數而 <code>signed</code> 變數是負值時, 可能會產生意外的後果, 簡單來說, 避免將這兩種型別混合使用</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="213-literals">2.1.3 Literals</h3>
+<ul>
+<li>
+<p>每個字面常數都有一種型別, 以下為常見幾種寫法, 若想要強制決定字面常數的型別, 可以參考 <strong>Character and Character String Literals</strong> 介紹
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="mi">20</span>        <span class="c1">// decimal</span>
+<span class="linenos" data-linenos="2 "></span><span class="mo">024</span>       <span class="c1">// octal</span>
+<span class="linenos" data-linenos="3 "></span><span class="mh">0x14</span>      <span class="c1">// hexadecimal</span>
+<span class="linenos" data-linenos="4 "></span><span class="mf">3.14159</span>   <span class="c1">// double</span>
+<span class="linenos" data-linenos="5 "></span><span class="mf">3.14159E0</span> <span class="c1">// E exponential</span>
+<span class="linenos" data-linenos="6 "></span><span class="mf">.001</span>      <span class="c1">// double</span>
+<span class="linenos" data-linenos="7 "></span><span class="sc">&#39;h&#39;</span>       <span class="c1">// char</span>
+<span class="linenos" data-linenos="8 "></span><span class="s">&quot;h&quot;</span>       <span class="c1">// string, &#39;\0&#39;</span>
+</code></pre></div>
+    #### Character and Character String Literals
+    | Prefix | Meaning | Type |
+    | -------- | -------- | -------- |
+    | <code>u</code> | Unicode 16 character | <code>char16_t</code> |
+    | <code>U</code> | Unicode 32 character | <code>char32_t</code> |
+    | <code>L</code> | wide character | <code>wchar_t</code> |
+    | <code>u8</code>| utf-8(string literals only) | <code>char</code> |</p>
+<h4 id="integer-literals">Integer Literals</h4>
+<table>
+<thead>
+<tr>
+<th>Suffix</th>
+<th>Minimum Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u</code> or <code>U</code></td>
+<td>unsigned</td>
+</tr>
+<tr>
+<td><code>l</code> or <code>L</code></td>
+<td>long</td>
+</tr>
+<tr>
+<td><code>ll</code> or <code>LL</code></td>
+<td>long long</td>
+</tr>
+</tbody>
+</table>
+<h4 id="floating-point-literals">Floating-point Literals</h4>
+<table>
+<thead>
+<tr>
+<th>Suffix</th>
+<th>Minimum Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f</code> or <code>F</code></td>
+<td>float</td>
+</tr>
+<tr>
+<td><code>l</code> or <code>L</code></td>
+<td>long double</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<hr />
+<h2 id="22-variables">2.2 Variables</h2>
+<h3 id="221-variable-definitions">2.2.1 Variable Definitions</h3>
+<ul>
+<li>
+<p>一個簡單的變數定義是要由 type specifier 和名稱所組成, 一個定義可能可以由一個或多個初始值和名稱所組成
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">units_sold</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Sales_item</span> <span class="n">item</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="nl">std</span><span class="p">:</span><span class="n">string</span> <span class="n">book</span><span class="p">(</span><span class="s">&quot;0-201-78345-X&quot;</span><span class="p">);</span>
+</code></pre></div>
+    #### Initializers
+    一個物件被創建時, 同時給定一個特定的值, 稱為初始化
+    &gt; !! Initialization is not assignment. 初始化是當變數在被創建時給定一個值, 賦值是物件現有的值被新的值所取代</p>
+<h4 id="list-initialization">List Initialization</h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">int</span> <span class="n">val</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>     <span class="c1">// C++ 11</span>
+<span class="linenos" data-linenos="4 "></span><span class="kt">int</span> <span class="nf">val</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="kt">long</span> <span class="kt">double</span> <span class="n">ld</span> <span class="o">=</span> <span class="mf">3.1415926536</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span><span class="kt">int</span> <span class="n">a</span><span class="p">{</span><span class="n">ld</span><span class="p">},</span> <span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="n">ld</span><span class="p">};</span>    <span class="c1">// error: narrowing conversion required</span>
+<span class="linenos" data-linenos="8 "></span><span class="kt">int</span> <span class="nf">c</span><span class="p">(</span><span class="n">ld</span><span class="p">),</span> <span class="n">d</span> <span class="o">=</span> <span class="n">ld</span><span class="p">;</span>      <span class="c1">// ok: but value will be truncated</span>
+</code></pre></div>
+<h4 id="default-initialization">Default Initialization</h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">empty</span><span class="p">;</span>    <span class="c1">// 隱式初始化空的string</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Sales_item</span> <span class="n">item</span><span class="p">;</span>      <span class="c1">// 預設初始化</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="222-variable-declaration-and-definitions">2.2.2 Variable Declaration and Definitions</h3>
+<ul>
+<li>一個變數只能被定義一次(只能有一個定義)，但是可以被宣告很多次。</li>
+<li>一個變數的定義也是一種宣告。
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">extern</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// declares but doesn&#39;t defines i</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="n">j</span><span class="p">;</span>        <span class="c1">// declares and defines j</span>
+</code></pre></div></li>
+</ul>
+<h3 id="223-identifiers">2.2.3 Identifiers</h3>
+<h3 id="224-scope-of-a-name">2.2.4 Scope of a Name</h3>
+<hr />
+<h2 id="23-compound-types">2.3 Compound Types</h2>
+<ul>
+<li>複合型態，是一種根據另一種型態定義而來的型態。C++ 有很多種複合型態，在本章節會提到其中 - <strong>reference and pointer</strong>。</li>
+</ul>
+<h3 id="231-reference">2.3.1 Reference</h3>
+<ul>
+<li>
+<blockquote>
+<p>附註：在之後的章節會提到一種新的標準的reference - "rvalue reference"，它主要是用於 class 裡面，技術上我們通常說的reference 指的是 - "lvalue reference"。</p>
+</blockquote>
+</li>
+<li>
+<p>reference 是對一個物件定義一個別名。</p>
+</li>
+<li>通常我們初始化一個變數，是將物件的值<strong>複製</strong>到我們要創建的變數。但是當我們定義一個reference並初始化時，不是複製物件的值到reference，而是 連結(bind) reference 跟這個物件。一但初始化過後，reference 就跟這個初始化物件連結在一起了，且不能重新連結到其他的物件
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span> <span class="n">ival</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">refVal</span> <span class="o">=</span> <span class="n">ival</span><span class="p">;</span> <span class="c1">// refVal refers to(is another name for) ival</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">refVal2</span><span class="p">;</span>       <span class="c1">// error: a reference must be initialized</span>
+<span class="linenos" data-linenos="4 "></span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">refVal3</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>  <span class="c1">// error;</span>
+</code></pre></div></li>
+</ul>
+<h3 id="232-pointers">2.3.2 Pointers</h3>
+<h3 id="233-understanding-compound-type-declaration">2.3.3 Understanding Compound Type Declaration</h3>
+<ul>
+<li>
+<p>Compound Type (複合型態) 指的就是常見的 <code>*</code>, <code>&amp;</code> 字符 , 此種型態的定義取決於多種型態的組合</p>
+<h4 id="defining-multiple-variable">Defining Multiple Variable</h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span><span class="o">*</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">;</span>  <span class="c1">// p1 is and pointer, p2 is an int</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="o">*</span><span class="n">p1</span><span class="p">,</span> <span class="o">*</span><span class="n">p2</span><span class="p">;</span> <span class="c1">// p1, p2 are pointers to int </span>
+</code></pre></div>
+<h4 id="pointers-to-pointers">Pointers to Pointers</h4>
+<p>通常, 在宣告上對於 type modifiers 使用的數量是沒有限制的, 當我們使用超過一個 type modifiers, 邏輯上是ok的, 但是並不直觀
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span> <span class="n">ival</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="o">*</span><span class="n">pi</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ival</span><span class="p">;</span> <span class="c1">// pi point to an int</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">int</span> <span class="o">**</span><span class="n">ppi</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">pi</span><span class="p">;</span> <span class="c1">// ppi points to a pointer to an int</span>
+</code></pre></div></p>
+<h4 id="reference-to-pointers">Reference to Pointers</h4>
+<p>reference 不是一個 object, 所以 pointer 是不能指向 reference 的, 但是 pointer 是一個 object, 所以 reference 是可以參考 pointer 的:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>      <span class="c1">// p 是一個 pointer 指向 int</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">int</span> <span class="o">*&amp;</span><span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// r 是一個 reference 參考 pointer p</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="n">r</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span> <span class="c1">// r 參考一個 pointer, 將 &amp;i assigning to r 使得 p 指向到 i</span>
+<span class="linenos" data-linenos="6 "></span><span class="o">*</span><span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// dereference r, p 所指向的 object i, 值被改變成 0</span>
+</code></pre></div>
+最簡單去閱讀理解 r 型別的方式, 就是由右讀到左的方式去閱讀
+最靠近變數的 symbol (<code>&amp;</code> in <code>&amp;r</code>) 是最早被作動的 symbol</p>
+</li>
+</ul>
+<hr />
+<h2 id="24-const-qualifier">2.4 <code>const</code> Qualifier</h2>
+<ul>
+<li>
+<p>型態 <code>const</code>, 我們可以用來定義一個不能被改變的變數</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">const</span> <span class="kt">int</span> <span class="n">bufsize</span> <span class="o">=</span> <span class="mi">512</span><span class="p">;</span> <span class="c1">// input buffer size</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">bufsize</span> <span class="o">=</span> <span class="mi">512</span><span class="p">;</span> <span class="c1">// error:attempt to write to const object</span>
+</code></pre></div>
+因為我們create <code>const</code> object 過後, 就不能改變他的值了, 所以 <code>const</code> 變數一定要初始化
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">get_size</span><span class="p">();</span> <span class="c1">// ok:initialized at run time</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>         <span class="c1">// ok:initialized at compile time</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">const</span> <span class="kt">int</span> <span class="n">k</span><span class="p">;</span>              <span class="c1">// error:k is uninitialized const</span>
+</code></pre></div></p>
+<h4 id="initialization-and-const">Initialization and <code>const</code></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">const</span> <span class="kt">int</span> <span class="n">ci</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// ok:the value in i is copied into ci</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">const</span> <span class="n">j</span> <span class="o">=</span> <span class="n">ci</span><span class="p">;</span>     <span class="c1">// ok:the value in ci is copied into j</span>
+</code></pre></div>
+<h4 id="by-default-const-object-are-local-to-a-file">By Default, <code>const</code> Object Are Local to a File</h4>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">const</span> <span class="kt">int</span> <span class="n">bufSize</span> <span class="o">=</span> <span class="mi">512</span><span class="p">;</span>
+</code></pre></div>
+如果在編譯時期初始化的 <code>const</code> 常數, compiler 在編譯過程中會將對應的值直接取代變數, 以上面為例: compiler 會產生 <code>512</code> 取代 <code>bufSize</code></p>
+</li>
+</ul>
+<h3 id="241-reference-to-const">2.4.1 Reference to <code>const</code></h3>
+<ul>
+<li>待續，等有時間再繼續寫。</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../C%2B%2B_Coding_Style/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              C++ Coding Style
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Clean_Code/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Clean Code 重點
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+    
+  </body>
+</html>

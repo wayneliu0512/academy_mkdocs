@@ -1,0 +1,1794 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>Template and Generic Programming - Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#template-and-generic-programming" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Academy" class="md-header__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Template and Generic Programming
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Academy" class="md-nav__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Academy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Agile project managment
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agile project managment" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Agile project managment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/" class="md-nav__link">
+        Agile Project Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Agile_Development/" class="md-nav__link">
+        Agile Development
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Jira_Project_Management/" class="md-nav__link">
+        Jira Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Kanban/" class="md-nav__link">
+        Kanban
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Scrum/" class="md-nav__link">
+        Scrum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agile%20project%20managment/Software_Development/" class="md-nav__link">
+        Software Development
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        C++ Academy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compound_type/" class="md-nav__link">
+        複合型別 (Compound type)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copy_control/" class="md-nav__link">
+        拷貝控制項 (Copy Control)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effective_cpp/" class="md-nav__link">
+        Effective C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception_additional_doc/" class="md-nav__link">
+        Exception 補充
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_oriented_programming/" class="md-nav__link">
+        物件導向編程 (OOP)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../q%26a/" class="md-nav__link">
+        Q&A
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart_pointer/" class="md-nav__link">
+        Smart Pointer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Template and Generic Programming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Template and Generic Programming
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    Template 參數列
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-template" class="md-nav__link">
+    使用 Function Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-template" class="md-nav__link">
+    使用 Class Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template_1" class="md-nav__link">
+    Template 參數
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-scope" class="md-nav__link">
+    Template 參數的作用域 (scope)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template_2" class="md-nav__link">
+    Template 宣告式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typename-class" class="md-nav__link">
+    關鍵字 typename 和 class 之間區別
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template_3" class="md-nav__link">
+    在 Template 定義式中表明型別
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-non-type" class="md-nav__link">
+    Template 的 non-type 參數
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-programs" class="md-nav__link">
+    編寫泛型程式 (Generic Programs)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-independent-code" class="md-nav__link">
+    撰寫型別獨立碼 (type-independent code)
+  </a>
+  
+    <nav class="md-nav" aria-label="撰寫型別獨立碼 (type-independent code)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    重點
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instantiation" class="md-nav__link">
+    具現化 (Instantiation)
+  </a>
+  
+    <nav class="md-nav" aria-label="具現化 (Instantiation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-argument-deduction" class="md-nav__link">
+    Template 引數推導 (Argument Deduction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    "以 type 參數為型別" 的引數身上的有限轉換
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-template-explicit-arguments" class="md-nav__link">
+    Function-Template 的顯式引數 (Explicit Arguments)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointer-to-function-template" class="md-nav__link">
+    顯式引數和 Pointer to Function Template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-compilation-models" class="md-nav__link">
+    Template 的編譯模型(Compilation Models)
+  </a>
+  
+    <nav class="md-nav" aria-label="Template 的編譯模型(Compilation Models)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inclusion-compilation-model" class="md-nav__link">
+    置入式編譯模型(Inclusion Compilation Model)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Concurrency
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Concurrency" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Concurrency
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concurrency/Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concurrency/qt_threading_event/" class="md-nav__link">
+        Qt Threading and Event Loop
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Design pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design pattern" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Design pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/" class="md-nav__link">
+        Design Pattern
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/command/" class="md-nav__link">
+        Command pattern (命令模式)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/decorator/" class="md-nav__link">
+        裝飾者模式 (Decorator pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/factory/" class="md-nav__link">
+        工廠模式 (Factory pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/observer/" class="md-nav__link">
+        觀察者模式 (Observer pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/singleton/" class="md-nav__link">
+        獨體 (單例) 模式 (Singleton Pattern)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Design%20pattern/welcome_strategy/" class="md-nav__link">
+        Welcome to Design Pattern (設計模式)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/" class="md-nav__link">
+        Git Academy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/branch_mang_remote/" class="md-nav__link">
+        Branch mang remote
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/branching_merging/" class="md-nav__link">
+        Branching merging
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/branching_nutshell/" class="md-nav__link">
+        Branching nutshell
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/clone_recording_changes/" class="md-nav__link">
+        Clone recording changes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_maintain_data_recovery/" class="md-nav__link">
+        Git maintain data recovery
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_object/" class="md-nav__link">
+        Git object
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_ref_packfiles/" class="md-nav__link">
+        Git ref packfiles
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/git_refspec/" class="md-nav__link">
+        Git refspec
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/q%26a/" class="md-nav__link">
+        Q&a
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/rebasing/" class="md-nav__link">
+        Rebasing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/remote/" class="md-nav__link">
+        Remote
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/tagging_aliase/" class="md-nav__link">
+        Tagging aliase
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/viewing_history_undoing/" class="md-nav__link">
+        Viewing history undoing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/C%2B%2B11_Feature/" class="md-nav__link">
+        C++ 11 new feature
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/C%2B%2B_Coding_Style/" class="md-nav__link">
+        C++ Coding Style
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/C%2B%2B_Primer_Ch2_Variable%26Types/" class="md-nav__link">
+        Chapter 2 - Variables and Basic Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/Clean_Code/" class="md-nav__link">
+        Clean Code 重點
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/How_to_Build_a_Web_on_GCP/" class="md-nav__link">
+        How to build a web server on GCP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/Why_UML_Modeling/" class="md-nav__link">
+        Why UML Modeling ? 為何使用UML建模
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Principles of OOD
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Principles of OOD" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Principles of OOD
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/" class="md-nav__link">
+        Principles of OOD (Object oriented design)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/SOLID/" class="md-nav__link">
+        SOLID 物件導向設計原則
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/coupling_packages/" class="md-nav__link">
+        Coupling packages
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Principles%20of%20OOD/package_cohesion/" class="md-nav__link">
+        Granularity
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Qt
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Qt" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Qt
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Qt/" class="md-nav__link">
+        Qt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Qt/model_view/" class="md-nav__link">
+        Model-View Programming
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        ROS
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="ROS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          ROS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS/ros/" class="md-nav__link">
+        ROS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    Template 參數列
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-template" class="md-nav__link">
+    使用 Function Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-template" class="md-nav__link">
+    使用 Class Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template_1" class="md-nav__link">
+    Template 參數
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-scope" class="md-nav__link">
+    Template 參數的作用域 (scope)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template_2" class="md-nav__link">
+    Template 宣告式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typename-class" class="md-nav__link">
+    關鍵字 typename 和 class 之間區別
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template_3" class="md-nav__link">
+    在 Template 定義式中表明型別
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-non-type" class="md-nav__link">
+    Template 的 non-type 參數
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-programs" class="md-nav__link">
+    編寫泛型程式 (Generic Programs)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-independent-code" class="md-nav__link">
+    撰寫型別獨立碼 (type-independent code)
+  </a>
+  
+    <nav class="md-nav" aria-label="撰寫型別獨立碼 (type-independent code)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    重點
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instantiation" class="md-nav__link">
+    具現化 (Instantiation)
+  </a>
+  
+    <nav class="md-nav" aria-label="具現化 (Instantiation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-argument-deduction" class="md-nav__link">
+    Template 引數推導 (Argument Deduction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    "以 type 參數為型別" 的引數身上的有限轉換
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-template-explicit-arguments" class="md-nav__link">
+    Function-Template 的顯式引數 (Explicit Arguments)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointer-to-function-template" class="md-nav__link">
+    顯式引數和 Pointer to Function Template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-compilation-models" class="md-nav__link">
+    Template 的編譯模型(Compilation Models)
+  </a>
+  
+    <nav class="md-nav" aria-label="Template 的編譯模型(Compilation Models)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inclusion-compilation-model" class="md-nav__link">
+    置入式編譯模型(Inclusion Compilation Model)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="template-and-generic-programming">Template and Generic Programming</h1>
+<p>所謂泛型編程 (generic programming)，意味以 "獨立於任何特定目標型別" 的方式撰寫程式。使用這種程式時用戶必須提供欲操作的目標型會目標值。</p>
+<p>泛型編程 (GP)，一如物件導向編程 (OOP)，亦倚賴某種形式的多型。OOP 的多型乃是在執行期施行 "以繼承關係相連的 classes"。泛型編程則是讓我們所寫的 classes 和 functions 在編譯期於彼此不相干的目標型別之間展現多型。單一 class 或 function 可用來操控各型物件。C++ 標準庫的容器，疊代器和演算法都是泛型編程的極佳例子。</p>
+<p>Template (模板) 是泛型編程的基石。所謂 template 是 "建立 class 或 function 的藍圖或方程式"。</p>
+<p>例如 C++ 標準庫定義了一個 class template 表現出 <code>vector</code> 意義，這個 template 可被用來產生任意數量的 "某目標型別專屬" 的 <code>vector</code> classes，像是 <code>vector&lt;int&gt;</code> 或 <code>vector&lt;string&gt;</code>。</p>
+<h3 id="template">Template 參數列</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">v1</span> <span class="o">&lt;</span> <span class="n">v2</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="k">return</span> <span class="mi">-1</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">v2</span> <span class="o">&lt;</span> <span class="n">v1</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Template 參數代表 "可在 class 或 function 定義式中使用的型別或是數值"。例如我們的 <code>compare</code> 函式宣告了一個 <code>T</code> 的型別參數。<code>compare</code> 定義式內可以使用 <code>T</code>指稱某個型別。至於 <code>T</code> 所代表的實際型別由編譯器根據用戶指定而定。</p>
+<p>Template 參數可以是代表型別的所謂 <strong><em>type</em> 參數</strong>，或是代表常數算式的所謂 <strong><em>nontype</em> 參數</strong>。</p>
+<h3 id="function-template">使用 Function Template</h3>
+<p>使用 function template 時，編譯器會推導將尚未確定的 <strong>template 引數</strong>綁定於 template 參數上。一旦判別出 template 引數，編譯器就為我們將 <strong>function template 具現 (instantiate)</strong> 出一份實體。</p>
+<p>推導出實際的 templates 引數後，編譯器就將那些引數至於對應的 template 參數位置然後產出該函式的一個版本並編譯之。換句話說編譯器接管了 "為所用的每一個目標型別 (再一次) 撰寫函式" 這樣的乏味工作。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="c1">// T 是 int</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="c1">// 編譯器具現出 int compare(const int&amp;, const int&amp;)</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="n">string</span> <span class="n">str_1</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="n">string</span> <span class="n">str_2</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>    <span class="c1">// T 是 string</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="c1">// 編譯器具現出 int compare(const string&amp;, const string&amp;)</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span><span class="p">(</span><span class="n">str_1</span><span class="p">,</span> <span class="n">str_2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="class-template">使用 Class Template</h3>
+<p>和呼叫 function template 不同，使用 class template 時我們必須明確指出 template 參數的引數:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q1</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="n">qc</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">qs</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="template_1">Template 參數</h3>
+<p>就像是函式參數一樣，程式員為 template 參數所選的名稱並無本質上的意義。先前例子中我們將 <code>compare()</code> 的 template <em>type</em> 參數命名為 <code>T</code>，但也可以取其他任何命名:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Glorp</span><span class="o">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">Glorp</span> <span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Glorp</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">v1</span> <span class="o">&lt;</span> <span class="n">v2</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="k">return</span> <span class="mi">-1</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">v2</span> <span class="o">&lt;</span> <span class="n">v1</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</code></pre></div>
+<p>這段程式碼定義的 <code>compare</code> template 與先前完全相同。</p>
+<h3 id="template-scope">Template 參數的作用域 (scope)</h3>
+<p>Template 參數遵循一般名稱的遮蔽規則。如果它與 global 作用域內的物件，函式，或型別的名稱相同，會遮蔽 global 作用域內的名稱:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">typedef</span> <span class="kt">double</span> <span class="n">T</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">clac</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> 
+<span class="linenos" data-linenos="3 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="c1">// tmp 的型別是 template 參數 T</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="c1">// 而非 global 作用域內的那個 typedef</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="n">T</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="c1">// ...</span>
+<span class="linenos" data-linenos="8 "></span>    <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="template_2">Template 宣告式</h3>
+<p>如同其他 class 或函式，我們可以宣告一個 template，而不定義它。</p>
+<p>Template 參數的名稱再同一個 template 的 (多個) 宣告式和定義式之間不需相同。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">calc</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">U</span><span class="o">&gt;</span> <span class="n">U</span> <span class="n">calc</span><span class="p">(</span><span class="k">const</span> <span class="n">U</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">U</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">Type</span><span class="o">&gt;</span> 
+<span class="linenos" data-linenos="5 "></span><span class="n">Type</span> <span class="n">calc</span><span class="p">(</span><span class="k">const</span> <span class="n">Type</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Type</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="cm">/*...*/</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="typename-class">關鍵字 <code>typename</code> 和 <code>class</code> 之間區別</h3>
+<p>關鍵字 <code>typename</code> 和 <code>class</code> 的意義相同，可互換使用。</p>
+<p><code>typename</code> 的意義可能比 <code>class</code> 更直覺一些，不過這個關鍵字直到標準 C++ 才加入，舊程式可能只會使用關鍵字 <code>class</code>。</p>
+<h3 id="template_3">在 Template 定義式中表明型別</h3>
+<p>當我們想在 function template 中使用某種型別，我們必須告訴編譯器我們所寫的名稱代表一個型別。因為編譯器 (以及閱讀程式碼的人) 無法檢驗 "由 <em>type</em> 參數所定義的名稱" 式個型別還是個數值。例如:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">Parm</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U</span><span class="o">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Parm</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Parm</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="n">U</span> <span class="n">value</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="n">Parm</span><span class="o">::</span><span class="n">size_type</span> <span class="o">*</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// 如果 Parm::size_type 是個型別，這就是個宣告</span>
+<span class="linenos" data-linenos="5 "></span>                         <span class="c1">// 如果 Parm::size_type 是個物件，這就是個乘法運算</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<p>我們不知道 <code>size_type</code> 是個型別名稱還是個成員變數。預設情況下編譯器會假設他是個成員變數而不是型別。</p>
+<p>如果我們想讓編譯器把 <code>size_type</code> 視為型別，必須明確告訴編譯器:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">Parm</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U</span><span class="o">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Parm</span> <span class="n">fcn</span><span class="p">(</span><span class="n">Parm</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="n">U</span> <span class="n">value</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="k">typename</span> <span class="nc">Parm</span><span class="o">::</span><span class="n">size_type</span> <span class="o">*</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// OK: 將 p 宣告為指標</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</code></pre></div>
+<p>在成員名稱之前加上關鍵字 <code>typename</code>，便告訴編譯器將該成員視為一個型別。</p>
+<h3 id="template-non-type">Template 的 <em>non-type</em> 參數</h3>
+<p>當函式被呼叫，<em>non-type</em> 參數會被數值替代。該數值的型別被具體指明於 template 參數列。例如以下的 function template 宣告 <code>array_init()</code> 擁有一個 <em>type</em> 參數和一個 <em>non-type</em> 參數，並接收唯一參數，是個 reference to array:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">N</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">array_init</span><span class="p">(</span><span class="n">T</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">parm</span><span class="p">)[</span><span class="n">N</span><span class="p">])</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="n">parm</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="generic-programs">編寫泛型程式 (Generic Programs)</h3>
+<p>如果我們在不支援 <code>&lt;</code> 運算子的物件身上呼叫 <code>compare()</code>，呼叫動作就不合法:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Sales_item</span> <span class="n">item1</span><span class="p">,</span> <span class="n">item2</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="c1">// 錯誤: Sales_item 不支援 &lt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span><span class="p">(</span><span class="n">item1</span><span class="p">,</span> <span class="n">item2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</code></pre></div>
+<p><code>Sales_item</code> 未定義 <code>&lt;</code> 運算子，程式無法通過編譯。</p>
+<p>"function template" 內執行那些操作" 會造成目標型別的範圍受到侷限，程式員應該保證，作為目標型別的那個引數，其型別必須支援 function template 內使用的任何操作，而且這些操作在 (template 內的) 使用語境中均有正常行為。</p>
+<h3 id="type-independent-code">撰寫型別獨立碼 (type-independent code)</h3>
+<p>撰寫優秀泛型碼的技術，已經超出本課程的範疇。然而有個整體性準則值得一提。</p>
+<p>我們的 <code>compare()</code> 雖然簡單，卻也展示了泛型碼的兩個重要的撰寫原則:
+- 這個 function template 的參數是 <code>const</code> reference。
+- 主體內的測試只使用 <code>&lt;</code> 進行大小比較。</p>
+<p>有些讀者可能會認為大小比較動作如果以 <code>&lt;</code> 和 <code>&gt;</code> 運算子執行，會更自然:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">if</span> <span class="p">(</span><span class="n">v1</span> <span class="o">&lt;</span> <span class="n">v2</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="k">return</span> <span class="mi">-1</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">if</span> <span class="p">(</span><span class="n">v1</span> <span class="o">&gt;</span> <span class="n">v2</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span><span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
+<p>然而若寫成這樣:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">if</span> <span class="p">(</span><span class="n">v1</span> <span class="o">&lt;</span> <span class="n">v2</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="k">return</span> <span class="mi">-1</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">if</span> <span class="p">(</span><span class="n">v2</span> <span class="o">&lt;</span> <span class="n">v1</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span><span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
+<p>就是減少 "對引數型別的需求量"。在這，引數型別必須支援 <code>&lt;</code> 但不必同時支援 <code>&gt;</code>。</p>
+<h4 id="_1">重點</h4>
+<p>撰寫 template 程式碼時，若能盡量減少 "對引數型別的需求"，將會十分有利。</p>
+<h2 id="instantiation">具現化 (Instantiation)</h2>
+<p>Template 是一份藍圖，他本身並非 class 或 function。編譯器會根據 template 產出對應之 class 或 function 的特定版本。為 template 產出一份針對特定目標型別的實體，這個過程便是所謂的具現化 (instantiation)。</p>
+<h3 id="template-argument-deduction">Template 引數推導 (Argument Deduction)</h3>
+<p>第一個呼叫式 <code>compare(1,0)</code> 的引數型別為 <code>int</code>，第二個呼叫式 <code>compare(3.14, 2.7)</code> 的引數型別為 <code>double</code>。"以函式引數決定 template 引數的型別和值" 的過程稱為 <strong>template 引數推導</strong></p>
+<h3 id="type">"以 <em>type</em> 參數為型別" 的引數身上的有限轉換</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">short</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span> <span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">compare</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">);</span> <span class="c1">// 沒問題: 具現出 compare(int, int)</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">);</span> <span class="c1">// 沒問題: 具現出 compare(short, short)</span>
+</code></pre></div>
+<p>如果 <code>compare(int, int)</code> 是一個一般的 non-template 函式，那麼能夠滿足上述第二個呼叫式，因為 <code>short</code> 引數會被晉升為 <code>int</code>。但因為 <code>compare()</code> 是個 template，所以上述第二個呼叫式會具現出新函式，其 <em>type</em> 參數被綁於 <code>short</code>。</p>
+<p>一般而言函式引數並不會為了 "與某個現有具現體契合" 而被轉換。實際發生的是另外產生一個新的具現體。只有兩種轉換會誘使編譯器執行而不產生新具現體。
+- <code>const</code> 轉換: 
+  - 函式如果接收 reference to const 或 pointer to const，用戶可以用 reference to non-const 或 pointer to non-const 呼叫之，不會產生新具現體。如果函式接收的是 non-reference 型別，那麼參數型別和引數的 const 都會被忽略。換句話說如果函式被定義為接收 non-reference，無論我們傳入 const 或 non-const 物件，使用的是同一份具現體。
+- array(或 function) 對 pointer 的轉換: 
+  - 如果 template 參數不是 reference 型別，那麼 "一般的 pointer 轉換" 會施行於 "array 型別或 function 型別" 的引數身上。array 引數會被視為一個 pointer 指向其第一元素，function 引數則被視為一個 pointer 指向該函式。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">fobj</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">);</span> <span class="c1">// 引數會被複製</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">fref</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// reference 引數</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">string</span> <span class="nf">s1</span><span class="p">(</span><span class="s">&quot;a value&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">const</span> <span class="n">string</span> <span class="nf">s2</span><span class="p">(</span><span class="s">&quot;another value&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="n">fobj</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">);</span> <span class="c1">// 沒問題: 呼叫 f(string, string)，const 被忽略</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">fref</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">);</span> <span class="c1">// 沒問題: non-const 物件 s1 被轉換為 const reference </span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">42</span><span class="p">];</span>
+<span class="linenos" data-linenos="10 "></span><span class="n">fobj</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span> <span class="c1">// 沒問題: 呼叫 f(int*, int*)</span>
+<span class="linenos" data-linenos="11 "></span><span class="n">fref</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span> <span class="c1">// 錯誤: array型別未契合，引數未被轉換為 pointer</span>
+</code></pre></div>
+<h3 id="function-template-explicit-arguments">Function-Template 的顯式引數 (Explicit Arguments)</h3>
+<p>考慮以下問題，我們想定義一個名為 <code>sum</code> 的 function template，接收兩個不同型別的引數。我們想讓返回型別的大小足夠容納 "以任意順序傳入的任意兩個型別值的合"。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// 返回型別該寫 T 還是 U ?</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U</span><span class="o">&gt;</span> <span class="o">???</span> <span class="n">sum</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">U</span><span class="p">);</span>
+</code></pre></div>
+<p>答案是: 採用其中任何一個，都會在某些時候出問題:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">sum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">4L</span><span class="p">);</span> <span class="c1">// 第二個型別比較大: 我們希望寫出 U sum(T, U)</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">sum</span><span class="p">(</span><span class="mf">3L</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// 第一個型別比較大: 我們希望寫出 T sum(T, U)</span>
+</code></pre></div>
+<p>解決方法有兩種，第一種是強迫 <code>sum()</code> 用戶將較小的型別強制轉型至我們想要的結果型別:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">short</span> <span class="n">s</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">sum</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">i</span><span class="p">)</span> <span class="c1">// 沒問題: 具現化 int sum(int, int)</span>
+</code></pre></div>
+<p>第二種解決方法式引進第三個 template 參數，此參數必須由呼叫者明確指定:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">class</span> <span class="nc">T2</span><span class="p">,</span> <span class="k">class</span> <span class="nc">T3</span><span class="o">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">T1</span> <span class="n">sum</span><span class="p">(</span><span class="n">T2</span><span class="p">,</span> <span class="n">T3</span><span class="p">);</span>
+</code></pre></div>
+<p>這唯一的缺點是: 沒有任何函式引數可以用來推導 <code>T1</code> 型別。因此用戶每次呼叫 <code>sum</code> 時都必須為 <code>T1</code> 參數明確提供引數。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">long</span> <span class="n">val3</span> <span class="o">=</span> <span class="n">sum</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">lng</span><span class="p">);</span> <span class="c1">// 沒問題: 呼叫的是 long sum(int, long)</span>
+</code></pre></div>
+<h3 id="pointer-to-function-template">顯式引數和 Pointer to Function Template</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="c1">// func 重載版本: 各自接收不同的 function pointer 型別</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">));</span>
+<span class="linenos" data-linenos="4 "></span><span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">));</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="n">func</span><span class="p">(</span><span class="n">compare</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">);</span> <span class="c1">// 沒問題: 明確指出要哪個 compare 版本</span>
+</code></pre></div>
+<h2 id="template-compilation-models">Template 的編譯模型(Compilation Models)</h2>
+<p>當我們呼叫函式時，編譯器通常只需在當時見過函式宣告即可。同樣道理，當我們定義 class 物件時，該 class 的定義式必須可見，但其成員函式的定義式不需在場。因此我們把 class 定義式和函式宣告放在標頭檔內，把一般函式和 class 成員函式的定義放在源碼檔 (source files) 內。</p>
+<p>但是 template 就不同了，欲產生一個具現體，編譯器必須能夠取得 template 的源碼。當我們呼叫 function template 或 "class template 的成員函式" 時，編譯器需要那些函式的定義，而那些定義式一般都被至於源碼檔。</p>
+<p>為了編譯 template 程式碼，有以下三種方法:
+1. 可將 class 定義式和函式宣告，函式和成員的定義全部都放到標頭檔
+2. "置入式編譯模型"(inclusion compilation model)
+3. "分離式編譯模型"(separate compilation model)</p>
+<p>2, 3種程式的架構方式大體相同: class 定義式和函式宣告式至於標頭檔，函式和成員定義放在源碼檔。幾乎所有編譯器都支援第 2 種，第 3 種只有少數編譯器支援。</p>
+<h3 id="inclusion-compilation-model">置入式編譯模型(Inclusion Compilation Model)</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// 標頭檔 utilities.h</span>
+<span class="linenos" data-linenos="2 "></span><span class="cp">#ifndef UTILITIES_H </span><span class="c1">// header guard</span>
+<span class="linenos" data-linenos="3 "></span><span class="cp">#define UTILITIES_H</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="c1">//...</span>
+<span class="linenos" data-linenos="7 "></span><span class="cp">#include</span> <span class="cpf">&quot;utilities.cpp&quot;</span><span class="c1"> // 取得 compare 和其他函式的定義 </span><span class="cp"></span>
+<span class="linenos" data-linenos="8 "></span><span class="cp">#endif</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// 實作檔 utilities.cpp</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">v1</span> <span class="o">&lt;</span> <span class="n">v2</span><span class="p">)</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="k">return</span> <span class="mi">-1</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">v2</span> <span class="o">&lt;</span> <span class="n">v1</span><span class="p">)</span>
+<span class="linenos" data-linenos="7 "></span>        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../smart_pointer/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Smart Pointer
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../../Concurrency/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Concurrency
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+    
+  </body>
+</html>
