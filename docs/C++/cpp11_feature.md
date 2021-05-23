@@ -1,6 +1,3 @@
-# C++ 11 new feature
-###### tags:`C++11`, `C++`
-
 ## Chapter 2: Variable and Basic Types
 - **List Initialization**
 - `nullptr`

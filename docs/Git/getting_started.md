@@ -1,4 +1,3 @@
-# Getting Started
 
 ## 關於版本控制
 

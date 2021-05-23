@@ -1,10 +1,4 @@
 
-# Chapter 2 - Variables and Basic Types
-
-###### tags: `C++` `C++11` `C++primer`
-
----
-
 ## 2.1 Primitive Built-in Types
 
 ### 2.1.1 Arithmetic Types

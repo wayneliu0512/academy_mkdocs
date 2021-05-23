@@ -87,8 +87,6 @@ When developers know their code will be reviewed by a teammate, they make an ext
 
 ## Testing
 
-![testing](https://www.ca.com/content/dam/ca/us/images/products/excuse-free-testing/no-time-for-complete-testing-sm.jpg)
-
 ### Moving from traditional to agile testing methods
 Much like compounding credit card debt, it starts with a small amount of pain, but snowballs quickly–and saps the team of critical agility. To combat snowballing technical debt, at Atlassian we empower (nay: expect) our developers to be great champions for quality. We believe that developers bring key skills that help drive quality into the product:
 

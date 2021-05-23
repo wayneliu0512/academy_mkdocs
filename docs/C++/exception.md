@@ -1,4 +1,4 @@
-# Exception 補充
+# Exception 
 
 ## 拋擲異常
 

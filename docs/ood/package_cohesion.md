@@ -1,4 +1,4 @@
-# Granularity
+## Granularity
 The class, while a very convenient unit for organizing small applications, is too ﬁnely grained to be used as an organizational unit for large applications. Something “larger” than a class is needed to help organize large applications. 
 
 ## Designing with Packages
