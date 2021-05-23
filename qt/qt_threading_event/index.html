@@ -1,0 +1,1566 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>Threading and Event - Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qt-threading-and-event-loop" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Academy" class="md-header__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Threading and Event
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../agile_project_management/agile_development/" class="md-tabs__link">
+        Agile Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../c%2B%2B/variables_types/" class="md-tabs__link">
+        C++
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../git/getting_started/" class="md-tabs__link">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ood/solid/" class="md-tabs__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../design_pattern/strategy/" class="md-tabs__link md-tabs__link--active">
+        Others
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Academy" class="md-nav__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Academy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Agile Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agile Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Agile Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/agile_development/" class="md-nav__link">
+        Agile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/jira_project_management/" class="md-nav__link">
+        Jira
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/kanban/" class="md-nav__link">
+        Kanban
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/scrum/" class="md-nav__link">
+        Scrum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/software_development/" class="md-nav__link">
+        Software Development
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/variables_types/" class="md-nav__link">
+        Variables and Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/compound_type/" class="md-nav__link">
+        Compound Type
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/copy_control/" class="md-nav__link">
+        Copy Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/object_oriented_programming/" class="md-nav__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/smart_pointer/" class="md-nav__link">
+        Smart Pointer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/template/" class="md-nav__link">
+        Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/exception/" class="md-nav__link">
+        Exception
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/effective_cpp/" class="md-nav__link">
+        Effective C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/cpp11_feature/" class="md-nav__link">
+        C++ 11 Feature
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/getting_started/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/clone_recording_changes/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branching_nutshell/" class="md-nav__link">
+        Branching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branching_merging/" class="md-nav__link">
+        Branching and Merging
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branch_mang_remote/" class="md-nav__link">
+        Branch Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/remote/" class="md-nav__link">
+        Remote Branches
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/rebasing/" class="md-nav__link">
+        Rebasing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Object Oriented Programming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Oriented Programming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Object Oriented Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/solid/" class="md-nav__link">
+        SOLID
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/coupling_packages/" class="md-nav__link">
+        Package Coupling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/package_cohesion/" class="md-nav__link">
+        Package Cohesion
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      <label class="md-nav__link" for="__nav_6_1">
+        Design Pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design Pattern" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Design Pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/strategy/" class="md-nav__link">
+        Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/command/" class="md-nav__link">
+        Command
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/factory/" class="md-nav__link">
+        Factory
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/decorator/" class="md-nav__link">
+        Decorator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/observer/" class="md-nav__link">
+        Observer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/singleton/" class="md-nav__link">
+        Singleton
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" checked>
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        Qt
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Qt" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Qt
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model_view/" class="md-nav__link">
+        Model View
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Threading and Event
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Threading and Event
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#events-and-the-event-loop" class="md-nav__link">
+    Events and the event loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-requires-a-running-event-loop" class="md-nav__link">
+    What requires a running event loop ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-the-event-loop" class="md-nav__link">
+    Blocking the event loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forcing-event-dispatching" class="md-nav__link">
+    Forcing event dispatching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread-and-qobject" class="md-nav__link">
+    Thread and QObject
+  </a>
+  
+    <nav class="md-nav" aria-label="Thread and QObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qt-naming-convention" class="md-nav__link">
+    Qt naming convention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-thread-event-loop" class="md-nav__link">
+    Per-thread event loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signals-and-slots-across-threads" class="md-nav__link">
+    Signals and slots across threads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-and-donts" class="md-nav__link">
+    DOs and DON'Ts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-shouldnt-i-use-threads" class="md-nav__link">
+    When shouldn't I use threads?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread-support-in-qt" class="md-nav__link">
+    Thread Support in Qt
+  </a>
+  
+    <nav class="md-nav" aria-label="Thread Support in Qt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    參考資料
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros/" class="md-nav__link">
+        ROS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concurrency/concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#events-and-the-event-loop" class="md-nav__link">
+    Events and the event loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-requires-a-running-event-loop" class="md-nav__link">
+    What requires a running event loop ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-the-event-loop" class="md-nav__link">
+    Blocking the event loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forcing-event-dispatching" class="md-nav__link">
+    Forcing event dispatching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread-and-qobject" class="md-nav__link">
+    Thread and QObject
+  </a>
+  
+    <nav class="md-nav" aria-label="Thread and QObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qt-naming-convention" class="md-nav__link">
+    Qt naming convention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-thread-event-loop" class="md-nav__link">
+    Per-thread event loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signals-and-slots-across-threads" class="md-nav__link">
+    Signals and slots across threads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-and-donts" class="md-nav__link">
+    DOs and DON'Ts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-shouldnt-i-use-threads" class="md-nav__link">
+    When shouldn't I use threads?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread-support-in-qt" class="md-nav__link">
+    Thread Support in Qt
+  </a>
+  
+    <nav class="md-nav" aria-label="Thread Support in Qt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    參考資料
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="qt-threading-and-event-loop">Qt Threading and Event Loop</h1>
+<h2 id="events-and-the-event-loop">Events and the event loop</h2>
+<p>An event in Qt is an object which represents something interesting that happened; the main difference between an event and a signal is that events are targeted to a specific object in our application (which decides what to do with that event), while signals are emitted "in the wild". From a code point of view, all events are instances of some subclass of <code>QEvent</code>, and all QObject-derived classes can override the <code>QObject::event()</code> virtual method in order to handle events targeted to their instances.</p>
+<p>Events can be generated from both inside and outside the application; for instance:
+- <code>QKeyEvent</code> and <code>QMouseEvent</code> objects represent some kind of keyboard and mouse interaction, and they come from the window manager;
+- <code>QTimerEvent</code> objects are sent to a <code>QObject</code> when one of its timers fires, and they (usually) come from the operating system;
+- <code>QChildEvent</code> objects are sent to a <code>QObject</code> when a child is added or removed, and they come from inside your Qt application.</p>
+<p>The important thing about events is that they're not delivered as soon as they're generated; they're instead queued up in an event queue and sent sometime later. The dispatcher itself loops around the event queue and sends queued events to their target objects, and therefore it is called the event loop. Conceptually, this is how an event loop looks</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">while</span> <span class="p">(</span><span class="n">is_active</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">event_queue_is_empty</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="n">dispatch_next_event</span><span class="p">();</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span>    <span class="n">wait_for_more_events</span><span class="p">();</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+</code></pre></div>
+event loop by running <code>QCoreApplication::exec()</code>;</p>
+<p>call blocks until <code>QCoreApplication::exit()</code> or <code>QCoreApplication::quit()</code> are called, terminating the loop.</p>
+<p>The <code>wait_for_more_events()</code> function blocks (that is, it's not a busy wait) until some event is generated. for example, the event loop can be woken up by:
+- window manager activity (key/mouse presses, interaction with the windows, etc.);
+- sockets activity (there's some data available to read, or a socket is writable without blocking, there's a new incoming connection, etc.);
+- timers (i.e. a timer fired);
+- events posted from other threads (see later).</p>
+<h2 id="what-requires-a-running-event-loop">What requires a running event loop ?</h2>
+<ul>
+<li><strong>Widgets painting and interaction</strong>:<code>QWidget::paintEvent()</code> will be called when delivering <code>QPaintEvent</code> objects, which are generated both by calling <code>QWidget::update</code>() (i.e. internally) or by the window manager (for instance, because a hidden window was shown). The same thing holds for all kinds of interaction (keyboard, mouse, etc.)</li>
+<li><strong>Timers</strong>:</li>
+<li><strong>Networking</strong>: all low-level Qt networking classes (<code>QTcpSocket</code>, <code>QUdpSocket</code>, <code>QTcpServer</code>, etc.) are asynchronous by design. When you call <code>read()</code>, they just return already available data; when you call <code>write()</code>, they schedule the writing for later. Notice that they do offer synchronous methods (not recommended, it will block event-loop)</li>
+</ul>
+<h2 id="blocking-the-event-loop">Blocking the event loop</h2>
+<p><strong>You should never ever block the event loop</strong>, Suppose you have a Button widget which emits a signal when clicked; connected to this signal there's a slot of our Worker object, like this:</p>
+<ol>
+<li><code>main(int, char )</code></li>
+<li><code>QApplication::exec()</code></li>
+<li><code>...</code></li>
+<li><code>QWidget::event(QEvent)</code> </li>
+<li><code>Button::mousePressEvent(QMouseEvent)</code></li>
+<li><code>Button::clicked()</code></li>
+<li><code>...</code></li>
+<li><code>Worker::doWork()</code></li>
+</ol>
+<p>While the worker is busy working, what's the event loop doing? You should've guessed it: nothing! It dispatched the mouse press event and it's blocked waiting for the event handler to return. We managed to <strong>block the event loop</strong>, which means that no event is sent any more, until we return from the <code>doWork()</code> slot, up the stack, to the event loop, and let it process pending events.</p>
+<p>Moreover, many window managers will detect that your application is not handling events any more and tell the user that your application isn't responding. That's why is so important to quickly react to events and return to the event loop as soon as possible!</p>
+<h2 id="forcing-event-dispatching">Forcing event dispatching</h2>
+<p>So, what do we do if we have a long task to run and don't want to block the event loop? 
+-  We move the task into another thread (In the next section).
+-  We manually force the event loop to run, by (repeatedly) calling <code>QCoreApplication::processEvents()</code> inside our blocking task. <code>QCoreApplication::processEvents()</code> will process all the events in the event queue and return to the caller.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">QNetworkAccessManager</span> <span class="n">qnam</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">QNetworkReply</span> <span class="o">*</span><span class="n">reply</span> <span class="o">=</span> <span class="n">qnam</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">QNetworkRequest</span><span class="p">(</span><span class="n">QUrl</span><span class="p">(</span><span class="err">…</span><span class="p">)));</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">QEventLoop</span> <span class="n">loop</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">QObject</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="n">SIGNAL</span> <span class="p">(</span><span class="n">finished</span><span class="p">()),</span> <span class="o">&amp;</span><span class="n">loop</span><span class="p">,</span> <span class="n">SLOT</span> <span class="p">(</span><span class="n">quit</span><span class="p">()));</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">loop</span><span class="p">.</span><span class="n">exec</span><span class="p">();</span>
+<span class="linenos" data-linenos="6 "></span><span class="cm">/* reply has finished, use it */</span>
+</code></pre></div>
+Be very careful when reentering the event loop "by other paths": it can lead to unwanted recursions! Let's go back to the Button example.</p>
+<ol>
+<li><code>main(int, char)</code></li>
+<li><code>QApplication::exec()</code></li>
+<li><code>[…]</code></li>
+<li><code>QWidget::event(QEvent )</code></li>
+<li><code>Button::mousePressEvent(QMouseEvent)</code></li>
+<li><code>Button::clicked()</code></li>
+<li><code>[…]</code></li>
+<li><code>Worker::doWork() // first, inner invocation</code></li>
+<li><code>QCoreApplication::processEvents() // we manually dispatch events and…</code></li>
+<li><code>[…]</code></li>
+<li><code>QWidget::event(QEvent * ) // another mouse click is sent to the Button…</code></li>
+<li><code>Button::mousePressEvent(QMouseEvent *)</code></li>
+<li><code>Button::clicked() // which emits clicked() again…</code></li>
+<li><code>[…]</code></li>
+<li><code>Worker::doWork() // DANG! we've recursed into our slot.</code></li>
+</ol>
+<p>A quick and easy workaround for this is passing <code>QEventLoop::ExcludeUserInputEvents()</code> to <code>QCoreApplication::processEvents()</code></p>
+<p>about deletion:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">QObject</span> <span class="o">*</span><span class="n">object</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QObject</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">object</span><span class="o">-&gt;</span><span class="n">deleteLater</span><span class="p">();</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">QDialog</span> <span class="n">dialog</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">dialog</span><span class="p">.</span><span class="n">exec</span><span class="p">();</span>
+</code></pre></div></p>
+<h2 id="thread-and-qobject">Thread and QObject</h2>
+<h3 id="qt-naming-convention">Qt naming convention</h3>
+<ul>
+<li><strong>Reentrant:</strong> A class is reentrant if it's safe to use its instances from more than one thread, provided that at most one thread is accessing the same instance at the same time. A function is reentrant if it's safe to invoke it from more than one thread at the same, provided that each invocation references unique data. In other words, this means that users of that class/function must <em>serialize</em> all accesses to instances/shared data by means of some <em>external locking mechanism</em>.</li>
+<li><strong>Thread-safe:</strong>  A class is thread-safe if it's safe to use its instances from more than one thread at the same time. A function is thread-safe if it's safe to invoke it from more than one thread at the same time even if the invocations reference shared data.</li>
+</ul>
+<p><a href="https://doc.qt.io/archives/qt-4.8/threads-reentrancy.html">see more...</a></p>
+<h3 id="per-thread-event-loop">Per-thread event loop</h3>
+<p>So far we've always talked about "the event loop", taking somehow per granted that there's only one event loop in a Qt application.</p>
+<p>Therefore, we say that the <strong>main event loop</strong> is the one created by the thread which invoked <code>main()</code>, and started with <code>QCoreApplication::exec()</code> (which must be called from that thread). This is also called the <strong>GUI thread</strong>, because it's the only thread in which GUI-related operations are allowed. A QThread local event loop can be started instead by calling <code>QThread::exec()</code> (inside its <code>run()</code> method):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Thread</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QThread</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">protected</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="kt">void</span> <span class="n">run</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="cm">/* … initialize … */</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span>    <span class="n">exec</span><span class="p">();</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">};</span>
+</code></pre></div>
+<p>since Qt 4.4 <code>QThread::run()</code> is no longer a pure virtual method; instead, it calls <code>QThread::exec()</code>. Exactly like QCoreApplication, QThread has also the <code>QThread::quit()</code> and <code>QThread::exit()</code> methods to stop the event loop.</p>
+<p>A thread event loop delivers events for all QObjects that are <strong>living</strong> in that thread; this includes, by default, all objects that are created into that thread, or that were moved to that thread (more info about this later). We also say that the <strong>thread affinity</strong> of a QObject is a certain thread, meaning that the object is living in that thread. This applies to objects which are built in the constructor of a QThread object:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">MyThread</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QThread</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="n">MyThread</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>        <span class="n">otherObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QObject</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="n">QObject</span> <span class="n">obj</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="n">QObject</span> <span class="o">*</span><span class="n">otherObj</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="n">QScopedPointer</span><span class="o">&lt;</span><span class="n">QObject</span><span class="o">&gt;</span> <span class="n">yetAnotherObj</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">};</span>
+</code></pre></div>
+<p>What's the thread affinity of <code>obj</code>, <code>otherObj</code>, <code>yetAnotherObj</code> after we create a MyThread object? We must look at the thread that created them: it's the thread that ran the MyThread constructor. Therefore, all three objects are not living in the MyThread thread, but in the thread that created the MyThread instance (which, by the way, is where the instance is living as well).</p>
+<p><img alt="figure_per-thread_event-loop" src="images/figure_per-thread_event-loop.PNG" /></p>
+<p>It is very important to understand that QObject and all of its subclasses <strong>are not thread-safe</strong> (although they can be reentrant); therefore, you can not access a QObject from more than one thread at the same time, unless you serialize all accesses to the object's internal data (for instance, by protecting it with a mutex). Remember that the object may be handling events dispatched by the event loop of the thread it is living in while you're accessing it from another thread! For the same reason, you can't delete a QObject from another thread, but you must use <code>QObject::deleteLater()</code>, which will post an event that will ultimately cause its deletion by the thread the object is living in.</p>
+<p>Moreover, QWidget and all of its subclasses, along with other GUI-related classes (even not QObject-based, like QPixmap) are not reentrant either: they can be used exclusively from the GUI thread.</p>
+<p>We can change a QObject's affinity by calling <code>QObject::moveToThread()</code>; this will change the affinity of the object and of its children. Since QObject is not thread-safe, we must use it from the thread the object is living in; that is, you can only <strong>push</strong> objects from the thread they're living in to other threads, and not <strong>pull</strong> them or move them around from other threads. Moreover, Qt requires that the child of a QObject must live in the same thread where the parent is living. This implies that:</p>
+<ul>
+<li>you can't use <code>QObject::moveToThread()</code> on a object which has a parent;</li>
+<li>you must not create objects in a QThread using the QThread object itself as their parent:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Thread</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QThread</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="n">QObject</span> <span class="o">*</span><span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QObject</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="c1">// WRONG!!!!!!!</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">};</span>
+</code></pre></div>
+This is because the <strong>QThread object is living in another thread</strong>, namely, the one in which it was created.</p>
+<h3 id="signals-and-slots-across-threads">Signals and slots across threads</h3>
+<p>When we connect a signal to a slot, the fifth argument of QObject::connect is used to specify the connection type:
+- a <strong>direct connection</strong> means that the slot is always invoked directly by the thread the signal is emitted from;
+- a <strong>queued connection</strong> means that an event is posted in the event queue of the thread the receiver is living in, which will be picked up by the event loop and will cause the slot invocation sometime later;
+- a <strong>blocking queued connection</strong> is like a queued connection, but the sender thread blocks until the event is picked up by the event loop of the thread the receiver is living in, the slot is invoked, and it returns;
+- an <strong>automatic connection</strong> (<em>the default</em>) means that if the thread the receiver is living in is the same as the current thread, a direct connection is used; otherwise, a queued connection is used.</p>
+<p>In every case, keep in mind the thread the emitting object is living in has no importance at all! For instance:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Thread</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QThread</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Q_OBJECT</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="nl">signals</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kt">void</span> <span class="n">aSignal</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="k">protected</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="kt">void</span> <span class="n">run</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="n">emit</span> <span class="nf">aSignal</span><span class="p">();</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="cm">/* … */</span>
+<span class="linenos" data-linenos="15 "></span><span class="n">Thread</span> <span class="kr">thread</span><span class="p">;</span>
+<span class="linenos" data-linenos="16 "></span><span class="n">Object</span> <span class="n">obj</span><span class="p">;</span>
+<span class="linenos" data-linenos="17 "></span><span class="n">QObject</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span><span class="o">&amp;</span><span class="kr">thread</span><span class="p">,</span> <span class="n">SIGNAL</span> <span class="p">(</span><span class="n">aSignal</span><span class="p">()),</span> <span class="o">&amp;</span><span class="n">obj</span><span class="p">,</span> <span class="n">SLOT</span> <span class="p">(</span><span class="n">aSlot</span><span class="p">()));</span>
+<span class="linenos" data-linenos="18 "></span><span class="kr">thread</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+</code></pre></div>
+<p>The signal <code>aSignal()</code> will be emitted by the new thread; since it is not the thread the Object object is living in, a <strong>queued connection</strong> will be used.</p>
+<p>Another common pitfall is the following one:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Thread</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QThread</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Q_OBJECT</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="nl">slots</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kt">void</span> <span class="n">aSlot</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="cm">/* … */</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="k">protected</span><span class="o">:</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="kt">void</span> <span class="n">run</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="cm">/* … */</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span><span class="cm">/* … */</span>
+<span class="linenos" data-linenos="17 "></span><span class="n">Thread</span> <span class="kr">thread</span><span class="p">;</span>
+<span class="linenos" data-linenos="18 "></span><span class="n">Object</span> <span class="n">obj</span><span class="p">;</span>
+<span class="linenos" data-linenos="19 "></span><span class="n">QObject</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">obj</span><span class="p">,</span> <span class="n">SIGNAL</span> <span class="p">(</span><span class="n">aSignal</span><span class="p">()),</span> <span class="o">&amp;</span><span class="kr">thread</span><span class="p">,</span> <span class="n">SLOT</span> <span class="p">(</span><span class="n">aSlot</span><span class="p">()));</span>
+<span class="linenos" data-linenos="20 "></span><span class="kr">thread</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+<span class="linenos" data-linenos="21 "></span><span class="n">obj</span><span class="p">.</span><span class="n">emitSignal</span><span class="p">();</span>
+</code></pre></div>
+When <code>obj</code> emits its <code>aSignal()</code> signal, which kind of connection will be used? You should've guessed it: a <strong>direct connection</strong>. That's because the Thread object is living in the thread that emits the signal.</p>
+<p>In the <code>aSlot()</code>slot we could then access some Thread's member variable while they're being accessed by the <code>run()</code> method, which is running concurrently: this is the perfect recipe for disaster.</p>
+<p>Yet another example, probably the most important one:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Thread</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QThread</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Q_OBJECT</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="nl">slots</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kt">void</span> <span class="n">aSlot</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="cm">/* … */</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="k">protected</span><span class="o">:</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="kt">void</span> <span class="n">run</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="n">QObject</span> <span class="o">*</span><span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span>        <span class="n">connect</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">SIGNAL</span> <span class="p">(</span><span class="n">aSignal</span><span class="p">()),</span> <span class="k">this</span><span class="p">,</span> <span class="n">SLOT</span> <span class="p">(</span><span class="n">aSlot</span><span class="p">()));</span>
+<span class="linenos" data-linenos="14 "></span>        <span class="cm">/* … */</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">};</span>
+</code></pre></div>
+In this case a queued connection is used, therefore you're required to run an event loop in the thread the Thread object is living in.</p>
+<p>A solution you'll often found in forums, blog posts etc. is to add a <code>moveToThread(this)</code> to the Thread constructor
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Thread</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QThread</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="n">Q_OBJECT</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="n">Thread</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="n">moveToThread</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="c1">// WRONG</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span>
+<span class="linenos" data-linenos="8 "></span><span class="cm">/* … */</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">};</span>
+</code></pre></div></p>
+<p>which indeed will work (because now the affinity of the Thread object changed), but it's a very bad design. What's wrong here is that we're misunderstanding the purpose of a thread object (the QThread subclass): QThread objects are not threads; they're control objects around a thread, therefore meant to be used from another thread (usually, the one they're living in).</p>
+<p><strong>A good way to achieve the same result</strong> is splitting the "working" part from the "controller" part, that is, writing a QObject subclass and using <code>QObject::moveToThread()</code> to change its affinity:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Worker</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QObject</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Q_OBJECT</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">public</span> <span class="nl">slots</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kt">void</span> <span class="n">doWork</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="cm">/* … */</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="cm">/* … */</span>
+<span class="linenos" data-linenos="12 "></span><span class="n">QThread</span> <span class="o">*</span><span class="kr">thread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QThread</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="n">Worker</span> <span class="o">*</span><span class="n">worker</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Worker</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="n">connect</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">SIGNAL</span> <span class="p">(</span><span class="n">workReady</span><span class="p">()),</span> <span class="n">worker</span><span class="p">,</span> <span class="n">SLOT</span> <span class="p">(</span><span class="n">doWork</span><span class="p">()));</span>
+<span class="linenos" data-linenos="15 "></span><span class="n">worker</span><span class="o">-&gt;</span><span class="n">moveToThread</span><span class="p">(</span><span class="kr">thread</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="kr">thread</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="dos-and-donts">DOs and DON'Ts</h3>
+<p><strong>You can:</strong>
+- add signals to a QThread subclass. It's perfectly safe and they'll do the "right thing" (see above; the sender's thread affinity does not matter).</p>
+<p><strong>You shouldn't:</strong>
+- use <code>moveToThread(this)</code>.
+- force the connection type: this usually means that you're doing something wrong, like mixing the control interface of QThread with the program logic (which should stay in a separate object which lives in that thread).
+- add slots to a QThread subclass: they'll be invoked from the "wrong" thread, that is, not the one the QThread object is managing, but the one that object is living in, forcing you to specify a direct connection and/or to use moveToThread(this).
+- use QThread::terminate.</p>
+<p><strong>You must no:</strong>
+- quit your program when threads are still running. Use <code>QThread::wait</code> to wait for their termination.
+- destroy a QThread while the thread that it's managing is still running. If you want some kind of "self-destruction", you can connect the <code>finished()</code> signal with the <code>deleteLater()</code> slot. </p>
+<h2 id="when-shouldnt-i-use-threads">When shouldn't I use threads?</h2>
+<ul>
+<li>Timer</li>
+<li>Networking/State mechines</li>
+<li>Jobs splittable in chunks , like this:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Worker</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QObject</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Q_OBJECT</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">public</span> <span class="nl">slots</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="kt">void</span> <span class="n">startProcessing</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="n">processItem</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>    <span class="kt">void</span> <span class="n">processItem</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">)</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="cm">/* process items[index] … */</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">numberOfItems</span><span class="p">)</span>
+<span class="linenos" data-linenos="15 "></span>            <span class="n">QMetaObject</span><span class="o">::</span><span class="n">invokeMethod</span><span class="p">(</span><span class="k">this</span><span class="p">,</span>
+<span class="linenos" data-linenos="16 "></span>                                      <span class="s">&quot;processItem&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="17 "></span>                                      <span class="n">Qt</span><span class="o">::</span><span class="n">QueuedConnection</span><span class="p">,</span>
+<span class="linenos" data-linenos="18 "></span>                                      <span class="n">Q_ARG</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="p">}</span>   
+<span class="linenos" data-linenos="20 "></span><span class="p">};</span>
+</code></pre></div>
+<h2 id="thread-support-in-qt">Thread Support in Qt</h2>
+<ul>
+<li><a href="https://doc.qt.io/qt-5/threads.html">The Threading Classes</a></li>
+<li><a href="https://doc.qt.io/qt-5/threads-technologies.html">Multithreading Technologies in Qt</a></li>
+<li><a href="https://doc.qt.io/qt-5/threads-synchronizing.html">Synchronizing Threads</a></li>
+</ul>
+<h3 id="_1">參考資料</h3>
+<p>qt event and thread: https://wiki.qt.io/Threads_Events_QObjects</p>
+<p>qt thread basic: https://doc.qt.io/qt-5/thread-basics.html</p>
+<p>qt threading :https://doc.qt.io/qt-5/threads.html</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../model_view/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Model View
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../../ros/ros/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              ROS
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+    
+  </body>
+</html>

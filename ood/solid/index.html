@@ -1,0 +1,1696 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>SOLID - Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#solid" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Academy" class="md-header__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SOLID
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../agile_project_management/agile_development/" class="md-tabs__link">
+        Agile Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../c%2B%2B/variables_types/" class="md-tabs__link">
+        C++
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../git/getting_started/" class="md-tabs__link">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../design_pattern/strategy/" class="md-tabs__link">
+        Others
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Academy" class="md-nav__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Academy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Agile Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agile Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Agile Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/agile_development/" class="md-nav__link">
+        Agile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/jira_project_management/" class="md-nav__link">
+        Jira
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/kanban/" class="md-nav__link">
+        Kanban
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/scrum/" class="md-nav__link">
+        Scrum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/software_development/" class="md-nav__link">
+        Software Development
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/variables_types/" class="md-nav__link">
+        Variables and Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/compound_type/" class="md-nav__link">
+        Compound Type
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/copy_control/" class="md-nav__link">
+        Copy Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/object_oriented_programming/" class="md-nav__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/smart_pointer/" class="md-nav__link">
+        Smart Pointer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/template/" class="md-nav__link">
+        Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/exception/" class="md-nav__link">
+        Exception
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/effective_cpp/" class="md-nav__link">
+        Effective C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B/cpp11_feature/" class="md-nav__link">
+        C++ 11 Feature
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/getting_started/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/clone_recording_changes/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branching_nutshell/" class="md-nav__link">
+        Branching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branching_merging/" class="md-nav__link">
+        Branching and Merging
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branch_mang_remote/" class="md-nav__link">
+        Branch Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/remote/" class="md-nav__link">
+        Remote Branches
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/rebasing/" class="md-nav__link">
+        Rebasing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Object Oriented Programming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Oriented Programming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Object Oriented Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SOLID
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        SOLID
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#single-responsibility-principle-srp" class="md-nav__link">
+    Single Responsibility Principle (SRP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Single Responsibility Principle (SRP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#should-these-responsibilities-be-separated" class="md-nav__link">
+    Should these responsibilities be separated?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-closed-principle-ocp" class="md-nav__link">
+    Open-Closed Principle (OCP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Open-Closed Principle (OCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategic-closure" class="md-nav__link">
+    Strategic Closure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liskov-substitution-principle-lsp" class="md-nav__link">
+    Liskov Substitution Principle (LSP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Liskov Substitution Principle (LSP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-example-of-violation-of-lsp" class="md-nav__link">
+    A Example of violation of LSP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#square-and-rectangle-a-more-subtle-violation" class="md-nav__link">
+    Square and Rectangle, a More Subtle Violation.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-segregation-principle-isp" class="md-nav__link">
+    Interface Segregation Principle (ISP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Segregation Principle (ISP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-pollution" class="md-nav__link">
+    Interface Pollution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separation-through-multiple-inheritance" class="md-nav__link">
+    Separation through Multiple Inheritance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-timeddoor-public-door-public-timerclient-public-virtual-void-timeoutint-timeoutid" class="md-nav__link">
+    class TimedDoor : public Door, public TimerClient
+{
+public:
+    virtual void TimeOut(int timeOutId);
+};
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-inversion-principle-dip" class="md-nav__link">
+    Dependency-Inversion Principle (DIP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency-Inversion Principle (DIP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-definition-of-a-bad-design" class="md-nav__link">
+    The Definition of a “Bad Design”
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-the-copy-program" class="md-nav__link">
+    Example: The "Copy" Program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-inversion" class="md-nav__link">
+    Dependency Inversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layering" class="md-nav__link">
+    Layering
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coupling_packages/" class="md-nav__link">
+        Package Coupling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../package_cohesion/" class="md-nav__link">
+        Package Cohesion
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      <label class="md-nav__link" for="__nav_6_1">
+        Design Pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design Pattern" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Design Pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/strategy/" class="md-nav__link">
+        Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/command/" class="md-nav__link">
+        Command
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/factory/" class="md-nav__link">
+        Factory
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/decorator/" class="md-nav__link">
+        Decorator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/observer/" class="md-nav__link">
+        Observer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/singleton/" class="md-nav__link">
+        Singleton
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        Qt
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Qt" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Qt
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qt/model_view/" class="md-nav__link">
+        Model View
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qt/qt_threading_event/" class="md-nav__link">
+        Threading and Event
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros/" class="md-nav__link">
+        ROS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concurrency/concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#single-responsibility-principle-srp" class="md-nav__link">
+    Single Responsibility Principle (SRP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Single Responsibility Principle (SRP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#should-these-responsibilities-be-separated" class="md-nav__link">
+    Should these responsibilities be separated?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-closed-principle-ocp" class="md-nav__link">
+    Open-Closed Principle (OCP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Open-Closed Principle (OCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategic-closure" class="md-nav__link">
+    Strategic Closure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liskov-substitution-principle-lsp" class="md-nav__link">
+    Liskov Substitution Principle (LSP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Liskov Substitution Principle (LSP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-example-of-violation-of-lsp" class="md-nav__link">
+    A Example of violation of LSP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#square-and-rectangle-a-more-subtle-violation" class="md-nav__link">
+    Square and Rectangle, a More Subtle Violation.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-segregation-principle-isp" class="md-nav__link">
+    Interface Segregation Principle (ISP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Segregation Principle (ISP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-pollution" class="md-nav__link">
+    Interface Pollution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separation-through-multiple-inheritance" class="md-nav__link">
+    Separation through Multiple Inheritance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-timeddoor-public-door-public-timerclient-public-virtual-void-timeoutint-timeoutid" class="md-nav__link">
+    class TimedDoor : public Door, public TimerClient
+{
+public:
+    virtual void TimeOut(int timeOutId);
+};
+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-inversion-principle-dip" class="md-nav__link">
+    Dependency-Inversion Principle (DIP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency-Inversion Principle (DIP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-definition-of-a-bad-design" class="md-nav__link">
+    The Definition of a “Bad Design”
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-the-copy-program" class="md-nav__link">
+    Example: The "Copy" Program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-inversion" class="md-nav__link">
+    Dependency Inversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layering" class="md-nav__link">
+    Layering
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="solid">SOLID</h1>
+<p>SOLID is a mnemonic acronym for five design principles intended to make software designs more understandable, flexible and maintainable.</p>
+<ul>
+<li>更能容忍變化, 更彈性</li>
+<li>更容易理解</li>
+<li>更好維護</li>
+</ul>
+<p>the SOLID principles can also form a core philosophy for methodologies such as agile development or adaptive software development.</p>
+<ul>
+<li><strong>S</strong>ingle-Responsibility Principle (SRP)</li>
+<li><strong>O</strong>pen-Closed Principle (OCP)</li>
+<li><strong>L</strong>iskov Substitution Principle (LSP)</li>
+<li><strong>I</strong>nterface Segregation Principle (ISP)</li>
+<li><strong>D</strong>ependency-Inversion Principle (DIP)</li>
+</ul>
+<hr />
+<h2 id="single-responsibility-principle-srp">Single Responsibility Principle (SRP)</h2>
+<p><em>"A class should have only one reason to change."</em> - Robert C. Martin
+<img alt="figure_8-1" src="../images/figure_8-1.PNG" />
+This design violates the SRP.</p>
+<p>The Rectangle class has two responsibilities. </p>
+<p>The first responsibility is to provide a mathematical model of the geometry of a rectangle. </p>
+<p>The second responsibility is to render the rectangle on a graphical user interface.</p>
+<p>problem: 
+1. we must include the GUI in the computational geometry application. In .NET the GUI assembly would have to be built and deployed with the computational geometry application.
+2. if a change to the GraphicalApplication causes the Rectangle to change for some reason, that change may force us to rebuild, retest, and redeploy the ComputationalGeometryApplication. If we forget to do this, that application may break in unpredictable ways.
+<img alt="figure_8-2" src="../images/figure_8-2.PNG" /></p>
+<h3 id="should-these-responsibilities-be-separated">Should these responsibilities be separated?</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Modem</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">Dial</span><span class="p">(</span><span class="n">string</span> <span class="n">pno</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">Hangup</span><span class="p">();</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">Send</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="kd">public</span> <span class="kt">char</span> <span class="nf">Recv</span><span class="p">();</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<p>there are two responsibilities being shown here. The first responsibility is connection management. The second is data communication. </p>
+<p>Should these two responsibilities be separated? </p>
+<p>That depends upon how the application is changing. </p>
+<p>If the application changes in ways that affect the signature of the connection functions, then the design will smell of Rigidity because the classes that call send and read will have to be recompiled and redeployed more often than we like.</p>
+<p><img alt="figure_8-3" src="../images/figure_8-3.PNG" /></p>
+<p>If, on the other hand, the application is not changing in ways that cause the the two responsibilities to change at differen times, then there is no need to separate them. Indeed, separating them would smell of <em>Needless Complexity</em>.</p>
+<p><img alt="figure_saparate" src="../images/figure_saparate.PNG" /></p>
+<hr />
+<h2 id="open-closed-principle-ocp">Open-Closed Principle (OCP)</h2>
+<p><em>"Software entities (class, modules, functions, etc.) should be open for extension, but closed for modification."</em> - Robert C. Martin</p>
+<ol>
+<li>
+<p>They are <em>“Open For Extension”</em>.</p>
+<p>This means that the behavior of the module can be extended. That we can make the module behave in new and different ways as the requirements of the application change, or to meet the needs of new applications.</p>
+</li>
+<li>
+<p>They are <em>“Closed for Modification”</em>. </p>
+<p>The source code of such a module is inviolate. No one is allowed to make source code changes to it.</p>
+</li>
+</ol>
+<p>It would seem that these two attributes are at odds with each other. The normal way to extend the behavior of a module is to make changes to that module. A module that cannot be changed is normally thought to have a fixed behavior. How can these two opposing attributes be resolved?</p>
+<p><strong>Abstraction is the Key.</strong></p>
+<p>Figure 1 shows a simple design that does not conform to the open-closed principle. Both the Client and Server classes are concrete. There is no guarantee that the member functions of the Server class are virtual. The Client class uses the Server class.If we wish for a Client object to use a different server object, then the Client class must be changed to name the new server class.
+<img alt="figure_1" src="../images/figure_1.PNG" /></p>
+<p><img alt="figure_2" src="../images/figure_2.PNG" /></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">enum</span> <span class="nc">ShapeType</span> <span class="p">{</span><span class="n">circle</span><span class="p">,</span> <span class="n">square</span><span class="p">};</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">struct</span> <span class="nc">Point</span> <span class="p">{};</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">struct</span> <span class="nc">Shape</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="n">ShapeType</span> <span class="n">itsType</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">struct</span> <span class="nc">Circle</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="n">ShapeType</span> <span class="n">itsType</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="kt">double</span> <span class="n">itsRadius</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="n">Point</span> <span class="n">itsCenter</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="k">struct</span> <span class="nc">Square</span> <span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="n">ShapeType</span> <span class="n">itsType</span><span class="p">;</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="kt">double</span> <span class="n">itsSide</span><span class="p">;</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="n">Point</span> <span class="n">itsTopLeft</span><span class="p">;</span>
+<span class="linenos" data-linenos="19 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span><span class="c1">//</span>
+<span class="linenos" data-linenos="22 "></span><span class="c1">// These functions are implemented elsewhere</span>
+<span class="linenos" data-linenos="23 "></span><span class="c1">//</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span><span class="kt">void</span> <span class="nf">DrawSquare</span><span class="p">(</span><span class="k">struct</span> <span class="nc">Square</span><span class="o">*</span><span class="p">);</span>
+<span class="linenos" data-linenos="26 "></span><span class="kt">void</span> <span class="nf">DrawCircle</span><span class="p">(</span><span class="k">struct</span> <span class="nc">Circle</span><span class="o">*</span><span class="p">);</span>
+<span class="linenos" data-linenos="27 "></span>
+<span class="linenos" data-linenos="28 "></span><span class="k">typedef</span> <span class="k">struct</span> <span class="nc">Shape</span> <span class="o">*</span><span class="n">ShapePointer</span><span class="p">;</span>
+<span class="linenos" data-linenos="29 "></span><span class="kt">void</span> <span class="nf">DrawAllShapes</span><span class="p">(</span><span class="n">ShapePointer</span> <span class="n">list</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="30 "></span>    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="linenos" data-linenos="31 "></span>    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="32 "></span>        <span class="k">struct</span> <span class="nc">Shape</span><span class="o">*</span> <span class="n">s</span> <span class="o">=</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="linenos" data-linenos="33 "></span>        <span class="k">switch</span> <span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">itsType</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="34 "></span>        <span class="k">case</span> <span class="nl">square</span><span class="p">:</span>
+<span class="linenos" data-linenos="35 "></span>            <span class="n">DrawSquare</span><span class="p">((</span><span class="k">struct</span> <span class="nc">Square</span><span class="o">*</span><span class="p">)</span><span class="n">s</span><span class="p">);</span>
+<span class="linenos" data-linenos="36 "></span>            <span class="k">break</span><span class="p">;</span>
+<span class="linenos" data-linenos="37 "></span>        <span class="k">case</span> <span class="nl">circle</span><span class="p">:</span>
+<span class="linenos" data-linenos="38 "></span>            <span class="n">DrawCircle</span><span class="p">((</span><span class="k">struct</span> <span class="nc">Circle</span><span class="o">*</span><span class="p">)</span><span class="n">s</span><span class="p">);</span>
+<span class="linenos" data-linenos="39 "></span>            <span class="k">break</span><span class="p">;</span>
+<span class="linenos" data-linenos="40 "></span>        <span class="p">}</span>
+<span class="linenos" data-linenos="41 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="42 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Shape</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Draw</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="k">class</span> <span class="nc">Square</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Shape</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Draw</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="11 "></span><span class="k">class</span> <span class="nc">Circle</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Shape</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Draw</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="16 "></span><span class="kt">void</span> <span class="nf">DrawAllShapes</span><span class="p">(</span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Shape</span><span class="o">*&gt;&amp;</span> <span class="n">list</span><span class="p">)</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="k">for</span> <span class="p">(</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Shape</span><span class="o">*&gt;</span><span class="n">i</span><span class="p">(</span><span class="n">list</span><span class="p">);</span> <span class="n">i</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="linenos" data-linenos="19 "></span>        <span class="p">(</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">();</span>
+<span class="linenos" data-linenos="20 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="strategic-closure">Strategic Closure</h3>
+<p>It should be clear that no significant program can be 100% closed.</p>
+<p>Since closure cannot be complete, it must be strategic. That is, the designer must choose the kinds of changes against which to close his design. This takes a certain amount of prescience derived from experience. The experienced designer knows the users and the industry well enough to judge the probability of different kinds of changes.</p>
+<hr />
+<h2 id="liskov-substitution-principle-lsp">Liskov Substitution Principle (LSP)</h2>
+<p><em>"Subtypes must be substitutable for their base types."</em> - Robert C. Martin</p>
+<h3 id="a-example-of-violation-of-lsp">A Example of violation of LSP</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">void</span> <span class="nf">DrawShape</span><span class="p">(</span><span class="k">const</span> <span class="n">Shape</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">if</span> <span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeid</span><span class="p">(</span><span class="n">Square</span><span class="p">))</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="n">DrawSquare</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Square</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">s</span><span class="p">));</span> 
+<span class="linenos" data-linenos="5 "></span>    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeid</span><span class="p">(</span><span class="n">Circle</span><span class="p">))</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="n">DrawCircle</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Circle</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Clearly the DrawShape function is badly formed. It must know about every possible derivative of the Shape class, and it must be changed whenever new derivatives of Shape are created.</p>
+<h3 id="square-and-rectangle-a-more-subtle-violation">Square and Rectangle, a More Subtle Violation.</h3>
+<p><img alt="figure_rectangle" src="../images/figure_rectangle.png" /></p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Rectangle</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="kt">void</span> <span class="n">SetWidth</span><span class="p">(</span><span class="kt">double</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span><span class="n">itsWidth</span><span class="o">=</span><span class="n">w</span><span class="p">;}</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="kt">void</span> <span class="n">SetHeight</span><span class="p">(</span><span class="kt">double</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span><span class="n">itsHeight</span><span class="o">=</span><span class="n">w</span><span class="p">;}</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kt">double</span> <span class="n">GetHeight</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">itsHeight</span><span class="p">;}</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="kt">double</span> <span class="n">GetWidth</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">itsWidth</span><span class="p">;}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="kt">double</span> <span class="n">itsWidth</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="kt">double</span> <span class="n">itsHeight</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">};</span>
+</code></pre></div>
+memory problem </p>
+<p>assume that we don't care about memory problem</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Rectangle</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">SetWidth</span><span class="p">(</span><span class="kt">double</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span><span class="n">itsWidth</span><span class="o">=</span><span class="n">w</span><span class="p">;}</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">SetHeight</span><span class="p">(</span><span class="kt">double</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span><span class="n">itsHeight</span><span class="o">=</span><span class="n">h</span><span class="p">;}</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kt">double</span> <span class="n">GetHeight</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">itsHeight</span><span class="p">;}</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="kt">double</span> <span class="n">GetWidth</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span><span class="k">return</span> <span class="n">itsWidth</span><span class="p">;}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="kt">double</span> <span class="n">itsHeight</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="kt">double</span> <span class="n">itsWidth</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="k">class</span> <span class="nc">Square</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Rectangle</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">SetWidth</span><span class="p">(</span><span class="kt">double</span> <span class="n">w</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">SetHeight</span><span class="p">(</span><span class="kt">double</span> <span class="n">h</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="19 "></span><span class="kt">void</span> <span class="nf">Square::SetWidth</span><span class="p">(</span><span class="kt">double</span> <span class="n">w</span><span class="p">)</span>
+<span class="linenos" data-linenos="20 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="n">Rectangle</span><span class="o">::</span><span class="n">SetWidth</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+<span class="linenos" data-linenos="22 "></span>    <span class="n">Rectangle</span><span class="o">::</span><span class="n">SetHeight</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+<span class="linenos" data-linenos="23 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="24 "></span><span class="kt">void</span> <span class="nf">Square::SetHeight</span><span class="p">(</span><span class="kt">double</span> <span class="n">h</span><span class="p">)</span>
+<span class="linenos" data-linenos="25 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="26 "></span>    <span class="n">Rectangle</span><span class="o">::</span><span class="n">SetHeight</span><span class="p">(</span><span class="n">h</span><span class="p">);</span>
+<span class="linenos" data-linenos="27 "></span>    <span class="n">Rectangle</span><span class="o">::</span><span class="n">SetWidth</span><span class="p">(</span><span class="n">h</span><span class="p">);</span>
+<span class="linenos" data-linenos="28 "></span><span class="p">}</span>
+</code></pre></div>
+<p>The real problem is</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="n">Rectangle</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">r</span><span class="p">.</span><span class="n">SetWidth</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="n">r</span><span class="p">.</span><span class="n">SetHeight</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="n">assert</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">GetWidth</span><span class="p">()</span> <span class="o">*</span> <span class="n">r</span><span class="p">.</span><span class="n">GetHeight</span><span class="p">())</span> <span class="o">==</span> <span class="mi">20</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+we can use factory pattern to solve this problem, because the key point is about constructor</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">struct</span> <span class="nc">RectangleFactory</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">static</span> <span class="n">Rectangle</span> <span class="nf">create_rectangle</span><span class="p">(</span><span class="kt">int</span> <span class="n">w</span><span class="p">,</span> <span class="kt">int</span> <span class="n">h</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="k">static</span> <span class="n">Rectangle</span> <span class="nf">create_square</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</code></pre></div>
+<p>So We must Design by Contract</p>
+<hr />
+<h2 id="interface-segregation-principle-isp">Interface Segregation Principle (ISP)</h2>
+<p><em>"Clients should not be forced to depend upon interfaces that they don't use."</em> - Robert C. Martin</p>
+<p>This principle deals with the disadvantages of “fat” interfaces.
+Classes that have “fat” interfaces are classes whose interfaces are not cohesive.</p>
+<p>In this article we will discuss the disadvantages of “fat” or “polluted” interfacse.</p>
+<h3 id="interface-pollution">Interface Pollution</h3>
+<p>Consider a security system. In this system there are Door objects that can be locked and unlocked, and which know whether they are open or closed. (See Listing 1).</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Door</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Lock</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">Unlock</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">IsDoorOpen</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">class</span> <span class="nc">Timer</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="kt">void</span> <span class="n">Regsiter</span><span class="p">(</span><span class="kt">int</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">TimerClient</span><span class="o">*</span> <span class="n">client</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="k">class</span> <span class="nc">TimerClient</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">TimeOut</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="19 "></span><span class="p">};</span>
+</code></pre></div>
+<p>Now consider that one such implementation. TimedDoor needs to sound an alarm
+when the door has been left open for too long. In order to do this the TimedDoor object communicates with another object called a Timer.</p>
+<p>When an object wishes to be informed about a timeout, it calls the Register function of the Timer. The arguments of this function are the time of the timeout, and a pointer to a TimerClient object whose TimeOut function will be called when the timeout expires.</p>
+<p>How can we get the TimerClient class to communicate with the TimedDoor class so that the code in the TimedDoor can be notified of the timeout? There are several alternatives. Figure 1 shows a common solution. We force Door, and therefore TimedDoor, to inherit from TimerClient. This ensures that TimerClient can register itself with the Timer and receive the TimeOut message.</p>
+<p><img alt="figure_timeclient" src="../images/figure_timeclient.PNG" /></p>
+<p>But problem is Not all varieties of Door need timing.</p>
+<p>Moreover, the applications that use those derivatives will have to #include the definition of the TimerClient class, even though it is not used.
+that means you have to recompile.</p>
+<h3 id="separation-through-multiple-inheritance">Separation through Multiple Inheritance</h3>
+<p><img alt="figure_multiply_inherited" src="../images/figure_multiply_inherited.PNG" /></p>
+<h2 id="class-timeddoor-public-door-public-timerclient-public-virtual-void-timeoutint-timeoutid"><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">TimedDoor</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Door</span><span class="p">,</span> <span class="k">public</span> <span class="n">TimerClient</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">TimeOut</span><span class="p">(</span><span class="kt">int</span> <span class="n">timeOutId</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">};</span>
+</code></pre></div></h2>
+<h2 id="dependency-inversion-principle-dip">Dependency-Inversion Principle (DIP)</h2>
+<ul>
+<li>High-level modules should not depend on low-level modules. Both should depend on abstractions.</li>
+<li>Abstractions should not depend on details. Details should depend on abstractions.</li>
+</ul>
+<h3 id="the-definition-of-a-bad-design">The Definition of a “Bad Design”</h3>
+<ol>
+<li>It is hard to change because every change affects too many other parts of the system. (Rigidity)</li>
+<li>When you make a change, unexpected parts of the system break. (Fragility)</li>
+<li>It is hard to reuse in another application because it cannot be disentangled from the current application. (Immobility)</li>
+</ol>
+<h3 id="example-the-copy-program">Example: The "Copy" Program</h3>
+<p><img alt="figure_copy" src="../images/figure_copy.PNG" /></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">void</span> <span class="nf">Copy</span><span class="p">()</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">while</span> <span class="p">((</span><span class="n">c</span> <span class="o">=</span> <span class="n">ReadKeyboard</span><span class="p">())</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">WritePrinter</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<p>consider a new program that copies keyboard characters to a disk file.</p>
+<p>the “Copy” module is dependent upon the “Write Printer” module, and so cannot be reused in the new context.</p>
+<p>So we can enhance our program.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">enum</span> <span class="nc">OutputDevice</span> <span class="p">{</span><span class="n">printer</span><span class="p">,</span> <span class="n">disk</span><span class="p">};</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kt">void</span> <span class="nf">Copy</span><span class="p">(</span><span class="n">outputDevice</span> <span class="n">dev</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="k">while</span> <span class="p">((</span><span class="n">c</span> <span class="o">=</span> <span class="n">ReadKeyboard</span><span class="p">())</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 6 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">dev</span> <span class="o">==</span> <span class="n">printer</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 7 "></span>            <span class="n">WritePrinter</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="k">else</span>
+<span class="linenos" data-linenos=" 9 "></span>            <span class="n">WriteDisk</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</code></pre></div>
+<p>However this
+adds new interdependencies to the system. As time goes on, and more and more devices must participate in the copy program, the “Copy” module will be littered with if/else statements and will be dependent upon many lower level modules. It will eventually become rigid and fragile.</p>
+<h3 id="dependency-inversion">Dependency Inversion</h3>
+<p><img alt="figure_inverse_copy" src="../images/figure_inverse_copy.PNG" /></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Reader</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="k">virtual</span> <span class="kt">int</span> <span class="n">Read</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="k">class</span> <span class="nc">Writer</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Write</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="11 "></span><span class="kt">void</span> <span class="nf">Copy</span><span class="p">(</span><span class="n">Reader</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">,</span> <span class="n">Writer</span><span class="o">&amp;</span> <span class="n">w</span><span class="p">)</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="k">while</span><span class="p">((</span><span class="n">c</span><span class="o">=</span><span class="n">r</span><span class="p">.</span><span class="n">Read</span><span class="p">())</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="n">w</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="layering">Layering</h3>
+<p>According to <em>Booch</em> , <em>“...all well structured object oriented architectures have clearly-defined layers, with each layer providing some coherent set of services though a well-defined and controlled interface.”</em></p>
+<p><img alt="figure_layering" src="../images/figure_layering.PNG" /></p>
+<ul>
+<li>is hard to extend</li>
+<li>is hard to change </li>
+</ul>
+<p>it has the insidious characteristic that the Policy Layer is sensitive to changes all the way down in the Utility Layer. <em><strong>Dependency is transitive</strong></em>.</p>
+<p><img alt="figure_abstract_layer" src="../images/figure_abstract_layer.PNG" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../git/rebasing/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Rebasing
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../coupling_packages/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Package Coupling
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+    
+  </body>
+</html>
