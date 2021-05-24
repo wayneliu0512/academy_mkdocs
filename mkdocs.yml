@@ -1,4 +1,6 @@
 site_name: Academy
+repo_url: https://github.com/wayneliu0512/academy_mkdocs
+repo_name: wayneliu0512/academy_mkdocs
 nav:
   - Home: index.md
   - Agile Development: 
