@@ -45,6 +45,7 @@ nav:
       - Threading and Event: qt/qt_threading_event.md
     - ROS: ros/ros.md
     - Concurrency: concurrency/concurrency.md
+    - Google Mock: google_mock.md
     
 
 theme:
