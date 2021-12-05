@@ -1,4 +1,4 @@
-![keeplearning](images/keep_learning.png)
+![keeplearning](assets/images/keep_learning.png)
 
 ## Map
 - Agile Development:

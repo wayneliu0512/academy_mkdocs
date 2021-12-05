@@ -51,7 +51,9 @@ nav:
 theme:
   name: material
   favicon: assets/images/favicon.ico
-  logo: images/windows_icon.png
+  logo: assets/images/logo.png
+  font:
+    code: Poppins
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
