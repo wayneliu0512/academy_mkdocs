@@ -51,6 +51,7 @@ nav:
 theme:
   name: material
   logo: images/windows_icon.png
+  favicon: images/windows_icon.png
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
