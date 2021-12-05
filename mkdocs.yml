@@ -50,7 +50,7 @@ nav:
 
 theme:
   name: material
-  favicon: images/favicon.png
+  favicon: assets/images/favicon.ico
   logo: images/windows_icon.png
   palette:
     - media: "(prefers-color-scheme: light)"
