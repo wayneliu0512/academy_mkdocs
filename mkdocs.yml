@@ -1,4 +1,4 @@
-site_name: Academy
+site_name: Allxon
 repo_url: https://github.com/wayneliu0512/academy_mkdocs
 repo_name: wayneliu0512/academy_mkdocs
 nav:
@@ -50,17 +50,22 @@ nav:
 
 theme:
   name: material
+  logo: images/windows_icon.png
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
+      primary: allxon
+      accent: light blue
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+      primary: allxon
+      accent: light blue
   features:
     - navigation.instant
     - navigation.tracking
@@ -72,3 +77,5 @@ markdown_extensions:
       linenums_style: pymdownx-inline
   - pymdownx.inlinehilite
   - pymdownx.superfences
+extra_css:
+  - stylesheets/extra.css
