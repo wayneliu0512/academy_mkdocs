@@ -1,0 +1,1493 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../images/windows_icon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Google Mock - Allxon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="allxon" data-md-color-accent="light-blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#google-mock" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Allxon" class="md-header__button md-logo" aria-label="Allxon" data-md-component="logo">
+      
+  <img src="../images/windows_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Allxon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Google Mock
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="allxon" data-md-color-accent="light-blue" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="allxon" data-md-color-accent="light-blue" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/wayneliu0512/academy_mkdocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wayneliu0512/academy_mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../agile_project_management/agile_development/" class="md-tabs__link">
+        Agile Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../c%2B%2B/variables_types/" class="md-tabs__link">
+        C++
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../git/getting_started/" class="md-tabs__link">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ood/solid/" class="md-tabs__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../design_pattern/strategy/" class="md-tabs__link md-tabs__link--active">
+        Others
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Allxon" class="md-nav__button md-logo" aria-label="Allxon" data-md-component="logo">
+      
+  <img src="../images/windows_icon.png" alt="logo">
+
+    </a>
+    Allxon
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/wayneliu0512/academy_mkdocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wayneliu0512/academy_mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Agile Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agile Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Agile Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agile_project_management/agile_development/" class="md-nav__link">
+        Agile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agile_project_management/jira_project_management/" class="md-nav__link">
+        Jira
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agile_project_management/kanban/" class="md-nav__link">
+        Kanban
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agile_project_management/scrum/" class="md-nav__link">
+        Scrum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agile_project_management/software_development/" class="md-nav__link">
+        Software Development
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c%2B%2B/variables_types/" class="md-nav__link">
+        Variables and Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c%2B%2B/compound_type/" class="md-nav__link">
+        Compound Type
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c%2B%2B/class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c%2B%2B/copy_control/" class="md-nav__link">
+        Copy Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c%2B%2B/object_oriented_programming/" class="md-nav__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c%2B%2B/smart_pointer/" class="md-nav__link">
+        Smart Pointer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c%2B%2B/template/" class="md-nav__link">
+        Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c%2B%2B/exception/" class="md-nav__link">
+        Exception
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c%2B%2B/effective_cpp/" class="md-nav__link">
+        Effective C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c%2B%2B/cpp11_feature/" class="md-nav__link">
+        C++ 11 Feature
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/getting_started/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/clone_recording_changes/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/branching_nutshell/" class="md-nav__link">
+        Branching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/branching_merging/" class="md-nav__link">
+        Branching and Merging
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/branch_mang_remote/" class="md-nav__link">
+        Branch Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/remote/" class="md-nav__link">
+        Remote Branches
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/rebasing/" class="md-nav__link">
+        Rebasing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Object Oriented Programming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Oriented Programming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Object Oriented Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ood/solid/" class="md-nav__link">
+        SOLID
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ood/coupling_packages/" class="md-nav__link">
+        Package Coupling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ood/package_cohesion/" class="md-nav__link">
+        Package Cohesion
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      <label class="md-nav__link" for="__nav_6_1">
+        Design Pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design Pattern" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Design Pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_pattern/strategy/" class="md-nav__link">
+        Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_pattern/command/" class="md-nav__link">
+        Command
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_pattern/factory/" class="md-nav__link">
+        Factory
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_pattern/decorator/" class="md-nav__link">
+        Decorator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_pattern/observer/" class="md-nav__link">
+        Observer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design_pattern/singleton/" class="md-nav__link">
+        Singleton
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        Qt
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Qt" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Qt
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qt/model_view/" class="md-nav__link">
+        Model View
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qt/qt_threading_event/" class="md-nav__link">
+        Threading and Event
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ros/ros/" class="md-nav__link">
+        ROS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concurrency/concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Google Mock
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Google Mock
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-syntax" class="md-nav__link">
+    General Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key" class="md-nav__link">
+    Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-multiple-expectations" class="md-nav__link">
+    Using Multiple Expectations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordered-vs-unordered-calls" class="md-nav__link">
+    Ordered vs Unordered Calls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-nice-the-strict-and-the-naggy" class="md-nav__link">
+    The Nice, the Strict, and the Naggy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegating-calls-to-a-fake" class="md-nav__link">
+    Delegating Calls to a Fake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegating-calls-to-a-real-object" class="md-nav__link">
+    Delegating Calls to a Real Object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-matchers" class="md-nav__link">
+    Combining Matchers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casting-matchers" class="md-nav__link">
+    Casting Matchers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-between-overloaded-functions" class="md-nav__link">
+    Selecting Between Overloaded Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matching-multiple-arguments-as-a-whole" class="md-nav__link">
+    Matching Multiple Arguments as a Whole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-matchers-as-predicates" class="md-nav__link">
+    Using Matchers as Predicates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matching-arguments-that-are-not-copyable" class="md-nav__link">
+    Matching Arguments that Are Not Copyable
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-syntax" class="md-nav__link">
+    General Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key" class="md-nav__link">
+    Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-multiple-expectations" class="md-nav__link">
+    Using Multiple Expectations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordered-vs-unordered-calls" class="md-nav__link">
+    Ordered vs Unordered Calls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-nice-the-strict-and-the-naggy" class="md-nav__link">
+    The Nice, the Strict, and the Naggy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegating-calls-to-a-fake" class="md-nav__link">
+    Delegating Calls to a Fake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegating-calls-to-a-real-object" class="md-nav__link">
+    Delegating Calls to a Real Object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-matchers" class="md-nav__link">
+    Combining Matchers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casting-matchers" class="md-nav__link">
+    Casting Matchers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-between-overloaded-functions" class="md-nav__link">
+    Selecting Between Overloaded Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matching-multiple-arguments-as-a-whole" class="md-nav__link">
+    Matching Multiple Arguments as a Whole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-matchers-as-predicates" class="md-nav__link">
+    Using Matchers as Predicates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matching-arguments-that-are-not-copyable" class="md-nav__link">
+    Matching Arguments that Are Not Copyable
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wayneliu0512/academy_mkdocs/edit/master/docs/google_mock.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="google-mock">Google Mock</h1>
+<p>The key to using a mock object successfully is to set the right expectations on it. If you set the expectations too strict, your test will fail as the result of unrelated changes. If you set them too loose, bugs can slip through. You want to do it just right such that your test can catch exactly the kind of bugs you intend it to catch. Google Mock provides the necessary means for you to do it "just right."</p>
+<h2 id="general-syntax">General Syntax</h2>
+<p>In Google Mock we use the <code>EXPECT_CALL()</code> macro to set an expectation on a mock method. The general syntax is:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock_object</span><span class="p">,</span> <span class="n">method</span><span class="p">(</span><span class="n">matchers</span><span class="p">))</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="n">cardinality</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="p">.</span><span class="n">WillRepeatedly</span><span class="p">(</span><span class="n">action</span><span class="p">);</span>
+</code></pre></div>
+<p>This syntax is designed to make an expectation read like English. For example, you can probably guess that</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">...</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">GetX</span><span class="p">())</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">150</span><span class="p">))</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="p">.</span><span class="n">WillRepeatedly</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">200</span><span class="p">));</span>
+</code></pre></div>
+<h2 id="key">Key</h2>
+<ul>
+<li><strong>Matchers</strong>: What Arguments Do We Expect?</li>
+<li><strong>Cardinalities</strong>: How Many Times Will It Be Called?</li>
+<li><strong>Actions</strong>: What Should It Do?</li>
+</ul>
+<h2 id="using-multiple-expectations">Using Multiple Expectations</h2>
+<p>By default, when a mock method is invoked, Google Mock will search the expectations in the reverse order they are defined, and stop when an active expectation that matches the arguments is found (you can think of it as "newer rules override older ones.").</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">_</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">...</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">Forward</span><span class="p">(</span><span class="n">_</span><span class="p">));</span>  <span class="c1">// #1</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">Forward</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1">// #2</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="ordered-vs-unordered-calls">Ordered vs Unordered Calls</h2>
+<p>By default, an expectation can match a call even though an earlier expectation hasn't been satisfied. In other words, the calls don't have to occur in the order the expectations are specified.</p>
+<p>Sometimes, you may want all the expected calls to occur in a strict order. To say this in Google Mock is easy:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">InSequence</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">...</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">TEST</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span> <span class="n">DrawsLineSegment</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="p">...</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="n">InSequence</span> <span class="n">dummy</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">PenDown</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">Forward</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">PenUp</span><span class="p">());</span>
+<span class="linenos" data-linenos="11 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="n">Foo</span><span class="p">();</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</code></pre></div>
+<h2 id="the-nice-the-strict-and-the-naggy">The Nice, the Strict, and the Naggy</h2>
+<p>If a mock method has no <code>EXPECT_CALL</code> spec but is called, Google Mock will print a warning about the "uninteresting call". The rationale is:</p>
+<ul>
+<li>New methods may be added to an interface after a test is written. We shouldn't fail a test just because a method it doesn't know about is called.</li>
+<li>However, this may also mean there's a bug in the test, so Google Mock shouldn't be silent either. If the user believes these calls are harmless, they can add an <code>EXPECT_CALL()</code> to suppress the warning.</li>
+</ul>
+<p>However, sometimes you may want to suppress all "uninteresting call" warnings, while sometimes you may want the opposite, i.e. to treat all of them as errors. Google Mock lets you make the decision on a per-mock-object basis.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">NiceMock</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">TEST</span><span class="p">(...)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>  <span class="n">NiceMock</span><span class="o">&lt;</span><span class="n">MockFoo</span><span class="o">&gt;</span> <span class="n">mock_foo</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span>  <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock_foo</span><span class="p">,</span> <span class="n">DoThis</span><span class="p">());</span>
+<span class="linenos" data-linenos="6 "></span>  <span class="p">...</span> <span class="n">code</span> <span class="n">that</span> <span class="n">uses</span> <span class="n">mock_foo</span> <span class="p">...</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">StrictMock</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">TEST</span><span class="p">(...)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="n">StrictMock</span><span class="o">&lt;</span><span class="n">MockFoo</span><span class="o">&gt;</span> <span class="n">mock_foo</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock_foo</span><span class="p">,</span> <span class="n">DoThis</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 6 "></span>  <span class="p">...</span> <span class="n">code</span> <span class="n">that</span> <span class="n">uses</span> <span class="n">mock_foo</span> <span class="p">...</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="c1">// The test will fail if a method of mock_foo other than DoThis()</span>
+<span class="linenos" data-linenos=" 9 "></span>  <span class="c1">// is called.</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</code></pre></div>
+<h2 id="delegating-calls-to-a-fake">Delegating Calls to a Fake</h2>
+<p>Some times you have a non-trivial fake implementation of an interface. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>  <span class="k">virtual</span> <span class="o">~</span><span class="n">Foo</span><span class="p">()</span> <span class="p">{}</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="k">virtual</span> <span class="kt">char</span> <span class="n">DoThis</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">DoThat</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="k">class</span> <span class="nc">FakeFoo</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Foo</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="10 "></span>  <span class="k">virtual</span> <span class="kt">char</span> <span class="n">DoThis</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="sc">&#39;+&#39;</span> <span class="o">:</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="sc">&#39;-&#39;</span> <span class="o">:</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span>  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">DoThat</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span><span class="p">};</span>
+</code></pre></div>
+<p>Now you want to mock this interface such that you can set expectations on it. However, you also want to use <code>FakeFoo</code> for the default behavior, as duplicating it in the mock object is, well, a lot of work.</p>
+<p>When you define the mock class using Google Mock, you can have it delegate its default action to a fake class you already have, using this pattern:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">_</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Invoke</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">class</span> <span class="nc">MockFoo</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Foo</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 6 "></span>  <span class="c1">// Normal mock method definitions using Google Mock.</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="n">MOCK_METHOD1</span><span class="p">(</span><span class="n">DoThis</span><span class="p">,</span> <span class="kt">char</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="n">MOCK_METHOD2</span><span class="p">(</span><span class="n">DoThat</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>  <span class="c1">// Delegates the default actions of the methods to a FakeFoo object.</span>
+<span class="linenos" data-linenos="11 "></span>  <span class="c1">// This must be called *before* the custom ON_CALL() statements.</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="kt">void</span> <span class="nf">DelegateToFake</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="n">ON_CALL</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">DoThis</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
+<span class="linenos" data-linenos="14 "></span>        <span class="p">.</span><span class="n">WillByDefault</span><span class="p">(</span><span class="n">Invoke</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fake_</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">FakeFoo</span><span class="o">::</span><span class="n">DoThis</span><span class="p">));</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="n">ON_CALL</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">DoThat</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">))</span>
+<span class="linenos" data-linenos="16 "></span>        <span class="p">.</span><span class="n">WillByDefault</span><span class="p">(</span><span class="n">Invoke</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fake_</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">FakeFoo</span><span class="o">::</span><span class="n">DoThat</span><span class="p">));</span>
+<span class="linenos" data-linenos="17 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span> <span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos="19 "></span>  <span class="n">FakeFoo</span> <span class="n">fake_</span><span class="p">;</span>  <span class="c1">// Keeps an instance of the fake in the mock.</span>
+<span class="linenos" data-linenos="20 "></span><span class="p">};</span>
+</code></pre></div>
+<h2 id="delegating-calls-to-a-real-object">Delegating Calls to a Real Object</h2>
+<p>You can use the delegating-to-real technique to ensure that your mock has the same behavior as the real object while retaining the ability to validate calls. This technique is very similar to the delegating-to-fake technique, the difference being that we use a real object instead of a fake. Here's an example:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">_</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">AtLeast</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Invoke</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">class</span> <span class="nc">MockFoo</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Foo</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="n">MockFoo</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="c1">// By default, all calls are delegated to the real object.</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="n">ON_CALL</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">DoThis</span><span class="p">())</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="p">.</span><span class="n">WillByDefault</span><span class="p">(</span><span class="n">Invoke</span><span class="p">(</span><span class="o">&amp;</span><span class="n">real_</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Foo</span><span class="o">::</span><span class="n">DoThis</span><span class="p">));</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="n">ON_CALL</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">DoThat</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="p">.</span><span class="n">WillByDefault</span><span class="p">(</span><span class="n">Invoke</span><span class="p">(</span><span class="o">&amp;</span><span class="n">real_</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Foo</span><span class="o">::</span><span class="n">DoThat</span><span class="p">));</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="p">...</span>
+<span class="linenos" data-linenos="14 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span>  <span class="n">MOCK_METHOD0</span><span class="p">(</span><span class="n">DoThis</span><span class="p">,</span> <span class="p">...);</span>
+<span class="linenos" data-linenos="16 "></span>  <span class="n">MOCK_METHOD1</span><span class="p">(</span><span class="n">DoThat</span><span class="p">,</span> <span class="p">...);</span>
+<span class="linenos" data-linenos="17 "></span>  <span class="p">...</span>
+<span class="linenos" data-linenos="18 "></span> <span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos="19 "></span>  <span class="n">Foo</span> <span class="n">real_</span><span class="p">;</span>
+<span class="linenos" data-linenos="20 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">...</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span>  <span class="n">MockFoo</span> <span class="n">mock</span><span class="p">;</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span>  <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock</span><span class="p">,</span> <span class="n">DoThis</span><span class="p">())</span>
+<span class="linenos" data-linenos="26 "></span>      <span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="linenos" data-linenos="27 "></span>  <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock</span><span class="p">,</span> <span class="n">DoThat</span><span class="p">(</span><span class="s">&quot;Hi&quot;</span><span class="p">))</span>
+<span class="linenos" data-linenos="28 "></span>      <span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="n">AtLeast</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos" data-linenos="29 "></span>  <span class="p">...</span> <span class="n">use</span> <span class="n">mock</span> <span class="n">in</span> <span class="n">test</span> <span class="p">...</span>
+</code></pre></div>
+<h2 id="combining-matchers">Combining Matchers</h2>
+<p>You can build complex matchers from existing ones using <code>AllOf()</code>, <code>AnyOf()</code>, and <code>Not()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">AllOf</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Gt</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">HasSubstr</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Ne</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Not</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">...</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="c1">// The argument must be &gt; 5 and != 10.</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">DoThis</span><span class="p">(</span><span class="n">AllOf</span><span class="p">(</span><span class="n">Gt</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+<span class="linenos" data-linenos=" 9 "></span>                                <span class="n">Ne</span><span class="p">(</span><span class="mi">10</span><span class="p">))));</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span>  <span class="c1">// The first argument must not contain sub-string &quot;blah&quot;.</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">DoThat</span><span class="p">(</span><span class="n">Not</span><span class="p">(</span><span class="n">HasSubstr</span><span class="p">(</span><span class="s">&quot;blah&quot;</span><span class="p">)),</span>
+<span class="linenos" data-linenos="13 "></span>                          <span class="nb">NULL</span><span class="p">));</span>
+</code></pre></div>
+<h2 id="casting-matchers">Casting Matchers</h2>
+<p>Google Mock matchers are statically typed, meaning that the compiler can catch your mistake if you use a matcher of the wrong type (for example, if you use <code>Eq(5)</code> to match a <code>string</code> argument). Good for you!</p>
+<p>Sometimes, however, you know what you're doing and want the compiler to give you some slack. One example is that you have a matcher for <code>long</code> and the argument you want to match is <code>int</code>. While the two types aren't exactly the same, there is nothing really wrong with using a <code>Matcher&lt;long&gt;</code> to match an <code>int</code> - after all, we can first convert the <code>int</code> argument to a <code>long</code> before giving it to the matcher.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">SafeMatcherCast</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c1">// A base class and a child class.</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">class</span> <span class="nc">Base</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">class</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Base</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">class</span> <span class="nc">MockFoo</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Foo</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 9 "></span>  <span class="n">MOCK_METHOD1</span><span class="p">(</span><span class="n">DoThis</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="n">Derived</span><span class="o">*</span> <span class="n">derived</span><span class="p">));</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">...</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span>  <span class="n">MockFoo</span> <span class="n">foo</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span>  <span class="c1">// m is a Matcher&lt;Base*&gt; we got from somewhere.</span>
+<span class="linenos" data-linenos="15 "></span>  <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">DoThis</span><span class="p">(</span><span class="n">SafeMatcherCast</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">m</span><span class="p">)));</span>
+</code></pre></div>
+<h2 id="selecting-between-overloaded-functions">Selecting Between Overloaded Functions</h2>
+<h2 id="matching-multiple-arguments-as-a-whole">Matching Multiple Arguments as a Whole</h2>
+<h2 id="using-matchers-as-predicates">Using Matchers as Predicates</h2>
+<h2 id="matching-arguments-that-are-not-copyable">Matching Arguments that Are Not Copyable</h2>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../concurrency/concurrency/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Concurrency
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>

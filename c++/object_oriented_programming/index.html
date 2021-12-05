@@ -1,0 +1,2031 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../images/windows_icon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Object Oriented Programming - Allxon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="allxon" data-md-color-accent="light-blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oop" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Allxon" class="md-header__button md-logo" aria-label="Allxon" data-md-component="logo">
+      
+  <img src="../../images/windows_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Allxon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Object Oriented Programming
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="allxon" data-md-color-accent="light-blue" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="allxon" data-md-color-accent="light-blue" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/wayneliu0512/academy_mkdocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wayneliu0512/academy_mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../agile_project_management/agile_development/" class="md-tabs__link">
+        Agile Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../variables_types/" class="md-tabs__link md-tabs__link--active">
+        C++
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../git/getting_started/" class="md-tabs__link">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ood/solid/" class="md-tabs__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../design_pattern/strategy/" class="md-tabs__link">
+        Others
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Allxon" class="md-nav__button md-logo" aria-label="Allxon" data-md-component="logo">
+      
+  <img src="../../images/windows_icon.png" alt="logo">
+
+    </a>
+    Allxon
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/wayneliu0512/academy_mkdocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wayneliu0512/academy_mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Agile Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agile Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Agile Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/agile_development/" class="md-nav__link">
+        Agile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/jira_project_management/" class="md-nav__link">
+        Jira
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/kanban/" class="md-nav__link">
+        Kanban
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/scrum/" class="md-nav__link">
+        Scrum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/software_development/" class="md-nav__link">
+        Software Development
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables_types/" class="md-nav__link">
+        Variables and Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compound_type/" class="md-nav__link">
+        Compound Type
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copy_control/" class="md-nav__link">
+        Copy Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Object Oriented Programming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Object Oriented Programming
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-classes-derived-classes" class="md-nav__link">
+    Base Classes 和 Derived Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Base Classes 和 Derived Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    存取控制 (Access Control) 與繼承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-classes" class="md-nav__link">
+    Derived Classes (衍生類別)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-base" class="md-nav__link">
+    Derived 轉換為 Base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-polymorphism" class="md-nav__link">
+    關鍵觀念: C++ 多型 (Polymorphism)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-virtual-mechanism" class="md-nav__link">
+    推翻虛擬機制 (Overriding Virtual Mechanism)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override" class="md-nav__link">
+    override 關鍵字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-private-protected" class="md-nav__link">
+    Public, Private, Protected 三種繼承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    阻止繼承的發生
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#friendship" class="md-nav__link">
+    Friendship 和 繼承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    繼承與 Static 成員
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conversions-and-inheritance" class="md-nav__link">
+    繼承與轉換 (Conversions and Inheritance)
+  </a>
+  
+    <nav class="md-nav" aria-label="繼承與轉換 (Conversions and Inheritance)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reference-object" class="md-nav__link">
+    轉換至 Reference 不同於 轉換至 Object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-to-base-accessibility" class="md-nav__link">
+    Derived-to-Base 轉換的可用性 (Accessibility)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-derived" class="md-nav__link">
+    Base 轉換至 Derived
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copy-control" class="md-nav__link">
+    建構式和拷貝控制項 (Copy Control)
+  </a>
+  
+    <nav class="md-nav" aria-label="建構式和拷貝控制項 (Copy Control)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-class-copy-control" class="md-nav__link">
+    Base-class 建構式和拷貝控制項 (Copy Control)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-class" class="md-nav__link">
+    Derived-class 建構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-class-default" class="md-nav__link">
+    合成的 Derived class default 建構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-class" class="md-nav__link">
+    傳遞引數給 Base class 建構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-class_1" class="md-nav__link">
+    只有直接繼承的 Base class 可被初始化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-class_2" class="md-nav__link">
+    關鍵概念: 遵守 Base class 介面規範
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-control_1" class="md-nav__link">
+    Copy Control 與繼承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-copy" class="md-nav__link">
+    定義 Derived 的 Copy 建構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-class-assignment" class="md-nav__link">
+    Derived Class 的 Assignment 運算子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-class-destructor" class="md-nav__link">
+    Derived Class 的解構式 (Destructor)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual" class="md-nav__link">
+    Virtual 解構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignment-virtual" class="md-nav__link">
+    建構式和 Assignment 運算子不是 virtual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtuals" class="md-nav__link">
+    當 Virtuals 出現在建構式和解構式內
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class" class="md-nav__link">
+    繼承下的 Class 作用域
+  </a>
+  
+    <nav class="md-nav" aria-label="繼承下的 Class 作用域">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-collision" class="md-nav__link">
+    名稱衝突 (Name Collision) 和繼承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    作用域 (scope) 與成員函式
+  </a>
+  
+    <nav class="md-nav" aria-label="作用域 (scope) 與成員函式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-lookup" class="md-nav__link">
+    關鍵概念: 名稱搜尋 (Name Lookup) 和繼承:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pure-virtual" class="md-nav__link">
+    Pure Virtual (純虛擬) 函式
+  </a>
+  
+    <nav class="md-nav" aria-label="Pure Virtual (純虛擬) 函式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    重點:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart_pointer/" class="md-nav__link">
+        Smart Pointer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template/" class="md-nav__link">
+        Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception/" class="md-nav__link">
+        Exception
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effective_cpp/" class="md-nav__link">
+        Effective C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp11_feature/" class="md-nav__link">
+        C++ 11 Feature
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/getting_started/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/clone_recording_changes/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branching_nutshell/" class="md-nav__link">
+        Branching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branching_merging/" class="md-nav__link">
+        Branching and Merging
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branch_mang_remote/" class="md-nav__link">
+        Branch Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/remote/" class="md-nav__link">
+        Remote Branches
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/rebasing/" class="md-nav__link">
+        Rebasing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Object Oriented Programming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Oriented Programming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Object Oriented Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/solid/" class="md-nav__link">
+        SOLID
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/coupling_packages/" class="md-nav__link">
+        Package Coupling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/package_cohesion/" class="md-nav__link">
+        Package Cohesion
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      <label class="md-nav__link" for="__nav_6_1">
+        Design Pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design Pattern" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Design Pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/strategy/" class="md-nav__link">
+        Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/command/" class="md-nav__link">
+        Command
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/factory/" class="md-nav__link">
+        Factory
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/decorator/" class="md-nav__link">
+        Decorator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/observer/" class="md-nav__link">
+        Observer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/singleton/" class="md-nav__link">
+        Singleton
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        Qt
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Qt" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Qt
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qt/model_view/" class="md-nav__link">
+        Model View
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qt/qt_threading_event/" class="md-nav__link">
+        Threading and Event
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros/" class="md-nav__link">
+        ROS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concurrency/concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../google_mock/" class="md-nav__link">
+        Google Mock
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-classes-derived-classes" class="md-nav__link">
+    Base Classes 和 Derived Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Base Classes 和 Derived Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    存取控制 (Access Control) 與繼承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-classes" class="md-nav__link">
+    Derived Classes (衍生類別)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-base" class="md-nav__link">
+    Derived 轉換為 Base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-polymorphism" class="md-nav__link">
+    關鍵觀念: C++ 多型 (Polymorphism)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-virtual-mechanism" class="md-nav__link">
+    推翻虛擬機制 (Overriding Virtual Mechanism)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override" class="md-nav__link">
+    override 關鍵字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-private-protected" class="md-nav__link">
+    Public, Private, Protected 三種繼承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    阻止繼承的發生
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#friendship" class="md-nav__link">
+    Friendship 和 繼承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    繼承與 Static 成員
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conversions-and-inheritance" class="md-nav__link">
+    繼承與轉換 (Conversions and Inheritance)
+  </a>
+  
+    <nav class="md-nav" aria-label="繼承與轉換 (Conversions and Inheritance)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reference-object" class="md-nav__link">
+    轉換至 Reference 不同於 轉換至 Object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-to-base-accessibility" class="md-nav__link">
+    Derived-to-Base 轉換的可用性 (Accessibility)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-derived" class="md-nav__link">
+    Base 轉換至 Derived
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copy-control" class="md-nav__link">
+    建構式和拷貝控制項 (Copy Control)
+  </a>
+  
+    <nav class="md-nav" aria-label="建構式和拷貝控制項 (Copy Control)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-class-copy-control" class="md-nav__link">
+    Base-class 建構式和拷貝控制項 (Copy Control)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-class" class="md-nav__link">
+    Derived-class 建構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-class-default" class="md-nav__link">
+    合成的 Derived class default 建構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-class" class="md-nav__link">
+    傳遞引數給 Base class 建構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-class_1" class="md-nav__link">
+    只有直接繼承的 Base class 可被初始化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-class_2" class="md-nav__link">
+    關鍵概念: 遵守 Base class 介面規範
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-control_1" class="md-nav__link">
+    Copy Control 與繼承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-copy" class="md-nav__link">
+    定義 Derived 的 Copy 建構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-class-assignment" class="md-nav__link">
+    Derived Class 的 Assignment 運算子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derived-class-destructor" class="md-nav__link">
+    Derived Class 的解構式 (Destructor)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual" class="md-nav__link">
+    Virtual 解構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignment-virtual" class="md-nav__link">
+    建構式和 Assignment 運算子不是 virtual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtuals" class="md-nav__link">
+    當 Virtuals 出現在建構式和解構式內
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class" class="md-nav__link">
+    繼承下的 Class 作用域
+  </a>
+  
+    <nav class="md-nav" aria-label="繼承下的 Class 作用域">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-collision" class="md-nav__link">
+    名稱衝突 (Name Collision) 和繼承
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    作用域 (scope) 與成員函式
+  </a>
+  
+    <nav class="md-nav" aria-label="作用域 (scope) 與成員函式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-lookup" class="md-nav__link">
+    關鍵概念: 名稱搜尋 (Name Lookup) 和繼承:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pure-virtual" class="md-nav__link">
+    Pure Virtual (純虛擬) 函式
+  </a>
+  
+    <nav class="md-nav" aria-label="Pure Virtual (純虛擬) 函式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    重點:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wayneliu0512/academy_mkdocs/edit/master/docs/c++/object_oriented_programming.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="oop">物件導向編程 (OOP)</h1>
+<h2 id="base-classes-derived-classes">Base Classes 和 Derived Classes</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Item_base</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Item_base</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">book</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="kt">double</span> <span class="n">sales_price</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">:</span>
+<span class="linenos" data-linenos=" 4 "></span>        <span class="n">isbn</span><span class="p">(</span><span class="n">book</span><span class="p">),</span> <span class="n">price</span><span class="p">(</span><span class="n">sales_price</span><span class="p">)</span> <span class="p">{}</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">book</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">isbn</span><span class="p">;</span> <span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="k">virtual</span> <span class="kt">double</span> <span class="n">net_price</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">n</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> 
+<span class="linenos" data-linenos=" 7 "></span>        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="k">virtual</span> <span class="o">~</span><span class="n">Item_base</span><span class="p">()</span> <span class="p">{}</span>
+<span class="linenos" data-linenos="10 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">isbn</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="k">protected</span><span class="o">:</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="kt">double</span> <span class="n">price</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</code></pre></div>
+<p>目前只要記住，繼承體系的 root class 一般都會定義一個 virtual 解構式。</p>
+<p><code>Item_base</code> class 定義兩個函式，其中一個但有關鍵字 <code>virtual</code>，其目的是啟動動態綁定。在預設情況下成員函式並非 virtual。對 non-virtual 函式的呼叫會在編譯時期被決議。</p>
+<p>Base class 通常應該把 有必要由 derived class 重新定義 的函式定義為 virtual。</p>
+<h3 id="access-control">存取控制 (Access Control) 與繼承</h3>
+<p>Derived class 可存取其 base class 的 <code>public</code> 成員但不能存取其 <code>private</code> 成員。</p>
+<p>有時候 base class 的成員會想讓 derived class 存取，但禁止被其他用戶存取。<code>protected</code> 存取級別是為此而生。<code>protected</code> 成員可被 derived 物件存取，但不能被一般用戶存取。</p>
+<h3 id="derived-classes">Derived Classes (衍生類別)</h3>
+<p>定義一個 derived class，我們用 class derivation list (衍化列) 標示 base class。也就是列出一或多個 base class 名稱，形式如下:</p>
+<p><em>class classname : access-label base-class</em></p>
+<p>其中 <em>access-label</em> 是 <code>public</code>, <code>protected</code>, <code>private</code> 三者之一，<em>base-class</em> 是先前已定義好的 class 名稱。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// 同一本書售出一定數量後可享有折扣</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">class</span> <span class="nc">Bulk_item</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Item_base</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="c1">// 將 base 版本重新定義，用以實現大量購書情況下的折扣策略</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="kt">double</span> <span class="n">net_price</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">)</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">min_qty</span><span class="p">;</span> <span class="c1">// 折扣所需的最低購買量</span>
+<span class="linenos" data-linenos="8 "></span>    <span class="kt">double</span> <span class="n">discount</span><span class="p">;</span>     <span class="c1">// 折扣率</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div>
+<p>每個 <code>Bulk_item</code> 物件含有 4 筆資料元素: 從 <code>Item_base</code> 繼承而得的 <code>isbn</code> 和 <code>price</code>，以及自己定義的 <code>min_qty</code> 和 <code>discount</code>。<code>Bulk_item</code> 還需要定義建構式，後面會提。</p>
+<h3 id="derived-base">Derived 轉換為 Base</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">double</span> <span class="nf">print_total</span><span class="p">(</span><span class="k">const</span> <span class="n">Item_base</span><span class="o">&amp;</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Item_base</span> <span class="n">item</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">print_total</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="n">Item_base</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">item</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span><span class="n">Bulk_item</span> <span class="n">bulk</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span>
+<span class="linenos" data-linenos="8 "></span><span class="n">print_total</span><span class="p">(</span><span class="n">bulk</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="linenos" data-linenos="9 "></span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">bulk</span><span class="p">;</span>
+</code></pre></div>
+<p>這段程式碼以同一個 base-type pointer 在不同時間分別指向 base-type 物件和 derived-type 物件。並且呼叫 接收一個 base-type reference 函式，不同時間分別傳入一個 base-type 物件和一個 derived-type 物件。兩種用法都沒有問題，因為每個 derived 物件都內含其 base 成分。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">void</span> <span class="nf">print_total</span><span class="p">(</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">Item_base</span> <span class="o">&amp;</span><span class="n">item</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ISBN: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">.</span><span class="n">book</span><span class="p">()</span>
+<span class="linenos" data-linenos="3 "></span>       <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\t</span><span class="s">number sold: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\t</span><span class="s">total price: &quot;</span>
+<span class="linenos" data-linenos="4 "></span>       <span class="c1">// virtual call: 以下呼叫的 net_price() 在執行期才獲得決議</span>
+<span class="linenos" data-linenos="5 "></span>       <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">.</span><span class="n">net_price</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Item_base</span> <span class="n">base</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">bulk_item</span> <span class="n">derived</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="c1">// print_total() 對 net_price() 進行 virtual call</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">print_total</span><span class="p">(</span><span class="n">cout</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>    <span class="c1">// 呼叫 Item_base::net_price</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">print_total</span><span class="p">(</span><span class="n">cout</span><span class="p">,</span> <span class="n">derived</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// 呼叫 Bulk_item::net_price</span>
+</code></pre></div>
+<h3 id="c-polymorphism">關鍵觀念: C++ 多型 (Polymorphism)</h3>
+<p>Reference 和 Pointer 的靜態型別和動態型別可以不同，這個事實是 C++ 多型的基石。</p>
+<p>當我們透過一個 base-class reference 或 pointer 呼叫定義於 base-class 內的函式時，我們並不知道該函式所處裡的物件的精確型別，因為該物件可以是 base type, 也可以是 derived type。</p>
+<p>如果呼叫的是 virtual 函式，那麼 喚起哪個函式 的抉擇會延至執行期。</p>
+<p>另一方面，物件(非 reference 或 pointer) 不帶多型性 (不是 polymorphic)，因為其型別已知且不可能改變。物件的動態型別永遠和靜態型別相同。</p>
+<h3 id="overriding-virtual-mechanism">推翻虛擬機制 (Overriding Virtual Mechanism)</h3>
+<p>某種情況下我們會想推翻虛擬機制，強迫喚起 virtual 函式的某個特定版本。<em>scope</em> 運算子可以幫我們達到目的。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Item_base</span> <span class="o">*</span><span class="n">baseP</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">derived</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="c1">// 無論 baseP 的動態型別是什麼，都希望喚起定義於 base class 的版本</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="n">baseP</span><span class="o">-&gt;</span><span class="n">Item_base</span><span class="o">::</span><span class="n">net_price</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="override"><code>override</code> 關鍵字</h3>
+<p>derived class 如果定義了一個函數與 base class 中的虛擬函式的名子相同但是參數列不同，這仍然是合法行為。編譯器將認為新定義個這個函數與 base class 中原有的函式是相互獨立的。就實際的編程習慣而言，這種聲明往往意味著發生了錯誤，因為我們原本希望 derived class 能覆蓋掉 base class 中的虛擬函式，但是不小心把參數列寫錯了。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">struct</span> <span class="nc">B</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">f2</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="kt">void</span> <span class="nf">f3</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">struct</span> <span class="nc">D1</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span> <span class="c1">// 正確: f1與 base class 中的 f1 匹配</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="kt">void</span> <span class="nf">f2</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>       <span class="c1">// 錯誤: B 沒有形如 f2(int) 的函式</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="kt">void</span> <span class="nf">f3</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>          <span class="c1">// 錯誤: f3 不是虛擬函式</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="kt">void</span> <span class="nf">f4</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>          <span class="c1">// 錯誤: B 沒有名為 f4 的函式</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="public-private-protected">Public, Private, Protected 三種繼承</h3>
+<ul>
+<li><code>public</code> 繼承: base 成員的存取級別不變。</li>
+<li><code>protected</code> 繼承: base class 的 <code>public</code> 和 <code>protected</code> 成員將變成 derived class 的 <code>protected</code> 成員。</li>
+<li><code>private</code> 繼承: base class 的所有成員在 derived class 內部變成 private。</li>
+</ul>
+<h3 id="_1">阻止繼承的發生</h3>
+<p>有時候我們在創造某個類別時，我們不希望其他類可以繼承它，C++11 提供一種阻止繼承發生的方法，就是在類名後加入關鍵字 <code>final</code>。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">NoDerived</span> <span class="k">final</span> <span class="p">{</span> <span class="cm">/* */</span> <span class="p">};</span> <span class="c1">// 不能作為基類。</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="k">struct</span> <span class="nc">D2</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="k">const</span> <span class="k">final</span><span class="p">;</span> <span class="c1">// 不允許後續的其他類覆蓋 f1(int)</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="friendship">Friendship 和 繼承</h3>
+<p><code>friend</code> class 可以直接存取 class 的 <code>private</code> 和 <code>protected</code> 資料。</p>
+<p><code>friend</code> 關係不會被繼承，base 的 friends 對於 derived classes 的成員並無特殊存取權。</p>
+<h3 id="static">繼承與 Static 成員</h3>
+<p>如果 base class 定義一個 <code>static</code> 成員，整個繼承體系也就只定義這麼一個成員。無論這個 base class 衍生多少 classes, <code>static</code> 成員只有一份實體。</p>
+<h2 id="conversions-and-inheritance">繼承與轉換 (Conversions and Inheritance)</h2>
+<p>理解 base 與 derived 型別之間的轉換關係，對於理解 物件導向編程在 C++ 如何運作 十分重要。</p>
+<h3 id="reference-object">轉換至 Reference 不同於 轉換至 Object</h3>
+<p>一如先前所見，我們可以傳遞 derived type 物件給預期接收一個 reference to base 的函式。當我們傳遞物件給接收 reference 的函式，該 reference 會被直接綁定於該物件身上。雖然看起來很像是在傳遞物件，其實引數是指向該物件的一個 reference。物件本身並未被複製，也沒有任何轉換動作改變 derived type 物件。</p>
+<p>當我們傳遞 derived 物件給預期接收 base-type object (而非 reference) 的函式時，情況大為不同。如果我們傳入 derived type 物件，該物件中的 base 成分會被複製到參數身上。</p>
+<p>理解 "derived 物件轉換為 base type reference" 和 "以 derived 物件初始化或賦值 base 物件" 之間的差異，是很重要的。</p>
+<h3 id="derived-to-base-accessibility">Derived-to-Base 轉換的可用性 (Accessibility)</h3>
+<p>若想判斷是否可轉換至 base，可考慮 base class 的 public 成員可否存取。如果可以，轉換便可進行，否則無法。</p>
+<h3 id="base-derived">Base 轉換至 Derived</h3>
+<p>Base class 至 derived class 之間並無自發轉換關係。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Item_base</span> <span class="n">base</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Bulk_item</span><span class="o">*</span> <span class="n">bulkP</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">base</span><span class="p">;</span>  <span class="c1">// 錯誤: 無法將 base 轉換為 derived</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Bulk_item</span><span class="o">&amp;</span> <span class="n">bulkRef</span> <span class="o">=</span> <span class="n">base</span><span class="p">;</span> <span class="c1">// 錯誤: 無法將 base 轉換為 derived</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">Bulk_item</span> <span class="n">bulk</span> <span class="o">=</span> <span class="n">base</span><span class="p">;</span>     <span class="c1">// 錯誤: 無法將 base 轉換為 derived</span>
+</code></pre></div>
+<p>之所以如此，是因為 base 物件就只是一個 base，它並沒有 derived type 成員。</p>
+<h2 id="copy-control">建構式和拷貝控制項 (Copy Control)</h2>
+<p>每個 derived 物件都會擁有 derived class 定義的成員，以及一個 (以上) 的 base class 子物件。這個事實影響了 derived 物件的建構, 拷貝, 賦值, 銷毀。當我們建構, 拷貝, 賦值, 銷毀一個 derived-type 物件，我們也同時建構, 拷貝, 賦值, 銷毀其中的 base class 子物件。</p>
+<p>建構式和 copy-control 成員不會被繼承。每個 class 應該定義自己的建構式和 copy-control 成員。任何 class 如果沒有定義自己的 <em>default</em> 建構式和 copy-control 成員，就使用編譯器自動合成的版本。</p>
+<h3 id="base-class-copy-control">Base-class 建構式和拷貝控制項 (Copy Control)</h3>
+<p>自身不是 derived class 的 base class，其建構式和 copy control 多半不受繼承影響，唯一影響的是，當我們決定要提供那些建構式時，必須多考慮一種新用戶，derived class，當需要某些特殊建構式只給 derived class 使用，這種建構式應該設計為  <code>protected</code></p>
+<h3 id="derived-class">Derived-class 建構式</h3>
+<p>Derived 建構式受到 "繼承自另一個 class" 的影響。每個 derived 建構式除了初始化自身成員變數外，還得初始化其 base class。</p>
+<h3 id="derived-class-default">合成的 Derived class <em>default</em> 建構式</h3>
+<p>Derived class 的 <em>default</em> 建構式只有一個地方不同於 non-derived 建構式。它們不僅初始化 derived class 的成員變數，也初始化其物件的 base 成分。Base 成分由 base class 的 <em>default</em> 建構式初始化。</p>
+<p>以我們的 <code>Bulk_item</code> class 而言，合成的 <em>default</em> 建構式會執行以下動作:
+1. 喚起 <code>Item_base</code> 的 <em>default</em> 建構式，將 <code>isbn</code> 初始化為空字串，將 <code>price</code> 初始化為零。
+2. 以變數初始化一班規則完成 <code>Bulk_item</code> 成員的初始化。</p>
+<p>由於 <code>Bulk_item</code> 有內建型成員，我們應該定義自己的 <em>default</em> 建構式:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Bulk_item</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Item_base</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">Bulk_item</span><span class="p">()</span> <span class="o">:</span> <span class="n">min_qty</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">discount</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="c1">// ...</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">};</span>
+</code></pre></div></p>
+<p>執行這個建構式的效果如下: </p>
+<p>首先以 <code>Item_base</code> 的 <em>default</em> 建構式完成 <code>Item_base</code> 成分的初始化，將 <code>isbn</code> 設為空字串並將 <code>price</code> 設為零。然後 <code>Bulk_item</code> 成分的成員被初始化，然後執行建構式主體。</p>
+<h3 id="base-class">傳遞引數給 Base class 建構式</h3>
+<p>Derived class 建構式的初值列 (initialize list) 只能初始化 derived class 成員，不能直接初始化繼承來的成員。derived 建構式必須藉由在建構式初值列含入 base class，才得以間接初始化繼承而來的成員:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Bulk_item</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Item_base</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">Bulk_item</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">book</span><span class="p">,</span> <span class="kt">double</span> <span class="n">sales_price</span><span class="p">,</span> 
+<span class="linenos" data-linenos="4 "></span>              <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">qty</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">disc_rate</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">:</span>
+<span class="linenos" data-linenos="5 "></span>              <span class="n">Item_base</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="n">sales_price</span><span class="p">),</span> <span class="n">min_qty</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">discount</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="c1">// ...</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">};</span>
+</code></pre></div>
+<p>這個建構式以雙參數的 <code>Item_base</code> 建構式初始化其 base 子物件。我們可以這樣使用這個建構式:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Bulk_item</span> <span class="nf">bulk</span><span class="p">(</span><span class="s">&quot;0-201-82470-1&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">.19</span><span class="p">);</span>
+</code></pre></div>
+<p>建構式初始列 (Constructor initializer list) 提供 base class 和成員的初值。它們的排列次序並非就是初始化次序。Base class 一定先被初始化，然後 derived class 成員才以其宣告次序被初始化。</p>
+<h3 id="base-class_1">只有直接繼承的 Base class 可被初始化</h3>
+<p>如果 class C 衍生自 class B，class B 又衍生自 class A，則 B 是 C 的直接 base。即使每個 C 物件都有個 A 成分，C 的建構式仍然不能直接初始化 A 成分。必須 C 初始化 B，B 建構式在初始化 A。</p>
+<p>舉個具體的例子，我們的書便可能有數種折扣策略。除了大量折扣外，也可以在購買一定數量內提供折扣，超過特定數量後便恢復原價。也可以在購買一定數量後才提供折扣，在那之前維持定價。</p>
+<p>這些折扣策略的共通點是，都需要一個購買數量和一個折扣率。我們可以定義一個新的 <code>Disc_item</code> class 儲存購買量和折扣率，用以支持這些不同策略。</p>
+<p>想要實現這個設計，必須先定義 <code>Disc_item</code> class:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Disc_item</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Item_base</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Disc_item</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">book</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="kt">double</span> <span class="n">sales_price</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 4 "></span>              <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">qty</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">disc_rate</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">:</span>
+<span class="linenos" data-linenos=" 5 "></span>              <span class="n">Item_base</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="n">sales_price</span><span class="p">),</span> <span class="n">quantity</span><span class="p">(</span><span class="n">qty</span><span class="p">),</span>
+<span class="linenos" data-linenos=" 6 "></span>              <span class="n">discount</span><span class="p">(</span><span class="n">disc_rate</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">protected</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">quantity</span><span class="p">;</span> <span class="c1">// 得享受折扣的臨界購買數</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="kt">double</span> <span class="n">discount</span>       <span class="c1">// 折扣率</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</code></pre></div>
+<p>接下來重新實作 <code>Bulk_item</code>，令它繼承自 <code>Disc_item</code> 而不再直接繼承 <code>Item_base</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Bulk_item</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Disc_item</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">Bulk_item</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">book</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="kt">double</span> <span class="n">sales_price</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> 
+<span class="linenos" data-linenos="4 "></span>              <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">qty</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">disc_rate</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">:</span>
+<span class="linenos" data-linenos="5 "></span>              <span class="n">Disc_item</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="n">sales_price</span><span class="p">,</span> <span class="n">qty</span><span class="p">,</span> <span class="n">disc_rate</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="c1">// 重新定義 base 版本，以實作大量採購的折扣策略</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="kt">double</span> <span class="n">net_price</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">};</span>
+</code></pre></div>
+<h3 id="base-class_2">關鍵概念: 遵守 Base class 介面規範</h3>
+<p>當我們定義 <code>Disc_item</code>，我們定義其建構式，指明如何初始化 <code>Disc_item</code>。一旦 class 定義其介面，所有與該 class 物件的任何互動都應該透過其介面進行，即便這些物件是 derived 物件的一部分。</p>
+<p>基於類似原因，derived class 不能對其 base class 成員進行初始化，也不該對它們賦值。如果這些成員是 <code>public</code> 或 <code>protected</code>，derived 建構式就語法而言可在函式主體內賦值給其 base class 成員。然而這樣做會違反 base 介面。Derived classes 應該改用建構式，遵從其 base classes 的初始化方式，而非在自己的建構式主體內直接賦值給那些成員。</p>
+<h3 id="copy-control_1"><em>Copy Control</em> 與繼承</h3>
+<p>如同其他 class，derived class 可使用編譯器合成的 copy-control 成員。這些合成操作可用來對 "物件的 base 成分和 derived 成分內的成員" 進行拷貝, 賦值, 銷毀。Base 成分是以 base class 的 <em>copy</em> 建構式, <em>assignment</em> 運算子及解構式分別進行拷貝, 賦值, 銷毀。</p>
+<h3 id="derived-copy">定義 Derived 的 <em>Copy</em> 建構式</h3>
+<p>如果 derived class 定義自己的 <em>copy</em> 建構式，這個建構式通常應該明確使用 base class 的 <em>copy</em> 建構式將物件的 base 成分初始化:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Base</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">}</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="k">class</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Base</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="c1">// Base::Base(const Base&amp;) 不會自動被喚起</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="n">Derived</span><span class="p">(</span><span class="k">const</span> <span class="n">Derived</span><span class="o">&amp;</span> <span class="n">d</span><span class="p">)</span><span class="o">:</span> <span class="n">Base</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="cm">/* 初始化其它成員 */</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">};</span>
+</code></pre></div>
+<p>上面的 <code>Base(d)</code> 會將 derived 物件 <code>d</code> 轉換為一個 reference 指向 base 成分，然後喚起 base class 的 <em>copy</em> 建構式。如果略而不寫 <code>Base(d)</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// Derived 的 copy 建構式定義，可能有誤。</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Derived</span><span class="p">(</span><span class="k">const</span> <span class="n">Derived</span><span class="o">&amp;</span> <span class="n">d</span><span class="p">)</span> <span class="cm">/* 初始化 Derived 的成員 */</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">}</span>
+</code></pre></div>
+<p>上面這樣寫的效果是喚起 <code>Base</code> 的 <em>default</em> 建構式將 base 成分初始化。假設 <code>Derived</code> 成員初始化方式是將 <code>d</code> 的對應成員複製過來，那麼新建物件將處於奇怪的狀態:其 Base 成分放置預設值，而其 <code>Derived</code> 成員是另一物件的複製品。</p>
+<h3 id="derived-class-assignment">Derived Class 的 <em>Assignment</em> 運算子</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Base::operator=(const Base&amp;) 不會被自動喚起</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="n">Derived</span> <span class="o">&amp;</span><span class="n">Derived</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Derived</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="n">Base</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">rhs</span><span class="p">);</span> <span class="c1">// 賦值給 Base 成分</span>
+<span class="linenos" data-linenos=" 6 "></span>        <span class="c1">// 執行 &quot;清理 derived 成分舊值&quot; 所需的任何動作</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="c1">// 賦值給 derived 成員</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="derived-class-destructor">Derived Class 的解構式 (Destructor)</h3>
+<p>解釋的運作方式不同於 <em>copy</em> 建構式和 <em>assignment</em> 運算子: 它不必負責摧毀其 base 物件成員。編譯器總是會隱寓喚起 derived 物件的 base 成分的解構式。每個解構式只需要清理自己的成員:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Derived</span><span class="o">:</span> <span class="k">public</span> <span class="n">Base</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="c1">// Base::~Base 會被自動喚起</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="o">~</span><span class="n">Derived</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* 清理 derived 成員 */</span> <span class="p">}</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</code></pre></div>
+<p>物件的銷毀將以 "建構之相反次序" 進行，也就是 derived 解構式先執行，然後喚起 base 解構式，並向上回朔整個繼承體系。</p>
+<h3 id="virtual">Virtual 解構式</h3>
+<p>"Base 解構式會自動被喚起"，此一事實對 base class 的設計帶來重要影響。</p>
+<p>當我們對著一個指向動態配置物的 pointer 施行 <code>delete</code> 時，該物件的記憶體被釋放前，解構式會先起來清理物件。處理繼承體系的物件時，pointer 的靜態型別可能不同於正被刪除的物件的動態型別。我們可能施行 <code>delete</code> 於一個 pointer to base-type，而後者實際指向一個 derived 物件。</p>
+<p>如果我們對 pointer to base 施行 <code>delete</code>，那麼 base class 解構式會被喚起，負責清理 base 成員。如果所指物件實際上是 derived 型別，則上述行為將不明確 (undefined)。若要保證喚起適當之解構式，base class的解構式一定必須是 virtual:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Item_base</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">virtual</span> <span class="o">~</span><span class="n">Item_base</span><span class="p">()</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+</code></pre></div>
+<p>如果解構式是 virtual，當它經由 pointer 被喚起，執行起來的解構式會依 pointer 所指物的型別而不同:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Item_base</span> <span class="o">*</span><span class="n">itemP</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Item_base</span><span class="p">;</span> <span class="c1">// 靜態型別和動態型別相同</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">delete</span> <span class="n">itemP</span><span class="p">;</span>                     <span class="c1">// 沒問題: 呼叫 Item_base 的解構式</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">itemP</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bulk_item</span><span class="p">;</span>            <span class="c1">// 沒問題: 靜態型別和動態型別不同</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">delete</span> <span class="n">itemP</span><span class="p">;</span>                     <span class="c1">// 沒問題: 呼叫 Bulk_item 的解構式</span>
+</code></pre></div>
+<p>重點: 繼承體系的 root class 應該定義一個 virtual 解構式，即使該解構式無事可做。</p>
+<h3 id="assignment-virtual">建構式和 <em>Assignment</em> 運算子不是 virtual</h3>
+<p>將 <em>assignment</em> 運算子設為 virtual 可能會引起疑惑，因為 virtual 函式在 base class 和 derived class 內必須擁有相同的參數型別。Base class 的 <em>assignment</em> 運算子接收的參數是個 reference 指向自身 class 型別。如果此運算子為 virtual，那麼每個 derived classes 都將獲得一個 virtual 成員，定義出 "以 base 物件為參數" 的 <code>operator=</code>，但那並不等同於 derived class 的 <em>assignment</em> 運算子。</p>
+<h3 id="virtuals">當 Virtuals 出現在建構式和解構式內</h3>
+<p>重點: 如果在建構或解構式中呼叫 virtual 函式，喚起的將是建構或解構式所在型別所定義的版本。</p>
+<p>為了要了解上述行為，試考慮 virtual 函式的 derived class 版本被 base class 建構式(或解構式)呼叫。此 virtual 函式的 derived 版本可能存取 derived 物件成員，畢竟如果 derived class 版本不需要使用 derived 物件成員，這個 derived class 可直接使用 base class 的 virtual 函式。然而當 base 建構式 (或解構式) 執行時，物件的衍生部的成員並未初始化。現實中如果允許這種存取動作，程式有可能當掉。</p>
+<h2 id="class">繼承下的 Class 作用域</h2>
+<p>繼承機制使得 class 作用域被階層式地嵌套堆置，當我們寫:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Bulk_item</span> <span class="n">bulk</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">bulk</span><span class="p">.</span><span class="n">book</span><span class="p">();</span>
+</code></pre></div>
+<p>對於名稱 <code>book</code> 的使用將這麼決議 (resolved):
+1. <code>bulk</code> 是個 <code>Bulk_item</code> 物件。編譯器於是在 <code>Bulk_item</code> class 內搜尋 <code>book</code>，但找不到。
+2. 由於 <code>Bulk_item</code> 衍生自 <code>Item_base</code>，編譯器於是搜尋 <code>Item_base</code> class，找到了名稱 <code>book</code>，決議成功。</p>
+<h3 id="name-collision">名稱衝突 (Name Collision) 和繼承</h3>
+<p>重點: Derived class 成員如果與 base class 成員同名，會對後者產生遮蔽效果，使後者無法被直接存取。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">struct</span> <span class="nc">Base</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="n">Base</span><span class="p">()</span><span class="o">:</span> <span class="n">mem</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">protected</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">mem</span><span class="p">;</span> <span class="c1">// 會被遮蔽</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">struct</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="n">Base</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="n">Derived</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span><span class="o">:</span> <span class="n">mem</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="kt">int</span> <span class="n">get_mem</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">mem</span><span class="p">;</span> <span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span><span class="k">protected</span><span class="o">:</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="kt">int</span> <span class="n">mem</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">};</span>
+</code></pre></div>
+<p>一旦在 <code>get_mem()</code> 中指涉 <code>mem</code>，會被編譯器視為 <code>Derived</code> 內的名稱。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Derived</span> <span class="nf">d</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">g</span><span class="p">.</span><span class="n">get_mem</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 印出 42</span>
+</code></pre></div>
+<h3 id="scope">作用域 (scope) 與成員函式</h3>
+<p>如果 base 和 derived class 擁有相同名稱的成員函式，其運作方式如同成員變數:
+derived 作用域內的成員會遮蔽 base class 的成員。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">struct</span> <span class="nc">Base</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="kt">int</span> <span class="nf">memfcn</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">struct</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="n">Base</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kt">int</span> <span class="nf">memfcn</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">Derived</span> <span class="n">d</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="n">Base</span> <span class="n">b</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="n">b</span><span class="p">.</span><span class="n">memfcn</span><span class="p">();</span>       <span class="c1">// 呼叫 Base::memfcn</span>
+<span class="linenos" data-linenos="11 "></span><span class="n">d</span><span class="p">.</span><span class="n">memfcn</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>     <span class="c1">// 呼叫 Derived::memfcn</span>
+<span class="linenos" data-linenos="12 "></span><span class="n">d</span><span class="p">.</span><span class="n">memfcn</span><span class="p">();</span>       <span class="c1">// 錯誤 : 無引數的 memfcn 已被遮蔽</span>
+<span class="linenos" data-linenos="13 "></span><span class="n">d</span><span class="p">.</span><span class="n">Base</span><span class="o">::</span><span class="n">memfcn</span><span class="p">();</span> <span class="c1">// 沒問題 : 呼叫 Base::memfcn</span>
+</code></pre></div>
+<p>重要觀念: 回憶一下，宣告於 local 作用域的函式，並不會與定義於 global 作用域的函式形成重載。同樣道理，定義於 derived class 的函式不會與 base 定義的函式形成重載。</p>
+<h4 id="name-lookup">關鍵概念: 名稱搜尋 (Name Lookup) 和繼承:</h4>
+<p>了解 "函式呼叫如何被決議" 對於了解 C++ 繼承體系十分重要。決議動作依以下四步驟進行:
+1. 首先決定呼叫者 (object, reference 或 pointer) 的靜態型別。
+2. 在上述 class 內搜尋該函式。如果沒有找到，就往最接近的 (immediate) base class 尋找，如此上朔 classes 繼承鏈，直到發現該函式，或直至搜尋到最後一個 class。如果都沒有發現，表示呼叫有誤。
+3. 一旦找到該名稱，就根據找到的定義式進行一般的型別檢驗，檢查呼叫動作是否合法。
+4. 若呼叫合法，編譯器變產出二進制碼。如果函式是 virtual，且係透過 reference 或 pointer 被呼叫，那麼編譯器產生的碼會根據物件的動態型別決定喚起哪個版本。否則編譯器產生的碼會直接喚起該函式。</p>
+<h2 id="pure-virtual">Pure Virtual (純虛擬) 函式</h2>
+<p>之前所寫的 <code>Disc_item</code> class 呈現一個有趣的問題: 這個 class 從 <code>Item_base</code> 繼承到 <code>net_price()</code>，但並未重新定義，因為沒必要。這個 class 的存在只是為了讓其他 classes 繼承。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Disc_item</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Item_base</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Disc_item</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">book</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="kt">double</span> <span class="n">sales_price</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 4 "></span>              <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">qty</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">disc_rate</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">:</span>
+<span class="linenos" data-linenos=" 5 "></span>              <span class="n">Item_base</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="n">sales_price</span><span class="p">),</span> <span class="n">quantity</span><span class="p">(</span><span class="n">qty</span><span class="p">),</span>
+<span class="linenos" data-linenos=" 6 "></span>              <span class="n">discount</span><span class="p">(</span><span class="n">disc_rate</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">protected</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">quantity</span><span class="p">;</span> <span class="c1">// 得享受折扣的臨界購買數</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="kt">double</span> <span class="n">discount</span><span class="p">;</span>      <span class="c1">// 折扣率</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Bulk_item</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Disc_item</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">Bulk_item</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">book</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="kt">double</span> <span class="n">sales_price</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> 
+<span class="linenos" data-linenos="4 "></span>              <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">qty</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">disc_rate</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">:</span>
+<span class="linenos" data-linenos="5 "></span>              <span class="n">Disc_item</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="n">sales_price</span><span class="p">,</span> <span class="n">qty</span><span class="p">,</span> <span class="n">disc_rate</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="c1">// 重新定義 base 版本，以實作大量採購的折扣策略</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="kt">double</span> <span class="n">net_price</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">};</span>
+</code></pre></div>
+<p>我們不希望用戶創建任何 <code>Disc_item</code> 物件。然而我們無法阻止用戶定義一個 <code>Disc_item</code> 物件。如果用戶真的建立一個 <code>Disc_item</code> 物件並喚起 <code>net_price()</code>，會計算出未打折的價格。</p>
+<p>結論是我們根本不希望用戶建立這種物件，如果將 <code>net_price()</code> 設為 pure virtual 函式就可以達到目的。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Disc_item</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Item_base</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="kt">double</span> <span class="n">net_price</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">)</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">};</span>
+</code></pre></div>
+<p>這裡將 virtual 函式定義為 pure virtual，意味此函式提供一個介面，可讓後續 (衍生) 型別覆寫，而此 class 內的版本永遠不會被喚起。而且用戶無法建立 <code>Disc_item</code> 物件。</p>
+<h4 id="_2">重點:</h4>
+<p>如果 class 內含 (或繼承) 一個以上的 pure virtual 函式，便稱為所謂抽象的 (abstract) base class。我們不能為 abstract 型別建立任何物件。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// Disc_item 內宣告有 pure virtual 函式</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Disc_item</span> <span class="n">discounted</span><span class="p">;</span> <span class="c1">// 錯誤: 不能定義 (建立) Disc_item 物件</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Bulk_item</span> <span class="n">bulk</span><span class="p">;</span>       <span class="c1">// 沒問題: Bulk_item 內含 Disc_item 子物件</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../copy_control/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Copy Control
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../smart_pointer/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Smart Pointer
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>

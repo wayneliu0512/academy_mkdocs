@@ -1,0 +1,1772 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../images/windows_icon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Smart Pointer - Allxon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="allxon" data-md-color-accent="light-blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#smart-pointer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Allxon" class="md-header__button md-logo" aria-label="Allxon" data-md-component="logo">
+      
+  <img src="../../images/windows_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Allxon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Smart Pointer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="allxon" data-md-color-accent="light-blue" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="allxon" data-md-color-accent="light-blue" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/wayneliu0512/academy_mkdocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wayneliu0512/academy_mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../agile_project_management/agile_development/" class="md-tabs__link">
+        Agile Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../variables_types/" class="md-tabs__link md-tabs__link--active">
+        C++
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../git/getting_started/" class="md-tabs__link">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ood/solid/" class="md-tabs__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../design_pattern/strategy/" class="md-tabs__link">
+        Others
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Allxon" class="md-nav__button md-logo" aria-label="Allxon" data-md-component="logo">
+      
+  <img src="../../images/windows_icon.png" alt="logo">
+
+    </a>
+    Allxon
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/wayneliu0512/academy_mkdocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wayneliu0512/academy_mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Agile Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agile Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Agile Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/agile_development/" class="md-nav__link">
+        Agile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/jira_project_management/" class="md-nav__link">
+        Jira
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/kanban/" class="md-nav__link">
+        Kanban
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/scrum/" class="md-nav__link">
+        Scrum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/software_development/" class="md-nav__link">
+        Software Development
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables_types/" class="md-nav__link">
+        Variables and Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compound_type/" class="md-nav__link">
+        Compound Type
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copy_control/" class="md-nav__link">
+        Copy Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_oriented_programming/" class="md-nav__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Smart Pointer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Smart Pointer
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uses-for-smart-pointers" class="md-nav__link">
+    Uses for smart pointers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-standard-library-smart-pointers" class="md-nav__link">
+    C++ Standard Library Smart Pointers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-and-use-unique_ptr-instances" class="md-nav__link">
+    How to: Create and Use unique_ptr Instances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-and-use-shared_ptr-instances" class="md-nav__link">
+    How to: Create and Use shared_ptr Instances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-and-use-weak_ptr-instances" class="md-nav__link">
+    How to: Create and Use weak_ptr Instances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt-smart-pointer" class="md-nav__link">
+    Qt Smart Pointer
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt Smart Pointer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raw-pointers-to-orphans" class="md-nav__link">
+    Raw pointers to orphans
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smart-pointers-in-qt" class="md-nav__link">
+    Smart pointers in Qt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    總結
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template/" class="md-nav__link">
+        Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception/" class="md-nav__link">
+        Exception
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effective_cpp/" class="md-nav__link">
+        Effective C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp11_feature/" class="md-nav__link">
+        C++ 11 Feature
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/getting_started/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/clone_recording_changes/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branching_nutshell/" class="md-nav__link">
+        Branching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branching_merging/" class="md-nav__link">
+        Branching and Merging
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branch_mang_remote/" class="md-nav__link">
+        Branch Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/remote/" class="md-nav__link">
+        Remote Branches
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/rebasing/" class="md-nav__link">
+        Rebasing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Object Oriented Programming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Oriented Programming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Object Oriented Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/solid/" class="md-nav__link">
+        SOLID
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/coupling_packages/" class="md-nav__link">
+        Package Coupling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/package_cohesion/" class="md-nav__link">
+        Package Cohesion
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      <label class="md-nav__link" for="__nav_6_1">
+        Design Pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design Pattern" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Design Pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/strategy/" class="md-nav__link">
+        Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/command/" class="md-nav__link">
+        Command
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/factory/" class="md-nav__link">
+        Factory
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/decorator/" class="md-nav__link">
+        Decorator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/observer/" class="md-nav__link">
+        Observer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/singleton/" class="md-nav__link">
+        Singleton
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        Qt
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Qt" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Qt
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qt/model_view/" class="md-nav__link">
+        Model View
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qt/qt_threading_event/" class="md-nav__link">
+        Threading and Event
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros/" class="md-nav__link">
+        ROS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concurrency/concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../google_mock/" class="md-nav__link">
+        Google Mock
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uses-for-smart-pointers" class="md-nav__link">
+    Uses for smart pointers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-standard-library-smart-pointers" class="md-nav__link">
+    C++ Standard Library Smart Pointers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-and-use-unique_ptr-instances" class="md-nav__link">
+    How to: Create and Use unique_ptr Instances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-and-use-shared_ptr-instances" class="md-nav__link">
+    How to: Create and Use shared_ptr Instances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-and-use-weak_ptr-instances" class="md-nav__link">
+    How to: Create and Use weak_ptr Instances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt-smart-pointer" class="md-nav__link">
+    Qt Smart Pointer
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt Smart Pointer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raw-pointers-to-orphans" class="md-nav__link">
+    Raw pointers to orphans
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smart-pointers-in-qt" class="md-nav__link">
+    Smart pointers in Qt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    總結
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wayneliu0512/academy_mkdocs/edit/master/docs/c++/smart_pointer.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="smart-pointer">Smart Pointer</h1>
+<p>In modern C++ programming, the Standard Library includes smart pointers, which are used to help ensure that programs are free of memory and resource leaks and are exception-safe.</p>
+<h3 id="uses-for-smart-pointers">Uses for smart pointers</h3>
+<p>Smart pointers are defined in the <code>std</code> namespace in the <code>&lt;memory&gt;</code> header file. They are crucial to the <strong><a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a></strong> or <em>Resource Acquisition Is Initialization programming</em> idiom. The main goal of this idiom is to ensure that resource acquisition occurs at the same time that the object is initialized, so that all resources for the object are created and made ready in one line of code. In practical terms, the main principle of RAII is to give ownership of any heap-allocated resource—for example, dynamically-allocated memory or system object handles—to a stack-allocated object whose destructor contains the code to delete or free the resource and also any associated cleanup code.</p>
+<p>In most cases, when you initialize a raw pointer or resource handle to point to an actual resource, pass the pointer to a smart pointer immediately. In modern C++, raw pointers are only used in small code blocks of limited scope, loops, or helper functions where performance is critical and there is no chance of confusion about ownership.</p>
+<p>The following example compares a raw pointer declaration to a smart pointer declaration.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kt">void</span> <span class="nf">UseRawPointer</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="c1">// Using a raw pointer -- not recommended.</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="n">Song</span><span class="o">*</span> <span class="n">pSong</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Song</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Nothing on You&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Bruno Mars&quot;</span><span class="p">);</span> 
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="c1">// Use pSong...</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="c1">// Don&#39;t forget to delete!</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="k">delete</span> <span class="n">pSong</span><span class="p">;</span>   
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="kt">void</span> <span class="nf">UseSmartPointer</span><span class="p">()</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="c1">// Declare a smart pointer on stack and pass it the raw pointer.</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span> <span class="n">song2</span><span class="p">(</span><span class="k">new</span> <span class="n">Song</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Nothing on You&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Bruno Mars&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>    <span class="c1">// Use song2...</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="n">wstring</span> <span class="n">s</span> <span class="o">=</span> <span class="n">song2</span><span class="o">-&gt;</span><span class="n">duration_</span><span class="p">;</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="c1">//...</span>
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span><span class="p">}</span> <span class="c1">// song2 is deleted automatically here.</span>
+</code></pre></div>
+<p>The C++ smart pointer idiom resembles object creation in languages such as C#: you create the object and then let the system take care of deleting it at the correct time. The difference is that no separate garbage collector runs in the background; memory is managed through the standard C++ scoping rules so that the runtime environment is faster and more efficient.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">LargeObject</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="kt">void</span> <span class="n">DoSomething</span><span class="p">(){}</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="kt">void</span> <span class="nf">ProcessLargeObject</span><span class="p">(</span><span class="k">const</span> <span class="n">LargeObject</span><span class="o">&amp;</span> <span class="n">lo</span><span class="p">){}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="kt">void</span> <span class="nf">SmartPointerDemo</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">{</span>    
+<span class="linenos" data-linenos="10 "></span>    <span class="c1">// Create the object and pass it to a smart pointer</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">LargeObject</span><span class="o">&gt;</span> <span class="n">pLarge</span><span class="p">(</span><span class="k">new</span> <span class="n">LargeObject</span><span class="p">());</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span>    <span class="c1">//Call a method on the object</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">pLarge</span><span class="o">-&gt;</span><span class="n">DoSomething</span><span class="p">();</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span>    <span class="c1">// Pass a reference to a method.</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="n">ProcessLargeObject</span><span class="p">(</span><span class="o">*</span><span class="n">pLarge</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="p">}</span> <span class="c1">//pLarge is deleted automatically when function block goes out of scope.</span>
+</code></pre></div>
+<p>Smart pointers have their own member functions, which are accessed by using “dot” notation. For example, some C++ Standard Library smart pointers have a reset member function that releases ownership of the pointer. This is useful when you want to free the memory owned by the smart pointer before the smart pointer goes out of scope, as shown in the following example.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kt">void</span> <span class="nf">SmartPointerDemo2</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="c1">// Create the object and pass it to a smart pointer</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">LargeObject</span><span class="o">&gt;</span> <span class="n">pLarge</span><span class="p">(</span><span class="k">new</span> <span class="n">LargeObject</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="c1">//Call a method on the object</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="n">pLarge</span><span class="o">-&gt;</span><span class="n">DoSomething</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="c1">// Free the memory before we exit function block.</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="n">pLarge</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span>    <span class="c1">// Do some other work...</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kt">void</span> <span class="nf">SmartPointerDemo4</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="c1">// Create the object and pass it to a smart pointer</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">LargeObject</span><span class="o">&gt;</span> <span class="n">pLarge</span><span class="p">(</span><span class="k">new</span> <span class="n">LargeObject</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="c1">//Call a method on the object</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="n">pLarge</span><span class="o">-&gt;</span><span class="n">DoSomething</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="c1">// Pass raw pointer to a legacy API</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="n">LegacyLargeObjectFunction</span><span class="p">(</span><span class="n">pLarge</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>    
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="c-standard-library-smart-pointers">C++ Standard Library Smart Pointers</h3>
+<ul>
+<li><code>unique_ptr</code>: Allows exactly one owner of the underlying pointer.</li>
+<li><code>shared_ptr</code>: Reference-counted smart pointer. Use when you want to assign one raw pointer to multiple owners.</li>
+<li><code>weak_ptr</code>: Special-case smart pointer for use in conjunction with <code>shared_ptr</code>. A <code>weak_ptr</code> provides access to an object that is owned by one or more <code>shared_ptr</code> instances, but does not participate in reference counting. </li>
+</ul>
+<h2 id="how-to-create-and-use-unique_ptr-instances">How to: Create and Use <code>unique_ptr</code> Instances</h2>
+<p>A <code>unique_ptr</code> does not share its pointer. It cannot be copied to another <code>unique_ptr</code>, passed by value to a function, or used in any C++ Standard Library algorithm that requires copies to be made. A <code>unique_ptr</code> can only be moved. This means that the ownership of the memory resource is transferred to another <code>unique_ptr</code> and the original <code>unique_ptr</code> no longer owns it.</p>
+<p>The following example shows how to create <code>unique_ptr</code> instances and pass them between functions.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span> <span class="n">SongFactory</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">wstring</span><span class="o">&amp;</span> <span class="n">artist</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">wstring</span><span class="o">&amp;</span> <span class="n">title</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="c1">// Implicit move operation into the variable that stores the result.</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="k">return</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">title</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="kt">void</span> <span class="n">MakeSongs</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="c1">// Create a new unique_ptr with a new object.</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="k">auto</span> <span class="n">song</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Mr. Children&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Namonaki Uta&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span>    <span class="c1">// Use the unique_ptr.</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">wstring</span><span class="o">&gt;</span> <span class="n">titles</span> <span class="o">=</span> <span class="p">{</span> <span class="n">song</span><span class="o">-&gt;</span><span class="n">title</span> <span class="p">};</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span>    <span class="c1">// Move raw pointer from one unique_ptr to another.</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span> <span class="n">song2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">song</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>    <span class="c1">// Obtain unique_ptr from function that returns by value.</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="k">auto</span> <span class="n">song3</span> <span class="o">=</span> <span class="n">SongFactory</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Michael Jackson&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Beat It&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="20 "></span><span class="p">}</span>
+</code></pre></div>
+<p>These examples demonstrate this basic characteristic of <code>unique_ptr</code>: it can be moved, but not copied. "Moving" transfers ownership to a new <code>unique_ptr</code> and resets the old <code>unique_ptr</code>.</p>
+<p>The following example shows how to create <code>unique_ptr</code> instances and use them in a vector.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kt">void</span> <span class="nf">SongVector</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;&gt;</span> <span class="n">songs</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="c1">// Create a few new unique_ptr&lt;Song&gt; instances</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="c1">// and add them to vector using implicit move semantics.</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="n">songs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;B&#39;z&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Juice&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="n">songs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Namie Amuro&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Funky Town&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="n">songs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Kome Kome Club&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Kimi ga Iru Dake de&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="n">songs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Ayumi Hamasaki&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Poker Face&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span>    <span class="c1">// Pass by const reference when possible to avoid copying.</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">song</span> <span class="p">:</span> <span class="n">songs</span><span class="p">)</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="sa">L</span><span class="s">&quot;Artist: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">song</span><span class="o">-&gt;</span><span class="n">artist</span> <span class="o">&lt;&lt;</span> <span class="sa">L</span><span class="s">&quot;   Title: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">song</span><span class="o">-&gt;</span><span class="n">title</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+<span class="linenos" data-linenos="16 "></span>    <span class="p">}</span>    
+<span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</code></pre></div>
+<p>The following example shows how to initialize a <code>unique_ptr</code> that is a class member.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">MyClass</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="c1">// MyClass owns the unique_ptr.</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">ClassFactory</span><span class="o">&gt;</span> <span class="n">factory</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="c1">// Initialize by using make_unique with ClassFactory default constructor.</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="n">MyClass</span><span class="p">()</span> <span class="o">:</span> <span class="n">factory</span> <span class="p">(</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">ClassFactory</span><span class="o">&gt;</span><span class="p">())</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span>    <span class="kt">void</span> <span class="n">MakeClass</span><span class="p">()</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="n">factory</span><span class="o">-&gt;</span><span class="n">DoSomething</span><span class="p">();</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">};</span>
+</code></pre></div>
+<p>You can use <code>make_unique</code> to create a unique_ptr to an array, but you cannot use <code>make_unique</code> to initialize the array elements.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// Create a unique_ptr to an array of 5 integers.</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="c1">// Initialize the array.</span>
+<span class="linenos" data-linenos="5 "></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span>    <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div>
+<h2 id="how-to-create-and-use-shared_ptr-instances">How to: Create and Use <code>shared_ptr</code> Instances</h2>
+<p>The <code>shared_ptr</code> type is a smart pointer in the C++ standard library that is designed for scenarios in which more than one owner might have to manage the lifetime of the object in memory. After you initialize a <code>shared_ptr</code> you can copy it, pass it by value in function arguments, and assign it to other <code>shared_ptr</code> instances. All the instances point to the same object, and share access to one "control block" that increments and decrements the reference count whenever a new <code>shared_ptr</code> is added, goes out of scope, or is reset. When the reference count reaches zero, the control block deletes the memory resource and itself.</p>
+<p><img alt="shared_ptr" src="../images/shared_ptr.png" /></p>
+<p>Whenever possible, use the <code>make_shared</code> function to create a <code>shared_ptr</code> when the memory resource is created for the first time. <code>make_shared</code> is exception-safe. It uses the same call to allocate the memory for the control block and the resource, and thereby reduces the construction overhead. </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Use make_shared function when possible.</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">auto</span> <span class="n">sp1</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;The Beatles&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Im Happy Just to Dance With You&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="c1">// Ok, but slightly less efficient. </span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// Note: Using new expression as constructor argument</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="c1">// creates no named variable for other code to access.</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span> <span class="n">sp2</span><span class="p">(</span><span class="k">new</span> <span class="n">Song</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Lady Gaga&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Just Dance&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">// When initialization must be separate from declaration, e.g. class members, </span>
+<span class="linenos" data-linenos="10 "></span><span class="c1">// initialize with nullptr to make your programming intent explicit.</span>
+<span class="linenos" data-linenos="11 "></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span> <span class="n">sp5</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="c1">//Equivalent to: shared_ptr&lt;Song&gt; sp5;</span>
+<span class="linenos" data-linenos="13 "></span><span class="c1">//...</span>
+<span class="linenos" data-linenos="14 "></span><span class="n">sp5</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Elton John&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;I&#39;m Still Standing&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>The following example shows how to declare and initialize <code>shared_ptr</code> instances that take on shared ownership of an object that has already been allocated by another <code>shared_ptr</code>. Assume that <code>sp2</code> is an initialized <code>shared_ptr</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">//Initialize with copy constructor. Increments ref count.</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">auto</span> <span class="n">sp3</span><span class="p">(</span><span class="n">sp2</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="c1">//Initialize via assignment. Increments ref count.</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">auto</span> <span class="n">sp4</span> <span class="o">=</span> <span class="n">sp2</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="c1">//Initialize with nullptr. sp7 is empty.</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span> <span class="n">sp7</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="c1">// Initialize with another shared_ptr. sp1 and sp2</span>
+<span class="linenos" data-linenos="11 "></span><span class="c1">// swap pointers as well as ref counts.</span>
+<span class="linenos" data-linenos="12 "></span><span class="n">sp1</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">sp2</span><span class="p">);</span>
+</code></pre></div>
+<p><code>shared_ptr</code> is also helpful in C++ Standard Library containers when you are using algorithms that copy elements. You can wrap elements in a <code>shared_ptr</code>, and then copy it into other containers with the understanding that the underlying memory is valid as long as you need it, and no longer. The following example shows how to use the <code>remove_copy_if</code> algorithm on <code>shared_ptr</code> instances in a vector.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Bob Dylan&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;The Times They Are A Changing&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Aretha Franklin&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Bridge Over Troubled Water&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Thala&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Entre El Mar y Una Estrella&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;&gt;</span> <span class="n">v2</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">remove_copy_if</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">back_inserter</span><span class="p">(</span><span class="n">v2</span><span class="p">),</span> <span class="p">[]</span> <span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">)</span> 
+<span class="linenos" data-linenos=" 9 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="k">return</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">artist</span><span class="p">.</span><span class="n">compare</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Bob Dylan&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>        
+<span class="linenos" data-linenos="11 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">v2</span><span class="p">)</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">artist</span> <span class="o">&lt;&lt;</span> <span class="sa">L</span><span class="s">&quot;:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">title</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">}</span>
+</code></pre></div>
+<p>output:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Aretha Franklin:Bridge Over Troubled Water
+<span class="linenos" data-linenos="2 "></span>Thala:Entre El Mar y Una Estrella
+</code></pre></div>
+<p>You can use <code>dynamic_pointer_cast</code>, <code>static_pointer_cast</code>, and <code>const_pointer_cast</code> to cast a <code>shared_ptr</code>. These functions resemble the <code>dynamic_cast</code>, <code>static_cast</code>, and <code>const_cast</code> operators. The following example shows how to test the derived type of each element in a vector of <code>shared_ptr</code> of base classes, and then copy the elements and display information about them.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">MediaAsset</span><span class="o">&gt;&gt;</span> <span class="n">assets</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">assets</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Song</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Himesh Reshammiya&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Tera Surroor&quot;</span><span class="p">)));</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">assets</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Song</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Song</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Penaz Masani&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Tu Dil De De&quot;</span><span class="p">)));</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="n">assets</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Photo</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Photo</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;2011-04-06&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Redmond, WA&quot;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Soccer field at Microsoft.&quot;</span><span class="p">)));</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">MediaAsset</span><span class="o">&gt;&gt;</span> <span class="n">photos</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="n">copy_if</span><span class="p">(</span><span class="n">assets</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">assets</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">back_inserter</span><span class="p">(</span><span class="n">photos</span><span class="p">),</span> <span class="p">[]</span> <span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">MediaAsset</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">bool</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="c1">// Use dynamic_pointer_cast to test whether</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="c1">// element is a shared_ptr&lt;Photo&gt;.</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Photo</span><span class="o">&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">dynamic_pointer_cast</span><span class="o">&lt;</span><span class="n">Photo</span><span class="o">&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>        
+<span class="linenos" data-linenos="14 "></span>    <span class="k">return</span> <span class="n">temp</span><span class="p">.</span><span class="n">get</span><span class="p">()</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span>  <span class="nl">p</span> <span class="p">:</span> <span class="n">photos</span><span class="p">)</span>
+<span class="linenos" data-linenos="18 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="c1">// We know that the photos vector contains only </span>
+<span class="linenos" data-linenos="20 "></span>    <span class="c1">// shared_ptr&lt;Photo&gt; objects, so use static_cast.</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Photo location: &quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">static_pointer_cast</span><span class="o">&lt;</span><span class="n">Photo</span><span class="o">&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">location_</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="22 "></span><span class="p">}</span>
+</code></pre></div>
+<p>output:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Photo location: Soccer field at Microsoft.
+</code></pre></div>
+<h2 id="how-to-create-and-use-weak_ptr-instances">How to: Create and Use <code>weak_ptr</code> Instances</h2>
+<p>Sometimes an object must store a way to access the underlying object of a <code>shared_ptr</code> without causing the reference count to be incremented. Typically, this situation occurs when you have cyclic references between <code>shared_ptr</code> instances.</p>
+<p>The following code example shows a case where <code>weak_ptr</code> is used to ensure proper deletion of objects that have circular dependencies. As you examine the example, assume that it was created only after alternative solutions were considered. The <code>Controller</code> objects represent some aspect of a machine process, and they operate independently. Each controller must be able to query the status of the other controllers at any time, and each one contains a private <code>vector&lt;weak_ptr&lt;Controller&gt;&gt;</code> for this purpose. Each vector contains a circular reference, and therefore, <code>weak_ptr</code> instances are used instead of <code>shared_ptr</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="linenos" data-linenos=" 2 "></span><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">class</span> <span class="nc">Controller</span> 
+<span class="linenos" data-linenos="10 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="kt">int</span> <span class="n">Num</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="n">wstring</span> <span class="n">Status</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;&gt;</span> <span class="n">others</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="k">explicit</span> <span class="n">Controller</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="o">:</span> <span class="n">Num</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">,</span> <span class="n">Status</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;On&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span>        <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="sa">L</span><span class="s">&quot;Creating Controller&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">Num</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span>    <span class="o">~</span><span class="n">Controller</span><span class="p">()</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="22 "></span>        <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="sa">L</span><span class="s">&quot;Destroying Controller&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">Num</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="23 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span>    <span class="c1">// Demonstrates how to test whether the  </span>
+<span class="linenos" data-linenos="26 "></span>    <span class="c1">// pointed-to memory still exists or not. </span>
+<span class="linenos" data-linenos="27 "></span>    <span class="kt">void</span> <span class="n">CheckStatuses</span><span class="p">()</span> <span class="k">const</span>
+<span class="linenos" data-linenos="28 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="29 "></span>        <span class="n">for_each</span><span class="p">(</span><span class="n">others</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">others</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[]</span> <span class="p">(</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;</span> <span class="n">wp</span><span class="p">)</span>
+<span class="linenos" data-linenos="30 "></span>        <span class="p">{</span>
+<span class="linenos" data-linenos="31 "></span>            <span class="k">try</span>
+<span class="linenos" data-linenos="32 "></span>            <span class="p">{</span>
+<span class="linenos" data-linenos="33 "></span>                <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">wp</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+<span class="linenos" data-linenos="34 "></span>                <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="sa">L</span><span class="s">&quot;Status of &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">Num</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">Status</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="35 "></span>            <span class="p">}</span>
+<span class="linenos" data-linenos="36 "></span>
+<span class="linenos" data-linenos="37 "></span>            <span class="k">catch</span> <span class="p">(</span><span class="n">bad_weak_ptr</span> <span class="n">b</span><span class="p">)</span>
+<span class="linenos" data-linenos="38 "></span>            <span class="p">{</span>
+<span class="linenos" data-linenos="39 "></span>                <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="sa">L</span><span class="s">&quot;Null object&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="40 "></span>            <span class="p">}</span>                
+<span class="linenos" data-linenos="41 "></span>        <span class="p">});</span>
+<span class="linenos" data-linenos="42 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="43 "></span><span class="p">};</span>
+<span class="linenos" data-linenos="44 "></span>
+<span class="linenos" data-linenos="45 "></span><span class="kt">void</span> <span class="nf">RunTest</span><span class="p">()</span>
+<span class="linenos" data-linenos="46 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="47 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+<span class="linenos" data-linenos="48 "></span>
+<span class="linenos" data-linenos="49 "></span>    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Controller</span><span class="p">(</span><span class="mi">0</span><span class="p">)));</span>
+<span class="linenos" data-linenos="50 "></span>    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Controller</span><span class="p">(</span><span class="mi">1</span><span class="p">)));</span>
+<span class="linenos" data-linenos="51 "></span>    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Controller</span><span class="p">(</span><span class="mi">2</span><span class="p">)));</span>
+<span class="linenos" data-linenos="52 "></span>    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Controller</span><span class="p">(</span><span class="mi">3</span><span class="p">)));</span>
+<span class="linenos" data-linenos="53 "></span>    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Controller</span><span class="p">(</span><span class="mi">4</span><span class="p">)));</span>
+<span class="linenos" data-linenos="54 "></span>
+<span class="linenos" data-linenos="55 "></span>    <span class="c1">// Each controller depends on all others not being deleted. </span>
+<span class="linenos" data-linenos="56 "></span>    <span class="c1">// Give each controller a pointer to all the others. </span>
+<span class="linenos" data-linenos="57 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="linenos" data-linenos="58 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="59 "></span>        <span class="n">for_each</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">)</span>
+<span class="linenos" data-linenos="60 "></span>        <span class="p">{</span>
+<span class="linenos" data-linenos="61 "></span>            <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">Num</span> <span class="o">!=</span> <span class="n">i</span><span class="p">)</span>
+<span class="linenos" data-linenos="62 "></span>            <span class="p">{</span>
+<span class="linenos" data-linenos="63 "></span>                <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">others</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">));</span>
+<span class="linenos" data-linenos="64 "></span>                <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="sa">L</span><span class="s">&quot;push_back to v[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;]: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">Num</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="65 "></span>            <span class="p">}</span>
+<span class="linenos" data-linenos="66 "></span>        <span class="p">});</span>        
+<span class="linenos" data-linenos="67 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="68 "></span>
+<span class="linenos" data-linenos="69 "></span>    <span class="n">for_each</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;&amp;</span> <span class="n">p</span><span class="p">)</span>
+<span class="linenos" data-linenos="70 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="71 "></span>        <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="sa">L</span><span class="s">&quot;use_count = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="72 "></span>        <span class="n">p</span><span class="o">-&gt;</span><span class="n">CheckStatuses</span><span class="p">();</span>
+<span class="linenos" data-linenos="73 "></span>    <span class="p">});</span>
+<span class="linenos" data-linenos="74 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="75 "></span>
+<span class="linenos" data-linenos="76 "></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="linenos" data-linenos="77 "></span><span class="p">{</span>    
+<span class="linenos" data-linenos="78 "></span>    <span class="n">RunTest</span><span class="p">();</span> 
+<span class="linenos" data-linenos="79 "></span>    <span class="n">wcout</span> <span class="o">&lt;&lt;</span> <span class="sa">L</span><span class="s">&quot;Press any key&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="linenos" data-linenos="80 "></span>    <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+<span class="linenos" data-linenos="81 "></span>    <span class="n">cin</span><span class="p">.</span><span class="n">getline</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ch</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="linenos" data-linenos="82 "></span><span class="p">}</span>
+</code></pre></div>
+<p>output:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>Creating Controller0
+<span class="linenos" data-linenos=" 2 "></span>Creating Controller1
+<span class="linenos" data-linenos=" 3 "></span>Creating Controller2
+<span class="linenos" data-linenos=" 4 "></span>Creating Controller3
+<span class="linenos" data-linenos=" 5 "></span>Creating Controller4
+<span class="linenos" data-linenos=" 6 "></span>push_back to v[0]: 1
+<span class="linenos" data-linenos=" 7 "></span>push_back to v[0]: 2
+<span class="linenos" data-linenos=" 8 "></span>push_back to v[0]: 3
+<span class="linenos" data-linenos=" 9 "></span>push_back to v[0]: 4
+<span class="linenos" data-linenos="10 "></span>push_back to v[1]: 0
+<span class="linenos" data-linenos="11 "></span>push_back to v[1]: 2
+<span class="linenos" data-linenos="12 "></span>push_back to v[1]: 3
+<span class="linenos" data-linenos="13 "></span>push_back to v[1]: 4
+<span class="linenos" data-linenos="14 "></span>push_back to v[2]: 0
+<span class="linenos" data-linenos="15 "></span>push_back to v[2]: 1
+<span class="linenos" data-linenos="16 "></span>push_back to v[2]: 3
+<span class="linenos" data-linenos="17 "></span>push_back to v[2]: 4
+<span class="linenos" data-linenos="18 "></span>push_back to v[3]: 0
+<span class="linenos" data-linenos="19 "></span>push_back to v[3]: 1
+<span class="linenos" data-linenos="20 "></span>push_back to v[3]: 2
+<span class="linenos" data-linenos="21 "></span>push_back to v[3]: 4
+<span class="linenos" data-linenos="22 "></span>push_back to v[4]: 0
+<span class="linenos" data-linenos="23 "></span>push_back to v[4]: 1
+<span class="linenos" data-linenos="24 "></span>push_back to v[4]: 2
+<span class="linenos" data-linenos="25 "></span>push_back to v[4]: 3
+<span class="linenos" data-linenos="26 "></span>use_count = 1
+<span class="linenos" data-linenos="27 "></span>Status of 1 = On
+<span class="linenos" data-linenos="28 "></span>Status of 2 = On
+<span class="linenos" data-linenos="29 "></span>Status of 3 = On
+<span class="linenos" data-linenos="30 "></span>Status of 4 = On
+<span class="linenos" data-linenos="31 "></span>use_count = 1
+<span class="linenos" data-linenos="32 "></span>Status of 0 = On
+<span class="linenos" data-linenos="33 "></span>Status of 2 = On
+<span class="linenos" data-linenos="34 "></span>Status of 3 = On
+<span class="linenos" data-linenos="35 "></span>Status of 4 = On
+<span class="linenos" data-linenos="36 "></span>use_count = 1
+<span class="linenos" data-linenos="37 "></span>Status of 0 = On
+<span class="linenos" data-linenos="38 "></span>Status of 1 = On
+<span class="linenos" data-linenos="39 "></span>Status of 3 = On
+<span class="linenos" data-linenos="40 "></span>Status of 4 = On
+<span class="linenos" data-linenos="41 "></span>use_count = 1
+<span class="linenos" data-linenos="42 "></span>Status of 0 = O
+<span class="linenos" data-linenos="43 "></span>nStatus of 1 = On
+<span class="linenos" data-linenos="44 "></span>Status of 2 = On
+<span class="linenos" data-linenos="45 "></span>Status of 4 = On
+<span class="linenos" data-linenos="46 "></span>use_count = 1
+<span class="linenos" data-linenos="47 "></span>Status of 0 = On
+<span class="linenos" data-linenos="48 "></span>Status of 1 = On
+<span class="linenos" data-linenos="49 "></span>Status of 2 = On
+<span class="linenos" data-linenos="50 "></span>Status of 3 = On
+<span class="linenos" data-linenos="51 "></span>Destroying Controller0
+<span class="linenos" data-linenos="52 "></span>Destroying Controller1
+<span class="linenos" data-linenos="53 "></span>Destroying Controller2
+<span class="linenos" data-linenos="54 "></span>Destroying Controller3
+<span class="linenos" data-linenos="55 "></span>Destroying Controller4
+<span class="linenos" data-linenos="56 "></span>Press any key
+</code></pre></div>
+<p>As an experiment, modify the vector <code>others</code> to be a <code>vector&lt;shared_ptr&lt;Controller&gt;&gt;</code>, and then in the output, notice that no destructors are invoked when <code>TestRun</code> returns.</p>
+<p>output:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>Creating Controller0
+<span class="linenos" data-linenos=" 2 "></span>Creating Controller1
+<span class="linenos" data-linenos=" 3 "></span>Creating Controller2
+<span class="linenos" data-linenos=" 4 "></span>Creating Controller3
+<span class="linenos" data-linenos=" 5 "></span>Creating Controller4
+<span class="linenos" data-linenos=" 6 "></span>push_back to v[0]: 1
+<span class="linenos" data-linenos=" 7 "></span>push_back to v[0]: 2
+<span class="linenos" data-linenos=" 8 "></span>push_back to v[0]: 3
+<span class="linenos" data-linenos=" 9 "></span>push_back to v[0]: 4
+<span class="linenos" data-linenos="10 "></span>push_back to v[1]: 0
+<span class="linenos" data-linenos="11 "></span>push_back to v[1]: 2
+<span class="linenos" data-linenos="12 "></span>push_back to v[1]: 3
+<span class="linenos" data-linenos="13 "></span>push_back to v[1]: 4
+<span class="linenos" data-linenos="14 "></span>push_back to v[2]: 0
+<span class="linenos" data-linenos="15 "></span>push_back to v[2]: 1
+<span class="linenos" data-linenos="16 "></span>push_back to v[2]: 3
+<span class="linenos" data-linenos="17 "></span>push_back to v[2]: 4
+<span class="linenos" data-linenos="18 "></span>push_back to v[3]: 0
+<span class="linenos" data-linenos="19 "></span>push_back to v[3]: 1
+<span class="linenos" data-linenos="20 "></span>push_back to v[3]: 2
+<span class="linenos" data-linenos="21 "></span>push_back to v[3]: 4
+<span class="linenos" data-linenos="22 "></span>push_back to v[4]: 0
+<span class="linenos" data-linenos="23 "></span>push_back to v[4]: 1
+<span class="linenos" data-linenos="24 "></span>push_back to v[4]: 2
+<span class="linenos" data-linenos="25 "></span>push_back to v[4]: 3
+<span class="linenos" data-linenos="26 "></span>use_count = 5
+<span class="linenos" data-linenos="27 "></span>Status of 1 = On
+<span class="linenos" data-linenos="28 "></span>Status of 2 = On
+<span class="linenos" data-linenos="29 "></span>Status of 3 = On
+<span class="linenos" data-linenos="30 "></span>Status of 4 = On
+<span class="linenos" data-linenos="31 "></span>use_count = 5
+<span class="linenos" data-linenos="32 "></span>Status of 0 = On
+<span class="linenos" data-linenos="33 "></span>Status of 2 = On
+<span class="linenos" data-linenos="34 "></span>Status of 3 = On
+<span class="linenos" data-linenos="35 "></span>Status of 4 = On
+<span class="linenos" data-linenos="36 "></span>use_count = 5
+<span class="linenos" data-linenos="37 "></span>Status of 0 = On
+<span class="linenos" data-linenos="38 "></span>Status of 1 = On
+<span class="linenos" data-linenos="39 "></span>Status of 3 = On
+<span class="linenos" data-linenos="40 "></span>Status of 4 = On
+<span class="linenos" data-linenos="41 "></span>use_count = 5
+<span class="linenos" data-linenos="42 "></span>Status of 0 = On
+<span class="linenos" data-linenos="43 "></span>Status of 1 = On
+<span class="linenos" data-linenos="44 "></span>Status of 2 = On
+<span class="linenos" data-linenos="45 "></span>Status of 4 = On
+<span class="linenos" data-linenos="46 "></span>use_count = 5
+<span class="linenos" data-linenos="47 "></span>Status of 0 = On
+<span class="linenos" data-linenos="48 "></span>Status of 1 = On
+<span class="linenos" data-linenos="49 "></span>Status of 2 = On
+<span class="linenos" data-linenos="50 "></span>Status of 3 = On
+</code></pre></div>
+<h2 id="qt-smart-pointer">Qt Smart Pointer</h2>
+<p>Because Qt relies on a parent-child model to manage Qobject resources. It follows the composite + Chain-of-responsibility pattern, which is used from event management to memory management, drawing, file handling, etc..</p>
+<p>Actually, trying to use a QObject in a shared\unique pointer is overengineering...</p>
+<ol>
+<li>You have to supply a custom deleter which will call <code>deleteLater</code></li>
+<li>Your qobject with parents already have a reference in the parent object. So you know that a object is not leaked as long as the parent exist. When you need to get rid of it, you can call <code>deleteLater</code> directly.</li>
+</ol>
+<h3 id="raw-pointers-to-orphans">Raw pointers to orphans</h3>
+<p>However, when a QObject (or derived type) is created on the heap without a parent QObject things are very different. In that case you should not just hold a raw pointer, but a smart pointer.</p>
+<h3 id="smart-pointers-in-qt">Smart pointers in Qt</h3>
+<table>
+<thead>
+<tr>
+<th align="left">qt</th>
+<th align="left">std</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>QScopedPointer</code></td>
+<td align="left"><code>unique_ptr</code></td>
+</tr>
+<tr>
+<td align="left"><code>QSharedPointer</code></td>
+<td align="left"><code>shared_ptr</code></td>
+</tr>
+<tr>
+<td align="left"><code>QWeakPointer</code></td>
+<td align="left"><code>weak_ptr</code></td>
+</tr>
+<tr>
+<td align="left"><code>QPointer</code></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">總結</h2>
+<ol>
+<li>首先考慮是否真的需要使用 pointer 來宣告這個變數 (非必要用 pointer, 使用一般變數即可)</li>
+<li>如果真的需要使用 pointer 何時該使用 smart pointer 還是該使用 raw pointer ?</li>
+<li>smart pointer: 當你的程式碼該掌控這個 pointer 的擁有權時 (ownership)，<code>new</code> or <code>delete</code>，使用 smart pointer 會是比較好的做法。</li>
+<li>raw pointer: 在程式碼裡很多地方是不需要理會 pointer 擁有權 (ownership)， 很典型的例子就是常常在 function 裡面，你只會去使用到某個傳進來的 pointer，而不需要去 <code>new</code> 或是 <code>delete</code>它，這時候就可以使用 raw pointer。</li>
+</ol>
+<h2 id="faq">FAQ</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/16760334/whats-the-difference-between-raw-pointer-and-weak-ptr">What's the difference between raw pointer and weak_ptr?</a></li>
+<li><a href="https://blog.gtwang.org/programming/lambda-expression-in-c11/">What is Lambda expression?</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../object_oriented_programming/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Object Oriented Programming
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../template/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Template
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>

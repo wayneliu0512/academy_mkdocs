@@ -1,0 +1,1843 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../images/windows_icon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Class - Allxon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="allxon" data-md-color-accent="light-blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#class" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Allxon" class="md-header__button md-logo" aria-label="Allxon" data-md-component="logo">
+      
+  <img src="../../images/windows_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Allxon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Class
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="allxon" data-md-color-accent="light-blue" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="allxon" data-md-color-accent="light-blue" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/wayneliu0512/academy_mkdocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wayneliu0512/academy_mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../agile_project_management/agile_development/" class="md-tabs__link">
+        Agile Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../variables_types/" class="md-tabs__link md-tabs__link--active">
+        C++
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../git/getting_started/" class="md-tabs__link">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ood/solid/" class="md-tabs__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../design_pattern/strategy/" class="md-tabs__link">
+        Others
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Allxon" class="md-nav__button md-logo" aria-label="Allxon" data-md-component="logo">
+      
+  <img src="../../images/windows_icon.png" alt="logo">
+
+    </a>
+    Allxon
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/wayneliu0512/academy_mkdocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wayneliu0512/academy_mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Agile Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Agile Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Agile Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/agile_development/" class="md-nav__link">
+        Agile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/jira_project_management/" class="md-nav__link">
+        Jira
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/kanban/" class="md-nav__link">
+        Kanban
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/scrum/" class="md-nav__link">
+        Scrum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile_project_management/software_development/" class="md-nav__link">
+        Software Development
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables_types/" class="md-nav__link">
+        Variables and Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compound_type/" class="md-nav__link">
+        Compound Type
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Class
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Class
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class_1" class="md-nav__link">
+    Class 的定義與宣告
+  </a>
+  
+    <nav class="md-nav" aria-label="Class 的定義與宣告">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typedef-class" class="md-nav__link">
+    使用 typedef 讓 Class 更易閱讀
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overloaded-member-functions" class="md-nav__link">
+    成員函式可以被重載 (Overloaded Member Functions)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前置宣告
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-pointer" class="md-nav__link">
+    如何使用 this pointer
+  </a>
+  
+    <nav class="md-nav" aria-label="如何使用 this pointer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#const-this" class="md-nav__link">
+    const 成員函式返回 *this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutable" class="md-nav__link">
+    可變的 (Mutable) 成員函式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    建構式 (Constructors)
+  </a>
+  
+    <nav class="md-nav" aria-label="建構式 (Constructors)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    建構是可以被重載
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructor-initializer" class="md-nav__link">
+    建構式初值器 (Constructor Initializer)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    有時候就是需要建構式初值器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    成員初始化的順序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    Default 建構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    隱式型別轉換
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    禁止建構式定義出隱式轉換
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delegating-constructors" class="md-nav__link">
+    委派建構式 (Delegating Constructors)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#friends" class="md-nav__link">
+    Friends (友元)
+  </a>
+  
+    <nav class="md-nav" aria-label="Friends (友元)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-friend" class="md-nav__link">
+    讓另一個 Class 的成員函式成為 friend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    static 成員
+  </a>
+  
+    <nav class="md-nav" aria-label="static 成員">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-globals" class="md-nav__link">
+    使用 static 成員而不使用 globals 好處
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_1" class="md-nav__link">
+    定義 static 成員
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_2" class="md-nav__link">
+    使用 static 成員
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-this" class="md-nav__link">
+    static 成員函式不帶 this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_3" class="md-nav__link">
+    static 成員變數
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-class" class="md-nav__link">
+    static 成員不隸屬於 class 物件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copy_control/" class="md-nav__link">
+        Copy Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_oriented_programming/" class="md-nav__link">
+        Object Oriented Programming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart_pointer/" class="md-nav__link">
+        Smart Pointer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template/" class="md-nav__link">
+        Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception/" class="md-nav__link">
+        Exception
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effective_cpp/" class="md-nav__link">
+        Effective C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp11_feature/" class="md-nav__link">
+        C++ 11 Feature
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/getting_started/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/clone_recording_changes/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branching_nutshell/" class="md-nav__link">
+        Branching
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branching_merging/" class="md-nav__link">
+        Branching and Merging
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/branch_mang_remote/" class="md-nav__link">
+        Branch Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/remote/" class="md-nav__link">
+        Remote Branches
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/rebasing/" class="md-nav__link">
+        Rebasing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Object Oriented Programming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Oriented Programming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Object Oriented Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/solid/" class="md-nav__link">
+        SOLID
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/coupling_packages/" class="md-nav__link">
+        Package Coupling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ood/package_cohesion/" class="md-nav__link">
+        Package Cohesion
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      <label class="md-nav__link" for="__nav_6_1">
+        Design Pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design Pattern" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Design Pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/strategy/" class="md-nav__link">
+        Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/command/" class="md-nav__link">
+        Command
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/factory/" class="md-nav__link">
+        Factory
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/decorator/" class="md-nav__link">
+        Decorator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/observer/" class="md-nav__link">
+        Observer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_pattern/singleton/" class="md-nav__link">
+        Singleton
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        Qt
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Qt" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Qt
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qt/model_view/" class="md-nav__link">
+        Model View
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qt/qt_threading_event/" class="md-nav__link">
+        Threading and Event
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ros/ros/" class="md-nav__link">
+        ROS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concurrency/concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../google_mock/" class="md-nav__link">
+        Google Mock
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class_1" class="md-nav__link">
+    Class 的定義與宣告
+  </a>
+  
+    <nav class="md-nav" aria-label="Class 的定義與宣告">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typedef-class" class="md-nav__link">
+    使用 typedef 讓 Class 更易閱讀
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overloaded-member-functions" class="md-nav__link">
+    成員函式可以被重載 (Overloaded Member Functions)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前置宣告
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-pointer" class="md-nav__link">
+    如何使用 this pointer
+  </a>
+  
+    <nav class="md-nav" aria-label="如何使用 this pointer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#const-this" class="md-nav__link">
+    const 成員函式返回 *this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutable" class="md-nav__link">
+    可變的 (Mutable) 成員函式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    建構式 (Constructors)
+  </a>
+  
+    <nav class="md-nav" aria-label="建構式 (Constructors)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    建構是可以被重載
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructor-initializer" class="md-nav__link">
+    建構式初值器 (Constructor Initializer)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    有時候就是需要建構式初值器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    成員初始化的順序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    Default 建構式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    隱式型別轉換
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    禁止建構式定義出隱式轉換
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delegating-constructors" class="md-nav__link">
+    委派建構式 (Delegating Constructors)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#friends" class="md-nav__link">
+    Friends (友元)
+  </a>
+  
+    <nav class="md-nav" aria-label="Friends (友元)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-friend" class="md-nav__link">
+    讓另一個 Class 的成員函式成為 friend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    static 成員
+  </a>
+  
+    <nav class="md-nav" aria-label="static 成員">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-globals" class="md-nav__link">
+    使用 static 成員而不使用 globals 好處
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_1" class="md-nav__link">
+    定義 static 成員
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_2" class="md-nav__link">
+    使用 static 成員
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-this" class="md-nav__link">
+    static 成員函式不帶 this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_3" class="md-nav__link">
+    static 成員變數
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-class" class="md-nav__link">
+    static 成員不隸屬於 class 物件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wayneliu0512/academy_mkdocs/edit/master/docs/c++/class.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="class">Class</h1>
+<h2 id="class_1">Class 的定義與宣告</h2>
+<p>Class 背後的基本概念是資料的抽象 (<strong>data abstraction</strong>) 與封裝 (<strong>encapsulation</strong>).</p>
+<h3 id="typedef-class">使用 <code>typedef</code> 讓 Class 更易閱讀</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="c1">// 成員函式的介面</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">contents</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">cursor</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">index</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">contents</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="n">index</span> <span class="n">cursor</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="n">index</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="overloaded-member-functions">成員函式可以被重載 (Overloaded Member Functions)</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">index</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="kt">char</span> <span class="nf">get</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">contents</span><span class="p">[</span><span class="n">cursor</span><span class="p">];</span> <span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kt">char</span> <span class="nf">get</span><span class="p">(</span><span class="n">index</span> <span class="n">ht</span><span class="p">,</span> <span class="n">index</span> <span class="n">wd</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">contents</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="n">index</span> <span class="n">cursor</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="n">index</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="_1">前置宣告</h3>
+<p>宣告一個 class 但是不定義它，是可以的：</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Screen</span><span class="p">;</span> <span class="c1">// 純粹宣告</span>
+</code></pre></div>
+<p>這種宣告稱為<strong>前置宣告</strong> (forward declaration)，指出 <code>Screen</code> 代表某個 class 型別。在宣告之後，定義之前，<code>Screen</code> 是一個不完整型別 (incomplete type)，只知道 <code>Screen</code> 是個型別，不知道它含有什麼成員。</p>
+<p>不完整型別只能用來定義 指向這個型別的 pointer 或是 reference，或是用來宣告以此型別為參數的函式。</p>
+<h2 id="this-pointer">如何使用 <code>this</code> pointer</h2>
+<p>Class <code>Screen</code> 就是個好例子，目前為止只有一對 <code>get()</code> 函式，很合理的我們該會要加上：</p>
+<ul>
+<li>一對 <code>set()</code>，用來指定字元或游標所指字元設值。</li>
+<li>一對 <code>move()</code>，給定兩個索引值，將 <code>cursor</code> 移至這個新位置。</li>
+</ul>
+<p>理想上，我們會希望用戶可以把這些操作連成一列，成為單獨算式：</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">myScreen</span><span class="p">.</span><span class="n">move</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">).</span><span class="n">set</span><span class="p">(</span><span class="sc">&#39;#&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>我們希望上面等價於：</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">myScreen</span><span class="p">.</span><span class="n">move</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">myScree</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="sc">&#39;#&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>為了可以在同一個算式中呼叫 <code>move()</code> 和 <code>set()</code>，每個操作都必須回傳一個 reference 指向當前物件：</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Screen</span><span class="o">&amp;</span> <span class="n">set</span><span class="p">(</span><span class="kt">char</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="n">Screen</span><span class="o">&amp;</span> <span class="nf">move</span><span class="p">(</span><span class="n">index</span> <span class="n">r</span><span class="p">,</span> <span class="n">index</span> <span class="n">c</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">Screen</span><span class="o">&amp;</span> <span class="n">Screen</span><span class="o">::</span><span class="n">set</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">){</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="n">content</span><span class="p">[</span><span class="n">cursor</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="n">Screen</span><span class="o">&amp;</span> <span class="n">Screen</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">index</span> <span class="n">r</span><span class="p">,</span> <span class="n">index</span> <span class="n">c</span><span class="p">){</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="n">index</span> <span class="n">row</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">width</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">cursor</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">c</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="const-this"><code>const</code> 成員函式返回 <code>*this</code></h3>
+<p>在 <code>const</code> 成員函式中，我們不能返回一個指向 class 物件的 reference，<code>const</code> 成員函式只能以 <code>const</code> reference 的形式返回 <code>*this</code>。</p>
+<p>假設，我們為 class <code>Screen</code> 添加一個 <code>display()</code>，邏輯上這個函示應該是 <code>const</code> 成員，因為列印 <code>contents</code> 並不會改變物件內容。接著看以下程式碼:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Screen</span> <span class="n">mySreen</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="c1">//這段程式碼會失敗，display() 返回一個 const reference; 然後我們不能夠以一個 const 物件喚起 set()</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">myScreen</span><span class="p">.</span><span class="n">display</span><span class="p">().</span><span class="n">set</span><span class="p">(</span><span class="sc">&#39;*&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>為了解決這個問題，我們利用重載必須定義兩個 <code>display()</code>: 一個是 <code>const</code> 一個不是。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Screen</span><span class="o">&amp;</span> <span class="n">display</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">iostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">)</span> <span class="p">{</span> 
+<span class="linenos" data-linenos=" 4 "></span>        <span class="n">do_display</span><span class="p">(</span><span class="n">os</span><span class="p">);</span> 
+<span class="linenos" data-linenos=" 5 "></span>        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="k">const</span> <span class="n">Screen</span><span class="o">&amp;</span> <span class="n">display</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">iostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>        <span class="n">do_display</span><span class="p">(</span><span class="n">os</span><span class="p">);</span> 
+<span class="linenos" data-linenos="10 "></span>        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="kt">void</span> <span class="n">do_display</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">iostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">contents</span><span class="p">;</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</code></pre></div>
+<p>現在把 <code>display()</code> 放入大算式中, nonconst 版本會被喚起。但是當我們要 <code>display()</code> 一個 <code>const</code> 物件時，<code>const</code> 版本會被喚起:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Screen</span> <span class="nf">myScreen</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">const</span> <span class="n">Screen</span> <span class="nf">blank</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">myScreen</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="sc">&#39;#&#39;</span><span class="p">).</span><span class="n">display</span><span class="p">(</span><span class="n">cout</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="mutable">可變的 (Mutable) 成員函式</h3>
+<p>常常，即使在一個 <code>const</code> 成員函式中，我們也希望能夠修改 class 的某個成員。只要以關鍵字 <code>mutable</code> 修飾成員變數，就可以達到這樣的目的。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="k">mutable</span> <span class="kt">size_t</span> <span class="n">access_ctr</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kt">void</span> <span class="nf">do_display</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">iostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="o">++</span><span class="n">access_ctr</span><span class="p">;</span> <span class="c1">// 計算成員函式被呼叫的次數</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">contents</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">};</span>
+</code></pre></div>
+<h2 id="constructors">建構式 (Constructors)</h2>
+<h3 id="_2">建構是可以被重載</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Sales_item</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">Sales_item</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="n">Sales_item</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="n">Sales_item</span><span class="p">();</span> <span class="c1">// default 建構式</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<p>引數決定使用哪個建構式</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// 使用 default 建構式</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Sales_item</span> <span class="n">empty</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Sales_item</span> <span class="nf">primer_3rd</span><span class="p">(</span><span class="s">&quot;0-201-82470-1&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">Sales_item</span> <span class="nf">primer_4th</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="constructor-initializer">建構式初值器 (Constructor Initializer)</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// 編寫建構式時，推薦使用建構式初值列</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Sales_item</span><span class="o">::</span><span class="n">Sales_item</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">book</span><span class="p">)</span><span class="o">:</span> <span class="n">isbn</span><span class="p">(</span><span class="n">book</span><span class="p">),</span> <span class="n">units_sold</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="linenos" data-linenos="3 "></span>                                            <span class="n">revenue</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// 合法但執行速度較慢的建構式</span>
+<span class="linenos" data-linenos="2 "></span><span class="c1">// 沒有建構式初值器</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Sales_item</span><span class="o">::</span><span class="n">Sales_item</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">book</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="n">isbn</span> <span class="o">=</span> <span class="n">book</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="n">units_sold</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="n">revenue</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+</code></pre></div>
+<p>概念上我們認為建構式分兩個階段執行:
+1. 初始化階段
+2. 一般計算階段</p>
+<p>計算階段由建構式本體內的所有述式組成</p>
+<p>上面兩版 <code>Sales_item</code> 建構式效果相同，唯一不同的是，使用建構式初始器的版本，是真正的<strong>初始化</strong>成員變數，而另一個版本是在建構式本體中為成員變數<strong>賦值</strong></p>
+<h3 id="_3">有時候就是需要建構式初值器</h3>
+<p>舉個例子，以下建構式有誤:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">ConstRef</span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">ConstRef</span><span class="p">(</span><span class="kt">int</span> <span class="n">ii</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">ci</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="n">ConstRef</span><span class="o">::</span><span class="n">ConstRef</span><span class="p">(</span><span class="kt">int</span> <span class="n">ii</span><span class="p">)</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">{</span>            <span class="c1">// 賦值:</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="n">i</span> <span class="o">=</span> <span class="n">ii</span><span class="p">;</span>  <span class="c1">// 沒問題</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="n">ci</span> <span class="o">=</span> <span class="n">ii</span><span class="p">;</span> <span class="c1">// 錯誤: 不可對一個 const 賦值</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">ri</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>  <span class="c1">// 錯誤: 賦值給 ri，但後者尚未綁定至某物件</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</code></pre></div>
+<p>某些成員變數必須在建構式初值器中被初始化。Class 型別中凡是不帶 default 建構式的成員，<code>const</code> 成員，reference 成員，不論型別是什麼，都必須在建構初值器中完成初始化</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// 正確: 明確的初始化 reference 和 const 成員</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">ConstRef</span><span class="o">::</span><span class="n">ConstRef</span><span class="p">(</span><span class="kt">int</span> <span class="n">ii</span><span class="p">)</span><span class="o">:</span> <span class="n">i</span><span class="p">(</span><span class="n">ii</span><span class="p">),</span> <span class="n">ci</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">ri</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></div>
+<h3 id="_4">成員初始化的順序</h3>
+<p>初始化順序往往並不重要，然而如果某個成員相依於另一個成員，那麼初始化成員就變得重要了。</p>
+<p>考慮以下情況:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="c1">// 執行期錯誤:因為其實 i 在 j 之前被初始化。</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="n">X</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span><span class="o">:</span> <span class="n">j</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">i</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="p">{}</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">};</span>
+</code></pre></div>
+<h3 id="default">Default 建構式</h3>
+<p>當我們定義一個物件卻沒有提供初值時，便會喚起 <em>default</em> 建構式。如果建構式的所有參數都有預設引數，那也成為一個 <em>default</em> 建構式。</p>
+<p>如果 class 沒有定義建構式，編譯器會自動為它生成一個 <em>default</em> 建構式。</p>
+<h3 id="_5">隱式型別轉換</h3>
+<p><strong>可被唯一引數喚起</strong>的建構式，本身就定義了從其參數型別至 class 型別的一個隱式轉換。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">string</span> <span class="n">null_book</span> <span class="o">=</span> <span class="s">&quot;9-999-99999-9&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="c1">//沒問題: 建立一個 Sales_item，其中 units_sold 和 revenus 皆為 0，isbn 等於 null_book</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">item</span><span class="p">.</span><span class="n">same_isbn</span><span class="p">(</span><span class="n">null_book</span><span class="p">);</span>
+</code></pre></div>
+<p>這個程式使用 <code>string</code> 物件作為 <code>Sales_item</code> 中的 <code>same_isbn()</code> 函式引數。然而該程式期望獲得一個 <code>Sales_item</code> 物件。於是編譯器喚起 <code>Sales_item</code> 中<strong>帶一個 string</strong>的建構式，以 <code>null_book</code> 生成一個新物件。新生成的 <code>Sales_item</code> 物件 (暫時物件) 被傳給 <code>same_isbn()</code>。</p>
+<h3 id="_6">禁止建構式定義出隱式轉換</h3>
+<p>如果將建構式宣告為 <code>explicit</code>，就可以阻止編譯器在需要隱式轉換時喚起那個建構式。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Sales_item</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">explicit</span> <span class="n">Sales_item</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">book</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span><span class="o">:</span> <span class="n">isbn</span><span class="p">(</span><span class="n">book</span><span class="p">),</span> <span class="n">units_sold</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">revenus</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span> <span class="p">{}</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="k">explicit</span> <span class="n">Sales_item</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="n">is</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">};</span>
+</code></pre></div>
+<p>加上關鍵字 <code>explicit</code> 之後，它們都不再可被用來隱式創建 <code>Sales_item</code> 物件。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">item</span><span class="p">.</span><span class="n">same_isbn</span><span class="p">(</span><span class="n">null_book</span><span class="p">);</span> <span class="c1">//錯誤: string 建構式是 explicit</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">item</span><span class="p">.</span><span class="n">same_isbn</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span>       <span class="c1">//錯誤: istream 建構式是 explicit</span>
+</code></pre></div>
+<p>通常應該將單引數建構式宣告為 <code>explicit</code>，除非有很明顯的理由需要定義一個隱式轉換。把建構式宣告為 <code>explicit</code> 可避免某些錯誤，而當用戶需要轉換時依然可以明確喚起他。</p>
+<h3 id="delegating-constructors">委派建構式 (Delegating Constructors)</h3>
+<p>C++11 提供了新的設定建構式初始值的功能, 稱為委派建構式, 範例如下:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Sales_data</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="c1">// nondelegating constructor initializes members from corresponding arguments</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="n">Sales_data</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">cnt</span><span class="p">,</span> <span class="kt">double</span> <span class="n">price</span><span class="p">)</span><span class="o">:</span> <span class="n">bookNo</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> 
+<span class="linenos" data-linenos=" 5 "></span>    <span class="n">units_sold</span><span class="p">(</span><span class="n">cnt</span><span class="p">),</span> <span class="n">revenue</span><span class="p">(</span><span class="n">cnt</span><span class="o">*</span><span class="n">price</span><span class="p">)</span> <span class="p">{}</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="c1">// remaining constructors all delegate to another constructor</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="n">Sales_data</span><span class="p">()</span><span class="o">:</span> <span class="n">Sales_data</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="n">Sales_data</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="n">Sales_data</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="n">Sales_data</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="n">is</span><span class="p">)</span><span class="o">:</span> <span class="n">Sales_data</span><span class="p">()</span> <span class="p">{</span> <span class="n">read</span><span class="p">(</span><span class="n">is</span><span class="p">,</span> <span class="o">*</span><span class="k">this</span><span class="p">);</span> <span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="c1">// other members as before</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">};</span>
+</code></pre></div>
+<h2 id="friends">Friends (友元)</h2>
+<p>有時候，令<strong>特定的某些非成員函式</strong>得以取用 <strong>class 的 private 成員</strong>，而又仍能阻止其他的一般性存取，可帶來很大的方便。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="c1">// Window_Mgr 的成員函式可以存取 class Screen 的 private 成分</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">friend</span> <span class="k">class</span> <span class="nc">Window_Mgr</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="c1">//...</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Window_Mgr</span><span class="o">&amp;</span> <span class="nf">Window_Mgr::relocate</span><span class="p">(</span><span class="n">Screen</span><span class="o">::</span><span class="n">index</span> <span class="n">r</span><span class="p">,</span> <span class="n">Screen</span><span class="o">::</span><span class="n">index</span> <span class="n">c</span><span class="p">,</span> <span class="n">Screen</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="c1">// 直接取用 height 和 width 沒問題</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">s</span><span class="p">.</span><span class="n">height</span> <span class="o">+=</span> <span class="n">r</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="n">s</span><span class="p">.</span><span class="n">width</span> <span class="o">+=</span> <span class="n">c</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="class-friend">讓另一個 Class 的成員函式成為 friend</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="c1">// Window_Mgr 必須在 class Screen 之前先定義好</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="k">friend</span> <span class="n">Window_Mgr</span><span class="o">&amp;</span> <span class="nf">Window_Mgr::relocate</span><span class="p">(</span><span class="n">Screen</span><span class="o">::</span><span class="n">index</span><span class="p">,</span> <span class="n">Screen</span><span class="o">::</span><span class="n">index</span><span class="p">,</span> <span class="n">Screen</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="c1">//...</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">};</span>
+</code></pre></div>
+<h2 id="static"><code>static</code> 成員</h2>
+<p>一般的所謂 nonstatic 成員變數存在於 class 的每個物件中。然而 <code>static</code> 成員卻是獨立於 class 的任何物件而存在；每一個 <code>static</code> 成員變數都是 <strong>與 class 相關聯</strong> 而非 <strong>與 object 相關聯</strong>。</p>
+<h3 id="static-globals">使用 <code>static</code> 成員而不使用 globals 好處</h3>
+<ol>
+<li><code>static</code> 成員名稱落在 class 作用域中，這可以避免和其他 classes 的成員或是和 global 物件發生名稱上的衝突。</li>
+<li>厲行封裝。<code>static</code> 成員可以是 <code>private</code>，global 物件卻不能夠。</li>
+<li>閱讀程式碼可以輕鬆看出一個 <code>static</code> 成員和其 class 之間有關連性。這可增加程式可讀性。</li>
+</ol>
+<h3 id="static_1">定義 <code>static</code> 成員</h3>
+<p>舉個例子，一個銀行帳戶的簡單 class。每個帳戶都有餘額和戶名，每個帳戶都有利息，但每個帳戶的利率總是相同的。</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Account</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="kt">void</span> <span class="n">applyint</span><span class="p">()</span> <span class="p">{</span> <span class="n">amount</span> <span class="o">+=</span> <span class="n">amount</span> <span class="o">*</span> <span class="n">interestRate</span><span class="p">;</span> <span class="p">}</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="k">static</span> <span class="kt">double</span> <span class="n">rate</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">interestRate</span><span class="p">;</span> <span class="p">}</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="k">static</span> <span class="kt">void</span> <span class="n">rate</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span> <span class="c1">//設定新利率</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">owner</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="kt">double</span> <span class="n">amount</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="k">static</span> <span class="kt">double</span> <span class="n">interestRate</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="k">static</span> <span class="kt">double</span> <span class="nf">initRate</span><span class="p">();</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">};</span>
+</code></pre></div>
+<p>物件裡面並沒有哪一個成員相應於 <code>static</code> 成員變數，而是存在唯一的 <code>interestRate</code> 物件被 <code>Account</code> 的所有物件共用。</p>
+<h3 id="static_2">使用 <code>static</code> 成員</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Account</span> <span class="n">ac1</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Account</span> <span class="o">*</span><span class="n">ac2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ac1</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="c1">//以下是呼叫 static rate() 三種等價寫法</span>
+<span class="linenos" data-linenos="4 "></span><span class="kt">double</span> <span class="n">rate</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">rate</span> <span class="o">=</span> <span class="n">ac1</span><span class="p">.</span><span class="n">rate</span><span class="p">();</span>
+<span class="linenos" data-linenos="6 "></span><span class="n">rate</span> <span class="o">=</span> <span class="n">ac2</span><span class="o">-&gt;</span><span class="n">rate</span><span class="p">();</span>
+<span class="linenos" data-linenos="7 "></span><span class="n">rate</span> <span class="o">=</span> <span class="n">Account</span><span class="o">::</span><span class="n">rate</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="static-this"><code>static</code> 成員函式不帶 <code>this</code></h3>
+<p><code>static</code> 成員是 class 的一部分，不是任何物件的一部分。因此 <code>static</code> 成員函式沒有 <code>this</code> 指標。在 <code>static</code> 成員函式中取用 <code>this</code> 指標，編譯會錯誤。</p>
+<p>由於 <code>static</code> 成員不是任何物件的一部分，所以 <code>static</code> 成員函式不能宣告為 <code>const</code>。 <code>static</code> 成員函式也不該宣告為 <code>virtual</code>。</p>
+<h3 id="static_3"><code>static</code> 成員變數</h3>
+<p>你必須在 class 本體外對 <code>static</code> 成員變數定義一次。和一般成員變數不同，<code>static</code> 成員變數並非經由 class 建構式來初始化，而是在定義時被初始化。</p>
+<h3 id="static-class"><code>static</code> 成員不隸屬於 class 物件</h3>
+<p>因為 <code>static</code> 成員獨立於任何物件而存在，所以 <code>static</code> 成員變數可以是其所在 class。但 nonstatic 成員變數只能是以 pointer 或 reference 指向其所在的 class:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Bar</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="c1">// ...</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="k">static</span> <span class="n">Bar</span> <span class="n">mem1</span><span class="p">;</span> <span class="c1">//正確</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="n">Bar</span> <span class="o">*</span><span class="n">mem2</span><span class="p">;</span>       <span class="c1">//正確</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="n">Bar</span> <span class="n">mem3</span><span class="p">;</span>        <span class="c1">//錯誤</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">};</span>
+</code></pre></div>
+<p>類似情況，<code>static</code> 成員變數可以被當作一個預設引數:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">public</span><span class="o">:</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">Screen</span><span class="o">&amp;</span> <span class="n">clear</span><span class="p">(</span><span class="kt">char</span> <span class="o">=</span> <span class="n">bkground</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">private</span><span class="o">:</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">bkground</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">};</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../compound_type/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Compound Type
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../copy_control/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Copy Control
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>
